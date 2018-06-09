@@ -1,5 +1,5 @@
 Fitter report for PushBox
-Fri Jun 08 22:16:15 2018
+Sat Jun 09 17:08:16 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -63,18 +63,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Fri Jun 08 22:16:15 2018           ;
+; Fitter Status                      ; Successful - Sat Jun 09 17:08:16 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; PushBox                                         ;
 ; Top-level Entity Name              ; PushBox                                         ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C20F484C7                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 201 / 18,752 ( 1 % )                            ;
-;     Total combinational functions  ; 199 / 18,752 ( 1 % )                            ;
-;     Dedicated logic registers      ; 37 / 18,752 ( < 1 % )                           ;
-; Total registers                    ; 37                                              ;
-; Total pins                         ; 16 / 315 ( 5 % )                                ;
+; Total logic elements               ; 2,776 / 18,752 ( 15 % )                         ;
+;     Total combinational functions  ; 2,676 / 18,752 ( 14 % )                         ;
+;     Dedicated logic registers      ; 665 / 18,752 ( 4 % )                            ;
+; Total registers                    ; 665                                             ;
+; Total pins                         ; 20 / 315 ( 6 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                             ;
 ; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                                  ;
@@ -334,10 +334,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Location     ;                ;              ; HEX3[6]       ; PIN_D4        ; QSF Assignment ;
 ; Location     ;                ;              ; I2C_SCLK      ; PIN_A3        ; QSF Assignment ;
 ; Location     ;                ;              ; I2C_SDAT      ; PIN_B3        ; QSF Assignment ;
-; Location     ;                ;              ; KEY[0]        ; PIN_R22       ; QSF Assignment ;
-; Location     ;                ;              ; KEY[1]        ; PIN_R21       ; QSF Assignment ;
-; Location     ;                ;              ; KEY[2]        ; PIN_T22       ; QSF Assignment ;
-; Location     ;                ;              ; KEY[3]        ; PIN_T21       ; QSF Assignment ;
 ; Location     ;                ;              ; LEDG[0]       ; PIN_U22       ; QSF Assignment ;
 ; Location     ;                ;              ; LEDG[1]       ; PIN_U21       ; QSF Assignment ;
 ; Location     ;                ;              ; LEDG[2]       ; PIN_V22       ; QSF Assignment ;
@@ -524,10 +520,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; I/O Standard ;                ;              ; HEX3[6]       ; LVTTL         ; QSF Assignment ;
 ; I/O Standard ;                ;              ; I2C_SCLK      ; LVTTL         ; QSF Assignment ;
 ; I/O Standard ;                ;              ; I2C_SDAT      ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; KEY[0]        ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; KEY[1]        ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; KEY[2]        ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; KEY[3]        ; LVTTL         ; QSF Assignment ;
 ; I/O Standard ;                ;              ; LEDG[0]       ; LVTTL         ; QSF Assignment ;
 ; I/O Standard ;                ;              ; LEDG[1]       ; LVTTL         ; QSF Assignment ;
 ; I/O Standard ;                ;              ; LEDG[2]       ; LVTTL         ; QSF Assignment ;
@@ -572,8 +564,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 258 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 258 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 3367 ( 0.00 % )    ;
+;     -- Achieved     ; 0 / 3367 ( 0.00 % )    ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -596,7 +588,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 255     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 3364    ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -607,123 +599,123 @@ Parallel compilation was disabled, but you have multiple processors available. E
 The pin-out file can be found in D:/altera/projects/PushBox/output_files/PushBox.pin.
 
 
-+---------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                       ;
-+---------------------------------------------+-----------------------+
-; Resource                                    ; Usage                 ;
-+---------------------------------------------+-----------------------+
-; Total logic elements                        ; 201 / 18,752 ( 1 % )  ;
-;     -- Combinational with no register       ; 164                   ;
-;     -- Register only                        ; 2                     ;
-;     -- Combinational with a register        ; 35                    ;
-;                                             ;                       ;
-; Logic element usage by number of LUT inputs ;                       ;
-;     -- 4 input functions                    ; 127                   ;
-;     -- 3 input functions                    ; 46                    ;
-;     -- <=2 input functions                  ; 26                    ;
-;     -- Register only                        ; 2                     ;
-;                                             ;                       ;
-; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 180                   ;
-;     -- arithmetic mode                      ; 19                    ;
-;                                             ;                       ;
-; Total registers*                            ; 37 / 19,649 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 37 / 18,752 ( < 1 % ) ;
-;     -- I/O registers                        ; 0 / 897 ( 0 % )       ;
-;                                             ;                       ;
-; Total LABs:  partially or completely used   ; 14 / 1,172 ( 1 % )    ;
-; Virtual pins                                ; 0                     ;
-; I/O pins                                    ; 16 / 315 ( 5 % )      ;
-;     -- Clock pins                           ; 2 / 8 ( 25 % )        ;
-;                                             ;                       ;
-; Global signals                              ; 2                     ;
-; M4Ks                                        ; 0 / 52 ( 0 % )        ;
-; Total block memory bits                     ; 0 / 239,616 ( 0 % )   ;
-; Total block memory implementation bits      ; 0 / 239,616 ( 0 % )   ;
-; Embedded Multiplier 9-bit elements          ; 0 / 52 ( 0 % )        ;
-; PLLs                                        ; 0 / 4 ( 0 % )         ;
-; Global clocks                               ; 2 / 16 ( 13 % )       ;
-; JTAGs                                       ; 0 / 1 ( 0 % )         ;
-; ASMI blocks                                 ; 0 / 1 ( 0 % )         ;
-; CRC blocks                                  ; 0 / 1 ( 0 % )         ;
-; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%          ;
-; Peak interconnect usage (total/H/V)         ; 1% / 1% / 2%          ;
-; Maximum fan-out                             ; 38                    ;
-; Highest non-global fan-out                  ; 38                    ;
-; Total fan-out                               ; 837                   ;
-; Average fan-out                             ; 3.23                  ;
-+---------------------------------------------+-----------------------+
++-----------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                         ;
++---------------------------------------------+-------------------------+
+; Resource                                    ; Usage                   ;
++---------------------------------------------+-------------------------+
+; Total logic elements                        ; 2,776 / 18,752 ( 15 % ) ;
+;     -- Combinational with no register       ; 2111                    ;
+;     -- Register only                        ; 100                     ;
+;     -- Combinational with a register        ; 565                     ;
+;                                             ;                         ;
+; Logic element usage by number of LUT inputs ;                         ;
+;     -- 4 input functions                    ; 1669                    ;
+;     -- 3 input functions                    ; 340                     ;
+;     -- <=2 input functions                  ; 667                     ;
+;     -- Register only                        ; 100                     ;
+;                                             ;                         ;
+; Logic elements by mode                      ;                         ;
+;     -- normal mode                          ; 2571                    ;
+;     -- arithmetic mode                      ; 105                     ;
+;                                             ;                         ;
+; Total registers*                            ; 665 / 19,649 ( 3 % )    ;
+;     -- Dedicated logic registers            ; 665 / 18,752 ( 4 % )    ;
+;     -- I/O registers                        ; 0 / 897 ( 0 % )         ;
+;                                             ;                         ;
+; Total LABs:  partially or completely used   ; 205 / 1,172 ( 17 % )    ;
+; Virtual pins                                ; 0                       ;
+; I/O pins                                    ; 20 / 315 ( 6 % )        ;
+;     -- Clock pins                           ; 2 / 8 ( 25 % )          ;
+;                                             ;                         ;
+; Global signals                              ; 2                       ;
+; M4Ks                                        ; 0 / 52 ( 0 % )          ;
+; Total block memory bits                     ; 0 / 239,616 ( 0 % )     ;
+; Total block memory implementation bits      ; 0 / 239,616 ( 0 % )     ;
+; Embedded Multiplier 9-bit elements          ; 0 / 52 ( 0 % )          ;
+; PLLs                                        ; 0 / 4 ( 0 % )           ;
+; Global clocks                               ; 2 / 16 ( 13 % )         ;
+; JTAGs                                       ; 0 / 1 ( 0 % )           ;
+; ASMI blocks                                 ; 0 / 1 ( 0 % )           ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )           ;
+; Average interconnect usage (total/H/V)      ; 8% / 7% / 8%            ;
+; Peak interconnect usage (total/H/V)         ; 16% / 15% / 19%         ;
+; Maximum fan-out                             ; 665                     ;
+; Highest non-global fan-out                  ; 315                     ;
+; Total fan-out                               ; 10756                   ;
+; Average fan-out                             ; 3.13                    ;
++---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Fitter Partition Statistics                                                                         ;
-+---------------------------------------------+----------------------+--------------------------------+
-; Statistic                                   ; Top                  ; hard_block:auto_generated_inst ;
-+---------------------------------------------+----------------------+--------------------------------+
-; Difficulty Clustering Region                ; Low                  ; Low                            ;
-;                                             ;                      ;                                ;
-; Total logic elements                        ; 201 / 18752 ( 1 % )  ; 0 / 18752 ( 0 % )              ;
-;     -- Combinational with no register       ; 164                  ; 0                              ;
-;     -- Register only                        ; 2                    ; 0                              ;
-;     -- Combinational with a register        ; 35                   ; 0                              ;
-;                                             ;                      ;                                ;
-; Logic element usage by number of LUT inputs ;                      ;                                ;
-;     -- 4 input functions                    ; 127                  ; 0                              ;
-;     -- 3 input functions                    ; 46                   ; 0                              ;
-;     -- <=2 input functions                  ; 26                   ; 0                              ;
-;     -- Register only                        ; 2                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 180                  ; 0                              ;
-;     -- arithmetic mode                      ; 19                   ; 0                              ;
-;                                             ;                      ;                                ;
-; Total registers                             ; 37                   ; 0                              ;
-;     -- Dedicated logic registers            ; 37 / 18752 ( < 1 % ) ; 0 / 18752 ( 0 % )              ;
-;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 14 / 1172 ( 1 % )    ; 0 / 1172 ( 0 % )               ;
-;                                             ;                      ;                                ;
-; Virtual pins                                ; 0                    ; 0                              ;
-; I/O pins                                    ; 16                   ; 0                              ;
-; Embedded Multiplier 9-bit elements          ; 0 / 52 ( 0 % )       ; 0 / 52 ( 0 % )                 ;
-; Total memory bits                           ; 0                    ; 0                              ;
-; Total RAM block bits                        ; 0                    ; 0                              ;
-; Clock control block                         ; 2 / 20 ( 10 % )      ; 0 / 20 ( 0 % )                 ;
-;                                             ;                      ;                                ;
-; Connections                                 ;                      ;                                ;
-;     -- Input Connections                    ; 0                    ; 0                              ;
-;     -- Registered Input Connections         ; 0                    ; 0                              ;
-;     -- Output Connections                   ; 0                    ; 0                              ;
-;     -- Registered Output Connections        ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 837                  ; 0                              ;
-;     -- Registered Connections               ; 355                  ; 0                              ;
-;                                             ;                      ;                                ;
-; External Connections                        ;                      ;                                ;
-;     -- Top                                  ; 0                    ; 0                              ;
-;     -- hard_block:auto_generated_inst       ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Partition Interface                         ;                      ;                                ;
-;     -- Input Ports                          ; 2                    ; 0                              ;
-;     -- Output Ports                         ; 14                   ; 0                              ;
-;     -- Bidir Ports                          ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Registered Ports                            ;                      ;                                ;
-;     -- Registered Input Ports               ; 0                    ; 0                              ;
-;     -- Registered Output Ports              ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Port Connectivity                           ;                      ;                                ;
-;     -- Input Ports driven by GND            ; 0                    ; 0                              ;
-;     -- Output Ports driven by GND           ; 0                    ; 0                              ;
-;     -- Input Ports driven by VCC            ; 0                    ; 0                              ;
-;     -- Output Ports driven by VCC           ; 0                    ; 0                              ;
-;     -- Input Ports with no Source           ; 0                    ; 0                              ;
-;     -- Output Ports with no Source          ; 0                    ; 0                              ;
-;     -- Input Ports with no Fanout           ; 0                    ; 0                              ;
-;     -- Output Ports with no Fanout          ; 0                    ; 0                              ;
-+---------------------------------------------+----------------------+--------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Fitter Partition Statistics                                                                          ;
++---------------------------------------------+-----------------------+--------------------------------+
+; Statistic                                   ; Top                   ; hard_block:auto_generated_inst ;
++---------------------------------------------+-----------------------+--------------------------------+
+; Difficulty Clustering Region                ; Low                   ; Low                            ;
+;                                             ;                       ;                                ;
+; Total logic elements                        ; 2776 / 18752 ( 15 % ) ; 0 / 18752 ( 0 % )              ;
+;     -- Combinational with no register       ; 2111                  ; 0                              ;
+;     -- Register only                        ; 100                   ; 0                              ;
+;     -- Combinational with a register        ; 565                   ; 0                              ;
+;                                             ;                       ;                                ;
+; Logic element usage by number of LUT inputs ;                       ;                                ;
+;     -- 4 input functions                    ; 1669                  ; 0                              ;
+;     -- 3 input functions                    ; 340                   ; 0                              ;
+;     -- <=2 input functions                  ; 667                   ; 0                              ;
+;     -- Register only                        ; 100                   ; 0                              ;
+;                                             ;                       ;                                ;
+; Logic elements by mode                      ;                       ;                                ;
+;     -- normal mode                          ; 2571                  ; 0                              ;
+;     -- arithmetic mode                      ; 105                   ; 0                              ;
+;                                             ;                       ;                                ;
+; Total registers                             ; 665                   ; 0                              ;
+;     -- Dedicated logic registers            ; 665 / 18752 ( 4 % )   ; 0 / 18752 ( 0 % )              ;
+;                                             ;                       ;                                ;
+; Total LABs:  partially or completely used   ; 205 / 1172 ( 17 % )   ; 0 / 1172 ( 0 % )               ;
+;                                             ;                       ;                                ;
+; Virtual pins                                ; 0                     ; 0                              ;
+; I/O pins                                    ; 20                    ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0 / 52 ( 0 % )        ; 0 / 52 ( 0 % )                 ;
+; Total memory bits                           ; 0                     ; 0                              ;
+; Total RAM block bits                        ; 0                     ; 0                              ;
+; Clock control block                         ; 2 / 20 ( 10 % )       ; 0 / 20 ( 0 % )                 ;
+;                                             ;                       ;                                ;
+; Connections                                 ;                       ;                                ;
+;     -- Input Connections                    ; 0                     ; 0                              ;
+;     -- Registered Input Connections         ; 0                     ; 0                              ;
+;     -- Output Connections                   ; 0                     ; 0                              ;
+;     -- Registered Output Connections        ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Internal Connections                        ;                       ;                                ;
+;     -- Total Connections                    ; 10756                 ; 0                              ;
+;     -- Registered Connections               ; 3156                  ; 0                              ;
+;                                             ;                       ;                                ;
+; External Connections                        ;                       ;                                ;
+;     -- Top                                  ; 0                     ; 0                              ;
+;     -- hard_block:auto_generated_inst       ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Partition Interface                         ;                       ;                                ;
+;     -- Input Ports                          ; 6                     ; 0                              ;
+;     -- Output Ports                         ; 14                    ; 0                              ;
+;     -- Bidir Ports                          ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Registered Ports                            ;                       ;                                ;
+;     -- Registered Input Ports               ; 0                     ; 0                              ;
+;     -- Registered Output Ports              ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Port Connectivity                           ;                       ;                                ;
+;     -- Input Ports driven by GND            ; 0                     ; 0                              ;
+;     -- Output Ports driven by GND           ; 0                     ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0                     ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0                     ; 0                              ;
+;     -- Input Ports with no Source           ; 0                     ; 0                              ;
+;     -- Output Ports with no Source          ; 0                     ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0                     ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0                     ; 0                              ;
++---------------------------------------------+-----------------------+--------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -732,6 +724,10 @@ The pin-out file can be found in D:/altera/projects/PushBox/output_files/PushBox
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; CLOCK_50 ; L1    ; 2        ; 0            ; 13           ; 0           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; KEY[0]   ; R22   ; 6        ; 50           ; 10           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; KEY[1]   ; R21   ; 6        ; 50           ; 10           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; KEY[2]   ; T22   ; 6        ; 50           ; 9            ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; KEY[3]   ; T21   ; 6        ; 50           ; 9            ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[0]    ; L22   ; 5        ; 50           ; 14           ; 0           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 +----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
@@ -768,7 +764,7 @@ The pin-out file can be found in D:/altera/projects/PushBox/output_files/PushBox
 ; 3        ; 14 / 43 ( 33 % ) ; 3.3V          ; --           ;
 ; 4        ; 0 / 40 ( 0 % )   ; 3.3V          ; --           ;
 ; 5        ; 1 / 39 ( 3 % )   ; 3.3V          ; --           ;
-; 6        ; 1 / 36 ( 3 % )   ; 3.3V          ; --           ;
+; 6        ; 5 / 36 ( 14 % )  ; 3.3V          ; --           ;
 ; 7        ; 0 / 40 ( 0 % )   ; 3.3V          ; --           ;
 ; 8        ; 0 / 43 ( 0 % )   ; 3.3V          ; --           ;
 +----------+------------------+---------------+--------------+
@@ -1151,8 +1147,8 @@ The pin-out file can be found in D:/altera/projects/PushBox/output_files/PushBox
 ; R18      ; 184        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R19      ; 185        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R20      ; 192        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
-; R21      ; 190        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; R22      ; 191        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; R21      ; 190        ; 6        ; KEY[1]                                   ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; R22      ; 191        ; 6        ; KEY[0]                                   ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; T1       ; 59         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T2       ; 60         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T3       ; 69         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -1173,8 +1169,8 @@ The pin-out file can be found in D:/altera/projects/PushBox/output_files/PushBox
 ; T18      ; 171        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; T19      ;            ; 6        ; VCCIO6                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; T20      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; T21      ; 188        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; T22      ; 189        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; T21      ; 188        ; 6        ; KEY[3]                                   ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; T22      ; 189        ; 6        ; KEY[2]                                   ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; U1       ; 61         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U2       ; 62         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U3       ; 70         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
@@ -1304,16 +1300,20 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                 ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name       ; Library Name ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------+--------------+
-; |PushBox                   ; 201 (0)     ; 37 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 16   ; 0            ; 164 (0)      ; 2 (0)             ; 35 (0)           ; |PushBox                  ; work         ;
-;    |PushBoxMap:inst2|      ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; |PushBox|PushBoxMap:inst2 ; work         ;
-;    |VgaPixel:inst1|        ; 144 (144)   ; 12 (12)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 132 (132)    ; 1 (1)             ; 11 (11)          ; |PushBox|VgaPixel:inst1   ; work         ;
-;    |VgaSync:inst|          ; 54 (54)     ; 25 (25)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 29 (29)      ; 1 (1)             ; 24 (24)          ; |PushBox|VgaSync:inst     ; work         ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                    ;
++----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name          ; Library Name ;
++----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------+--------------+
+; |PushBox                   ; 2776 (0)    ; 665 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 20   ; 0            ; 2111 (0)     ; 100 (0)           ; 565 (0)          ; |PushBox                     ; work         ;
+;    |PushBoxMap:instasdf|   ; 2393 (2393) ; 532 (532)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1861 (1861)  ; 93 (93)           ; 439 (439)        ; |PushBox|PushBoxMap:instasdf ; work         ;
+;    |Rebounce:inst3|        ; 47 (47)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (23)      ; 2 (2)             ; 22 (22)          ; |PushBox|Rebounce:inst3      ; work         ;
+;    |Rebounce:inst4|        ; 47 (47)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (23)      ; 2 (2)             ; 22 (22)          ; |PushBox|Rebounce:inst4      ; work         ;
+;    |Rebounce:inst5|        ; 46 (46)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 22 (22)      ; 1 (1)             ; 23 (23)          ; |PushBox|Rebounce:inst5      ; work         ;
+;    |Rebounce:inst6|        ; 47 (47)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 22 (22)      ; 2 (2)             ; 23 (23)          ; |PushBox|Rebounce:inst6      ; work         ;
+;    |VgaPixel:inst1|        ; 144 (144)   ; 12 (12)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 132 (132)    ; 0 (0)             ; 12 (12)          ; |PushBox|VgaPixel:inst1      ; work         ;
+;    |VgaSync:inst|          ; 53 (53)     ; 25 (25)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 25 (25)          ; |PushBox|VgaSync:inst        ; work         ;
++----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1338,29 +1338,290 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_R[0] ; Output   ; --            ; --            ; --                    ; --  ;
 ; CLOCK_50 ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; SW[0]    ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; KEY[0]   ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
+; KEY[3]   ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
+; KEY[2]   ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
+; KEY[1]   ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
 +----------+----------+---------------+---------------+-----------------------+-----+
 
 
-+---------------------------------------------------+
-; Pad To Core Delay Chain Fanout                    ;
-+---------------------+-------------------+---------+
-; Source Pin / Fanout ; Pad To Core Index ; Setting ;
-+---------------------+-------------------+---------+
-; CLOCK_50            ;                   ;         ;
-; SW[0]               ;                   ;         ;
-+---------------------+-------------------+---------+
++-------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                          ;
++-------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                       ; Pad To Core Index ; Setting ;
++-------------------------------------------+-------------------+---------+
+; CLOCK_50                                  ;                   ;         ;
+; SW[0]                                     ;                   ;         ;
+; KEY[0]                                    ;                   ;         ;
+;      - Rebounce:inst6|flipflops[0]~feeder ; 0                 ; 6       ;
+; KEY[3]                                    ;                   ;         ;
+;      - Rebounce:inst3|flipflops[0]~feeder ; 0                 ; 6       ;
+; KEY[2]                                    ;                   ;         ;
+;      - Rebounce:inst4|flipflops[0]~feeder ; 1                 ; 6       ;
+; KEY[1]                                    ;                   ;         ;
+;      - Rebounce:inst5|flipflops[0]        ; 0                 ; 6       ;
++-------------------------------------------+-------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                           ;
-+------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                         ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; CLOCK_50                     ; PIN_L1             ; 37      ; Clock        ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; PushBoxMap:inst2|Mux1~0      ; LCCOMB_X20_Y20_N14 ; 21      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; SW[0]                        ; PIN_L22            ; 37      ; Async. clear ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; VgaPixel:inst1|s_rgb_next~15 ; LCCOMB_X19_Y19_N18 ; 14      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-+------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                          ;
++---------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                                        ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++---------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; CLOCK_50                                    ; PIN_L1             ; 665     ; Clock        ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; PushBoxMap:instasdf|Mux41~169               ; LCCOMB_X31_Y14_N26 ; 19      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[0][0][0]~1   ; LCCOMB_X22_Y11_N14 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[0][10][1]~0  ; LCCOMB_X23_Y9_N6   ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[0][11][1]~2  ; LCCOMB_X21_Y8_N24  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[0][12][1]~0  ; LCCOMB_X23_Y10_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[0][13][0]~0  ; LCCOMB_X29_Y10_N4  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[0][14][0]~0  ; LCCOMB_X22_Y10_N24 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[0][15][0]~1  ; LCCOMB_X22_Y10_N18 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[0][1][0]~1   ; LCCOMB_X21_Y9_N14  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[0][2][0]~0   ; LCCOMB_X22_Y11_N12 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[0][3][0]~1   ; LCCOMB_X23_Y9_N28  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[0][4][0]~0   ; LCCOMB_X22_Y9_N10  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[0][5][0]~0   ; LCCOMB_X23_Y6_N28  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[0][6][1]~0   ; LCCOMB_X22_Y7_N22  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[0][7][0]~0   ; LCCOMB_X22_Y10_N16 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[0][8][0]~0   ; LCCOMB_X23_Y6_N14  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[0][9][0]~0   ; LCCOMB_X21_Y8_N8   ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[10][0][0]~0  ; LCCOMB_X29_Y19_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[10][10][0]~0 ; LCCOMB_X24_Y15_N24 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[10][11][0]~0 ; LCCOMB_X30_Y14_N22 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[10][12][1]~0 ; LCCOMB_X19_Y12_N16 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[10][13][1]~0 ; LCCOMB_X27_Y14_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[10][14][1]~0 ; LCCOMB_X30_Y13_N20 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[10][15][1]~3 ; LCCOMB_X30_Y13_N22 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[10][1][0]~0  ; LCCOMB_X29_Y18_N4  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[10][2][0]~0  ; LCCOMB_X22_Y15_N24 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[10][3][0]~0  ; LCCOMB_X26_Y18_N12 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[10][4][0]~0  ; LCCOMB_X29_Y12_N8  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[10][5][1]~1  ; LCCOMB_X29_Y10_N22 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[10][6][1]~0  ; LCCOMB_X30_Y14_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[10][7][0]~0  ; LCCOMB_X25_Y15_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[10][9][0]~0  ; LCCOMB_X29_Y18_N8  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[11][0][1]~0  ; LCCOMB_X27_Y19_N14 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[11][10][1]~0 ; LCCOMB_X24_Y15_N16 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[11][11][1]~0 ; LCCOMB_X27_Y19_N24 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[11][12][1]~0 ; LCCOMB_X27_Y17_N28 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[11][13][1]~0 ; LCCOMB_X27_Y19_N12 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[11][14][1]~0 ; LCCOMB_X27_Y17_N30 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[11][15][0]~1 ; LCCOMB_X27_Y17_N8  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[11][1][1]~0  ; LCCOMB_X27_Y19_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[11][2][1]~0  ; LCCOMB_X27_Y17_N16 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[11][3][1]~0  ; LCCOMB_X26_Y18_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[11][4][1]~0  ; LCCOMB_X31_Y19_N30 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[11][5][1]~0  ; LCCOMB_X25_Y17_N28 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[11][6][0]~0  ; LCCOMB_X27_Y17_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[11][7][0]~0  ; LCCOMB_X26_Y15_N28 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[11][8][1]~2  ; LCCOMB_X26_Y15_N18 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[11][9][0]~0  ; LCCOMB_X26_Y15_N30 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[12][0][0]~0  ; LCCOMB_X20_Y18_N20 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[12][10][1]~0 ; LCCOMB_X25_Y17_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[12][11][1]~2 ; LCCOMB_X24_Y18_N2  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[12][12][1]~0 ; LCCOMB_X21_Y18_N14 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[12][13][1]~0 ; LCCOMB_X25_Y17_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[12][14][1]~0 ; LCCOMB_X29_Y20_N14 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[12][15][1]~1 ; LCCOMB_X29_Y20_N8  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[12][1][1]~0  ; LCCOMB_X22_Y19_N2  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[12][2][0]~0  ; LCCOMB_X29_Y17_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[12][3][1]~0  ; LCCOMB_X25_Y17_N0  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[12][4][1]~0  ; LCCOMB_X21_Y20_N12 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[12][5][1]~0  ; LCCOMB_X21_Y19_N24 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[12][6][1]~0  ; LCCOMB_X29_Y17_N14 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[12][7][1]~0  ; LCCOMB_X32_Y15_N0  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[12][8][1]~0  ; LCCOMB_X24_Y18_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[12][9][1]~0  ; LCCOMB_X23_Y20_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[13][0][0]~0  ; LCCOMB_X22_Y20_N18 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[13][10][0]~0 ; LCCOMB_X19_Y19_N0  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[13][11][0]~2 ; LCCOMB_X23_Y19_N30 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[13][12][0]~0 ; LCCOMB_X22_Y17_N8  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[13][13][1]~0 ; LCCOMB_X18_Y19_N4  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[13][14][0]~0 ; LCCOMB_X22_Y17_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[13][15][0]~1 ; LCCOMB_X21_Y19_N22 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[13][1][0]~0  ; LCCOMB_X23_Y19_N12 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[13][2][1]~0  ; LCCOMB_X21_Y20_N14 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[13][3][0]~0  ; LCCOMB_X23_Y19_N22 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[13][4][1]~0  ; LCCOMB_X21_Y19_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[13][5][1]~0  ; LCCOMB_X23_Y19_N8  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[13][6][0]~0  ; LCCOMB_X22_Y17_N16 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[13][7][0]~0  ; LCCOMB_X22_Y17_N14 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[13][8][0]~0  ; LCCOMB_X19_Y19_N16 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[13][9][1]~0  ; LCCOMB_X22_Y20_N22 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[14][0][0]~0  ; LCCOMB_X29_Y16_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[14][10][0]~0 ; LCCOMB_X20_Y16_N16 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[14][11][0]~2 ; LCCOMB_X22_Y13_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[14][12][0]~0 ; LCCOMB_X21_Y13_N4  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[14][13][0]~0 ; LCCOMB_X21_Y13_N24 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[14][14][0]~0 ; LCCOMB_X22_Y18_N4  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[14][15][0]~1 ; LCCOMB_X22_Y18_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[14][1][0]~0  ; LCCOMB_X21_Y17_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[14][2][0]~0  ; LCCOMB_X18_Y10_N28 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[14][3][1]~0  ; LCCOMB_X21_Y13_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[14][4][1]~0  ; LCCOMB_X20_Y9_N22  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[14][5][1]~0  ; LCCOMB_X21_Y19_N30 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[14][6][0]~0  ; LCCOMB_X27_Y16_N2  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[14][7][1]~0  ; LCCOMB_X18_Y10_N20 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[14][8][1]~0  ; LCCOMB_X20_Y16_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[14][9][1]~0  ; LCCOMB_X22_Y13_N20 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[15][0][0]~1  ; LCCOMB_X19_Y17_N20 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[15][10][1]~1 ; LCCOMB_X20_Y17_N22 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[15][11][1]~3 ; LCCOMB_X18_Y17_N30 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[15][12][0]~1 ; LCCOMB_X18_Y15_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[15][13][1]~1 ; LCCOMB_X18_Y16_N4  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[15][14][0]~1 ; LCCOMB_X20_Y17_N4  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[15][15][0]~0 ; LCCOMB_X26_Y13_N24 ; 44      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[15][15][0]~5 ; LCCOMB_X19_Y16_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[15][1][1]~1  ; LCCOMB_X18_Y17_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[15][2][1]~1  ; LCCOMB_X20_Y17_N28 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[15][3][1]~1  ; LCCOMB_X22_Y14_N22 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[15][4][1]~1  ; LCCOMB_X16_Y15_N12 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[15][5][1]~1  ; LCCOMB_X18_Y13_N24 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[15][6][0]~1  ; LCCOMB_X18_Y16_N20 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[15][7][1]~1  ; LCCOMB_X18_Y13_N12 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[15][8][1]~1  ; LCCOMB_X19_Y17_N18 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[15][9][1]~1  ; LCCOMB_X22_Y14_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[1][0][0]~0   ; LCCOMB_X21_Y11_N16 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[1][10][0]~0  ; LCCOMB_X18_Y11_N18 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[1][11][1]~1  ; LCCOMB_X18_Y11_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[1][12][1]~0  ; LCCOMB_X21_Y11_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[1][13][1]~0  ; LCCOMB_X21_Y15_N24 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[1][14][1]~0  ; LCCOMB_X22_Y12_N16 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[1][15][0]~1  ; LCCOMB_X22_Y12_N20 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[1][1][0]~0   ; LCCOMB_X20_Y12_N16 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[1][2][1]~0   ; LCCOMB_X21_Y11_N2  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[1][3][0]~0   ; LCCOMB_X18_Y14_N16 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[1][4][1]~0   ; LCCOMB_X16_Y11_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[1][5][0]~0   ; LCCOMB_X21_Y9_N10  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[1][6][1]~0   ; LCCOMB_X16_Y11_N14 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[1][7][1]~0   ; LCCOMB_X32_Y15_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[1][8][1]~0   ; LCCOMB_X21_Y11_N20 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[1][9][1]~1   ; LCCOMB_X21_Y15_N4  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[2][0][1]~0   ; LCCOMB_X24_Y10_N4  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[2][10][0]~1  ; LCCOMB_X24_Y8_N6   ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[2][11][1]~0  ; LCCOMB_X22_Y7_N26  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[2][12][1]~0  ; LCCOMB_X27_Y8_N26  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[2][13][1]~0  ; LCCOMB_X24_Y8_N18  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[2][14][0]~0  ; LCCOMB_X25_Y8_N8   ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[2][15][0]~1  ; LCCOMB_X22_Y8_N6   ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[2][1][1]~0   ; LCCOMB_X24_Y8_N22  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[2][2][1]~0   ; LCCOMB_X24_Y8_N14  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[2][3][1]~0   ; LCCOMB_X22_Y8_N28  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[2][4][1]~0   ; LCCOMB_X29_Y8_N26  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[2][5][1]~0   ; LCCOMB_X29_Y8_N2   ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[2][6][1]~0   ; LCCOMB_X20_Y8_N16  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[2][7][1]~0   ; LCCOMB_X20_Y8_N30  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[2][8][0]~1   ; LCCOMB_X24_Y10_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[2][9][1]~0   ; LCCOMB_X26_Y8_N14  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[3][0][1]~0   ; LCCOMB_X26_Y14_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[3][10][1]~0  ; LCCOMB_X23_Y11_N30 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[3][11][1]~0  ; LCCOMB_X25_Y7_N18  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[3][12][1]~0  ; LCCOMB_X23_Y10_N4  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[3][13][1]~0  ; LCCOMB_X24_Y7_N8   ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[3][14][1]~0  ; LCCOMB_X24_Y11_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[3][15][1]~1  ; LCCOMB_X24_Y7_N30  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[3][1][0]~0   ; LCCOMB_X26_Y11_N12 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[3][2][1]~0   ; LCCOMB_X30_Y10_N20 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[3][3][1]~0   ; LCCOMB_X30_Y10_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[3][4][1]~0   ; LCCOMB_X26_Y14_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[3][5][0]~0   ; LCCOMB_X25_Y12_N12 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[3][6][0]~0   ; LCCOMB_X23_Y11_N28 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[3][7][0]~0   ; LCCOMB_X26_Y11_N20 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[3][8][1]~2   ; LCCOMB_X19_Y11_N30 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[3][9][1]~0   ; LCCOMB_X25_Y7_N30  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[4][0][0]~0   ; LCCOMB_X20_Y10_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[4][10][1]~0  ; LCCOMB_X20_Y9_N30  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[4][11][0]~2  ; LCCOMB_X19_Y15_N14 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[4][12][1]~0  ; LCCOMB_X21_Y14_N22 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[4][13][1]~0  ; LCCOMB_X20_Y14_N16 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[4][14][1]~0  ; LCCOMB_X20_Y13_N0  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[4][15][1]~1  ; LCCOMB_X20_Y14_N18 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[4][1][1]~0   ; LCCOMB_X19_Y13_N8  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[4][2][0]~0   ; LCCOMB_X20_Y13_N18 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[4][3][0]~0   ; LCCOMB_X19_Y14_N12 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[4][4][0]~0   ; LCCOMB_X20_Y13_N30 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[4][5][0]~0   ; LCCOMB_X19_Y13_N22 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[4][6][0]~0   ; LCCOMB_X20_Y10_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[4][7][1]~0   ; LCCOMB_X19_Y14_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[4][8][1]~0   ; LCCOMB_X19_Y11_N22 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[4][9][0]~0   ; LCCOMB_X19_Y15_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[5][0][1]~0   ; LCCOMB_X22_Y15_N8  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[5][10][1]~0  ; LCCOMB_X22_Y18_N24 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[5][11][1]~0  ; LCCOMB_X29_Y14_N28 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[5][12][1]~0  ; LCCOMB_X19_Y12_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[5][13][1]~0  ; LCCOMB_X27_Y14_N24 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[5][14][1]~0  ; LCCOMB_X30_Y12_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[5][15][0]~3  ; LCCOMB_X26_Y10_N2  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[5][1][1]~0   ; LCCOMB_X26_Y12_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[5][2][1]~2   ; LCCOMB_X22_Y15_N18 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[5][3][0]~0   ; LCCOMB_X24_Y16_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[5][4][1]~0   ; LCCOMB_X25_Y12_N20 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[5][5][1]~0   ; LCCOMB_X21_Y10_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[5][6][1]~0   ; LCCOMB_X30_Y14_N4  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[5][8][1]~1   ; LCCOMB_X22_Y7_N24  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[5][9][0]~0   ; LCCOMB_X22_Y18_N8  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[6][0][1]~0   ; LCCOMB_X23_Y7_N20  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[6][10][1]~0  ; LCCOMB_X19_Y10_N14 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[6][11][1]~2  ; LCCOMB_X19_Y10_N30 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[6][12][1]~0  ; LCCOMB_X30_Y9_N16  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[6][13][1]~0  ; LCCOMB_X30_Y9_N20  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[6][14][1]~0  ; LCCOMB_X29_Y9_N26  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[6][15][1]~1  ; LCCOMB_X29_Y9_N18  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[6][1][1]~0   ; LCCOMB_X16_Y13_N8  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[6][2][1]~0   ; LCCOMB_X27_Y10_N14 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[6][3][1]~0   ; LCCOMB_X18_Y14_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[6][4][0]~0   ; LCCOMB_X27_Y14_N22 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[6][5][1]~0   ; LCCOMB_X25_Y9_N6   ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[6][6][1]~0   ; LCCOMB_X27_Y10_N24 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[6][7][0]~0   ; LCCOMB_X25_Y9_N22  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[6][8][1]~0   ; LCCOMB_X23_Y7_N4   ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[6][9][1]~0   ; LCCOMB_X16_Y13_N22 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[7][0][1]~0   ; LCCOMB_X26_Y14_N22 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[7][11][1]~0  ; LCCOMB_X29_Y14_N24 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[7][12][0]~0  ; LCCOMB_X19_Y12_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[7][13][0]~0  ; LCCOMB_X27_Y14_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[7][14][0]~0  ; LCCOMB_X30_Y11_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[7][15][0]~3  ; LCCOMB_X26_Y10_N16 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[7][1][1]~0   ; LCCOMB_X26_Y12_N22 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[7][2][1]~1   ; LCCOMB_X22_Y15_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[7][3][1]~0   ; LCCOMB_X21_Y12_N12 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[7][4][1]~0   ; LCCOMB_X24_Y12_N30 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[7][5][1]~0   ; LCCOMB_X25_Y13_N30 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[7][6][1]~0   ; LCCOMB_X30_Y14_N24 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[7][8][0]~2   ; LCCOMB_X23_Y13_N20 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[8][0][1]~1   ; LCCOMB_X30_Y15_N18 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[8][10][1]~0  ; LCCOMB_X27_Y13_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[8][11][0]~2  ; LCCOMB_X29_Y14_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[8][12][1]~0  ; LCCOMB_X20_Y15_N2  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[8][13][1]~0  ; LCCOMB_X27_Y14_N0  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[8][14][0]~0  ; LCCOMB_X30_Y13_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[8][15][1]~3  ; LCCOMB_X26_Y10_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[8][1][1]~1   ; LCCOMB_X30_Y12_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[8][2][1]~1   ; LCCOMB_X22_Y15_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[8][3][0]~1   ; LCCOMB_X29_Y12_N22 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[8][4][0]~2   ; LCCOMB_X29_Y12_N2  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[8][6][0]~0   ; LCCOMB_X30_Y16_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[8][8][1]~1   ; LCCOMB_X26_Y15_N26 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[8][9][1]~1   ; LCCOMB_X30_Y15_N12 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[9][0][1]~0   ; LCCOMB_X22_Y14_N10 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[9][10][1]~0  ; LCCOMB_X21_Y16_N14 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[9][11][0]~0  ; LCCOMB_X29_Y14_N4  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[9][12][1]~2  ; LCCOMB_X19_Y12_N12 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[9][13][1]~2  ; LCCOMB_X19_Y18_N14 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[9][14][1]~2  ; LCCOMB_X30_Y13_N4  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[9][15][1]~5  ; LCCOMB_X26_Y10_N12 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[9][1][0]~0   ; LCCOMB_X26_Y12_N28 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[9][2][0]~0   ; LCCOMB_X22_Y15_N30 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[9][3][0]~0   ; LCCOMB_X24_Y16_N2  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[9][4][0]~0   ; LCCOMB_X25_Y12_N2  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[9][5][0]~0   ; LCCOMB_X27_Y11_N8  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[9][6][1]~2   ; LCCOMB_X30_Y14_N0  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[9][7][1]~0   ; LCCOMB_X31_Y13_N20 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; PushBoxMap:instasdf|map_matrix[9][9][1]~1   ; LCCOMB_X24_Y17_N24 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; SW[0]                                       ; PIN_L22            ; 37      ; Async. clear ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; VgaPixel:inst1|s_rgb_next~3                 ; LCCOMB_X31_Y20_N6  ; 12      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
++---------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------+
@@ -1368,272 +1629,1017 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+----------+---------+----------------------+------------------+---------------------------+
 ; Name     ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------+----------+---------+----------------------+------------------+---------------------------+
-; CLOCK_50 ; PIN_L1   ; 37      ; Global Clock         ; GCLK2            ; --                        ;
+; CLOCK_50 ; PIN_L1   ; 665     ; Global Clock         ; GCLK2            ; --                        ;
 ; SW[0]    ; PIN_L22  ; 37      ; Global Clock         ; GCLK6            ; --                        ;
 +----------+----------+---------+----------------------+------------------+---------------------------+
 
 
-+--------------------------------------------+
-; Non-Global High Fan-Out Signals            ;
-+----------------------------------+---------+
-; Name                             ; Fan-Out ;
-+----------------------------------+---------+
-; VgaSync:inst|s_countv_prev[2]    ; 38      ;
-; VgaSync:inst|s_countv_prev[3]    ; 35      ;
-; VgaSync:inst|s_countv_prev[1]    ; 33      ;
-; VgaSync:inst|s_counth_prev[2]    ; 30      ;
-; VgaSync:inst|s_countv_prev[4]    ; 29      ;
-; VgaSync:inst|s_counth_prev[4]    ; 28      ;
-; VgaSync:inst|s_counth_prev[3]    ; 26      ;
-; PushBoxMap:inst2|Mux2~0          ; 25      ;
-; VgaSync:inst|s_counth_prev[1]    ; 24      ;
-; PushBoxMap:inst2|Mux1~0          ; 21      ;
-; PushBoxMap:inst2|Mux0~0          ; 19      ;
-; VgaPixel:inst1|s_rgb_next~15     ; 14      ;
-; VgaSync:inst|s_activev_prev      ; 13      ;
-; VgaSync:inst|s_activeh_prev      ; 13      ;
-; VgaSync:inst|Equal7~2            ; 11      ;
-; VgaSync:inst|Equal3~2            ; 11      ;
-; VgaSync:inst|s_countv_prev[6]    ; 10      ;
-; VgaSync:inst|s_countv_prev[5]    ; 8       ;
-; VgaPixel:inst1|Mux66~9           ; 7       ;
-; VgaPixel:inst1|Mux22~0           ; 6       ;
-; VgaPixel:inst1|s_rgb_next~30     ; 6       ;
-; VgaPixel:inst1|s_rgb_next~22     ; 6       ;
-; VgaPixel:inst1|LessThan2~0       ; 6       ;
-; VgaSync:inst|s_countv_prev[0]    ; 6       ;
-; VgaSync:inst|s_counth_prev[6]    ; 6       ;
-; VgaSync:inst|s_countv_prev[8]    ; 5       ;
-; VgaSync:inst|s_countv_prev[7]    ; 5       ;
-; VgaSync:inst|s_countv_prev[9]    ; 5       ;
-; VgaSync:inst|s_counth_prev[5]    ; 5       ;
-; VgaSync:inst|s_counth_prev[7]    ; 5       ;
-; VgaPixel:inst1|Mux66~1           ; 4       ;
-; VgaPixel:inst1|Mux23~0           ; 4       ;
-; VgaPixel:inst1|Mux21~0           ; 4       ;
-; VgaPixel:inst1|Add1~0            ; 4       ;
-; VgaPixel:inst1|Add0~0            ; 4       ;
-; VgaSync:inst|s_counth_prev[10]   ; 4       ;
-; VgaSync:inst|s_counth_prev[8]    ; 4       ;
-; VgaSync:inst|s_counth_prev[9]    ; 4       ;
-; VgaSync:inst|Equal0~0            ; 4       ;
-; VgaPixel:inst1|s_rgb_next[4]~58  ; 3       ;
-; VgaPixel:inst1|Mux15~0           ; 3       ;
-; VgaPixel:inst1|s_rgb_prev[8]~6   ; 3       ;
-; VgaPixel:inst1|Mux3~0            ; 3       ;
-; VgaPixel:inst1|Mux32~0           ; 3       ;
-; VgaSync:inst|Equal3~1            ; 3       ;
-; VgaSync:inst|Equal3~0            ; 3       ;
-; VgaSync:inst|s_hsync_prev        ; 3       ;
-; VgaPixel:inst1|s_rgb_next[4]~61  ; 2       ;
-; VgaPixel:inst1|Mux25~11          ; 2       ;
-; VgaPixel:inst1|Mux8~0            ; 2       ;
-; VgaPixel:inst1|Mux30~5           ; 2       ;
-; VgaPixel:inst1|Mux30~4           ; 2       ;
-; VgaPixel:inst1|Mux30~3           ; 2       ;
-; VgaPixel:inst1|Mux26~2           ; 2       ;
-; VgaPixel:inst1|Mux29~1           ; 2       ;
-; VgaPixel:inst1|s_rgb_next[0]~36  ; 2       ;
-; VgaPixel:inst1|Mux25~4           ; 2       ;
-; VgaPixel:inst1|Mux18~0           ; 2       ;
-; VgaPixel:inst1|s_rgb_next[0]~33  ; 2       ;
-; VgaPixel:inst1|Mux66~8           ; 2       ;
-; VgaPixel:inst1|Mux66~7           ; 2       ;
-; VgaPixel:inst1|Mux66~6           ; 2       ;
-; VgaPixel:inst1|Mux66~5           ; 2       ;
-; VgaPixel:inst1|Mux66~4           ; 2       ;
-; VgaPixel:inst1|Mux66~3           ; 2       ;
-; VgaPixel:inst1|Mux66~2           ; 2       ;
-; VgaPixel:inst1|Mux66~0           ; 2       ;
-; VgaPixel:inst1|s_rgb_next[0]~32  ; 2       ;
-; VgaPixel:inst1|Mux33~1           ; 2       ;
-; VgaPixel:inst1|Equal5~2          ; 2       ;
-; VgaPixel:inst1|s_rgb_next~25     ; 2       ;
-; VgaPixel:inst1|s_rgb_next~23     ; 2       ;
-; VgaPixel:inst1|Mux35~0           ; 2       ;
-; VgaPixel:inst1|s_rgb_next~20     ; 2       ;
-; VgaPixel:inst1|s_rgb_next[2]~16  ; 2       ;
-; VgaSync:inst|Equal4~1            ; 2       ;
-; VgaSync:inst|Equal7~0            ; 2       ;
-; VgaSync:inst|Equal0~1            ; 2       ;
-; VgaSync:inst|s_counth_prev[0]    ; 2       ;
-; VgaSync:inst|s_vsync_prev        ; 2       ;
-; VgaPixel:inst1|s_rgb_prev[5]~1   ; 2       ;
-; VgaPixel:inst1|s_rgb_prev[6]~0   ; 2       ;
-; VgaPixel:inst1|s_rgb_next~67     ; 1       ;
-; VgaPixel:inst1|s_rgb_next~66     ; 1       ;
-; VgaPixel:inst1|s_rgb_next[7]~65  ; 1       ;
-; VgaPixel:inst1|s_rgb_next[7]~64  ; 1       ;
-; VgaPixel:inst1|s_rgb_next[4]~63  ; 1       ;
-; VgaPixel:inst1|s_rgb_next[4]~62  ; 1       ;
-; VgaSync:inst|s_counth_next[10]~3 ; 1       ;
-; VgaPixel:inst1|s_rgb_prev[9]~8   ; 1       ;
-; VgaPixel:inst1|Mux26~11          ; 1       ;
-; VgaPixel:inst1|Equal5~3          ; 1       ;
-; VgaPixel:inst1|Mux25~16          ; 1       ;
-; VgaPixel:inst1|Mux25~15          ; 1       ;
-; VgaPixel:inst1|s_rgb_next[0]~60  ; 1       ;
-; VgaPixel:inst1|s_rgb_next[1]~59  ; 1       ;
-; VgaPixel:inst1|s_rgb_next~57     ; 1       ;
-; VgaPixel:inst1|s_rgb_next[3]~56  ; 1       ;
-; VgaSync:inst|s_countv_prev[2]~9  ; 1       ;
-; VgaSync:inst|s_countv_prev[5]~8  ; 1       ;
-; VgaSync:inst|s_countv_prev[0]~7  ; 1       ;
-; VgaSync:inst|s_countv_prev[4]~6  ; 1       ;
-; VgaSync:inst|s_countv_prev[3]~5  ; 1       ;
-; VgaSync:inst|s_countv_prev[1]~4  ; 1       ;
-; VgaSync:inst|s_countv_prev[6]~3  ; 1       ;
-; VgaSync:inst|s_countv_prev[8]~2  ; 1       ;
-; VgaSync:inst|s_countv_prev[7]~1  ; 1       ;
-; VgaSync:inst|s_countv_prev[9]~0  ; 1       ;
-; VgaSync:inst|s_counth_next[4]~2  ; 1       ;
-; VgaPixel:inst1|s_rgb_next[8]~55  ; 1       ;
-; VgaPixel:inst1|s_rgb_next[8]~54  ; 1       ;
-; VgaPixel:inst1|s_rgb_prev[9]~7   ; 1       ;
-; VgaPixel:inst1|Mux26~10          ; 1       ;
-; VgaPixel:inst1|Mux26~9           ; 1       ;
-; VgaPixel:inst1|Mux26~8           ; 1       ;
-; VgaPixel:inst1|Mux26~7           ; 1       ;
-; VgaPixel:inst1|Mux26~6           ; 1       ;
-; VgaPixel:inst1|Mux26~5           ; 1       ;
-; VgaPixel:inst1|Mux26~4           ; 1       ;
-; VgaPixel:inst1|Mux26~3           ; 1       ;
-; VgaPixel:inst1|s_rgb_next[11]~53 ; 1       ;
-; VgaPixel:inst1|s_rgb_next[11]~52 ; 1       ;
-; VgaPixel:inst1|Mux25~14          ; 1       ;
-; VgaPixel:inst1|Mux25~13          ; 1       ;
-; VgaPixel:inst1|Mux25~12          ; 1       ;
-; VgaPixel:inst1|Mux25~10          ; 1       ;
-; VgaPixel:inst1|Mux25~9           ; 1       ;
-; VgaPixel:inst1|s_rgb_next[11]~51 ; 1       ;
-; VgaPixel:inst1|s_rgb_next[4]~50  ; 1       ;
-; VgaPixel:inst1|Mux31~0           ; 1       ;
-; VgaPixel:inst1|Mux16~0           ; 1       ;
-; VgaPixel:inst1|s_rgb_next[4]~49  ; 1       ;
-; VgaPixel:inst1|s_rgb_next~48     ; 1       ;
-; VgaPixel:inst1|s_rgb_next~47     ; 1       ;
-; VgaPixel:inst1|Mux30~8           ; 1       ;
-; VgaPixel:inst1|Mux30~7           ; 1       ;
-; VgaPixel:inst1|Mux30~6           ; 1       ;
-; VgaPixel:inst1|Mux30~2           ; 1       ;
-; VgaPixel:inst1|Mux30~1           ; 1       ;
-; VgaPixel:inst1|Mux30~0           ; 1       ;
-; VgaPixel:inst1|s_rgb_next~46     ; 1       ;
-; VgaPixel:inst1|s_rgb_next~45     ; 1       ;
-; VgaPixel:inst1|s_rgb_next~44     ; 1       ;
-; VgaPixel:inst1|s_rgb_next~43     ; 1       ;
-; VgaPixel:inst1|Mux29~0           ; 1       ;
-; VgaPixel:inst1|s_rgb_next[7]~42  ; 1       ;
-; VgaPixel:inst1|s_rgb_next[7]~41  ; 1       ;
-; VgaPixel:inst1|s_rgb_next[7]~40  ; 1       ;
-; VgaPixel:inst1|Mux3~1            ; 1       ;
-; VgaPixel:inst1|Mux6~0            ; 1       ;
-; VgaPixel:inst1|s_rgb_next~39     ; 1       ;
-; VgaPixel:inst1|s_rgb_next~38     ; 1       ;
-; VgaPixel:inst1|s_rgb_next[0]~37  ; 1       ;
-; VgaPixel:inst1|Mux34~1           ; 1       ;
-; VgaPixel:inst1|Mux25~8           ; 1       ;
-; VgaPixel:inst1|Mux25~7           ; 1       ;
-; VgaPixel:inst1|Mux34~0           ; 1       ;
-; VgaPixel:inst1|Mux25~6           ; 1       ;
-; VgaPixel:inst1|Mux25~5           ; 1       ;
-; VgaPixel:inst1|s_rgb_next[0]~35  ; 1       ;
-; VgaPixel:inst1|s_rgb_next[0]~34  ; 1       ;
-; VgaPixel:inst1|s_rgb_next[1]~31  ; 1       ;
-; VgaPixel:inst1|Mux38~0           ; 1       ;
-; VgaPixel:inst1|s_rgb_next~29     ; 1       ;
-; VgaPixel:inst1|s_rgb_next[2]~28  ; 1       ;
-; VgaPixel:inst1|s_rgb_next~27     ; 1       ;
-; VgaPixel:inst1|s_rgb_next~26     ; 1       ;
-; VgaPixel:inst1|Mux17~0           ; 1       ;
-; VgaPixel:inst1|Mux33~0           ; 1       ;
-; VgaPixel:inst1|s_rgb_next[3]~24  ; 1       ;
-; VgaPixel:inst1|s_rgb_next[3]~21  ; 1       ;
-; VgaPixel:inst1|s_rgb_next~19     ; 1       ;
-; VgaPixel:inst1|s_rgb_next~18     ; 1       ;
-; VgaPixel:inst1|s_rgb_next~17     ; 1       ;
-; VgaPixel:inst1|LessThan2~1       ; 1       ;
-; VgaPixel:inst1|s_rgb_next~14     ; 1       ;
-; VgaPixel:inst1|LessThan0~0       ; 1       ;
-; VgaSync:inst|s_activev_next~0    ; 1       ;
-; VgaSync:inst|Equal4~2            ; 1       ;
-; VgaSync:inst|Equal7~1            ; 1       ;
-; VgaSync:inst|s_activeh_next~0    ; 1       ;
-; VgaSync:inst|Equal0~2            ; 1       ;
-; VgaSync:inst|s_vsync_next~2      ; 1       ;
-; VgaSync:inst|Equal5~0            ; 1       ;
-; VgaSync:inst|Equal4~0            ; 1       ;
-; VgaSync:inst|s_vsync_next~1      ; 1       ;
-; VgaSync:inst|s_vsync_next~0      ; 1       ;
-; VgaSync:inst|s_hsync_next~1      ; 1       ;
-; VgaSync:inst|s_hsync_next~0      ; 1       ;
-; VgaPixel:inst1|r_out[0]~3        ; 1       ;
-; VgaPixel:inst1|s_rgb_prev[8]     ; 1       ;
-; VgaPixel:inst1|r_out[1]~2        ; 1       ;
-; VgaPixel:inst1|r_out[2]~1        ; 1       ;
-; VgaPixel:inst1|r_out[3]~0        ; 1       ;
-; VgaPixel:inst1|s_rgb_prev[11]    ; 1       ;
-; VgaPixel:inst1|g_out[0]~3        ; 1       ;
-; VgaPixel:inst1|s_rgb_prev[4]     ; 1       ;
-; VgaPixel:inst1|g_out[1]~2        ; 1       ;
-; VgaPixel:inst1|g_out[2]~1        ; 1       ;
-; VgaPixel:inst1|g_out[3]~0        ; 1       ;
-; VgaPixel:inst1|s_rgb_prev[7]     ; 1       ;
-; VgaPixel:inst1|b_out[0]~3        ; 1       ;
-; VgaPixel:inst1|s_rgb_prev[0]     ; 1       ;
-; VgaPixel:inst1|b_out[1]~2        ; 1       ;
-; VgaPixel:inst1|s_rgb_prev[1]     ; 1       ;
-; VgaPixel:inst1|b_out[2]~1        ; 1       ;
-; VgaPixel:inst1|s_rgb_prev[2]     ; 1       ;
-; VgaPixel:inst1|b_out[3]~0        ; 1       ;
-; VgaPixel:inst1|s_rgb_prev[3]     ; 1       ;
-; VgaSync:inst|Add1~18             ; 1       ;
-; VgaSync:inst|Add1~17             ; 1       ;
-; VgaSync:inst|Add1~16             ; 1       ;
-; VgaSync:inst|Add1~15             ; 1       ;
-; VgaSync:inst|Add1~14             ; 1       ;
-; VgaSync:inst|Add1~13             ; 1       ;
-; VgaSync:inst|Add1~12             ; 1       ;
-; VgaSync:inst|Add1~11             ; 1       ;
-; VgaSync:inst|Add1~10             ; 1       ;
-; VgaSync:inst|Add1~9              ; 1       ;
-; VgaSync:inst|Add1~8              ; 1       ;
-; VgaSync:inst|Add1~7              ; 1       ;
-; VgaSync:inst|Add1~6              ; 1       ;
-; VgaSync:inst|Add1~5              ; 1       ;
-; VgaSync:inst|Add1~4              ; 1       ;
-; VgaSync:inst|Add1~3              ; 1       ;
-; VgaSync:inst|Add1~2              ; 1       ;
-; VgaSync:inst|Add1~1              ; 1       ;
-; VgaSync:inst|Add1~0              ; 1       ;
-; VgaSync:inst|Add0~20             ; 1       ;
-; VgaSync:inst|Add0~19             ; 1       ;
-; VgaSync:inst|Add0~18             ; 1       ;
-; VgaSync:inst|Add0~17             ; 1       ;
-; VgaSync:inst|Add0~16             ; 1       ;
-; VgaSync:inst|Add0~15             ; 1       ;
-; VgaSync:inst|Add0~14             ; 1       ;
-; VgaSync:inst|Add0~13             ; 1       ;
-; VgaSync:inst|Add0~12             ; 1       ;
-; VgaSync:inst|Add0~11             ; 1       ;
-; VgaSync:inst|Add0~10             ; 1       ;
-; VgaSync:inst|Add0~9              ; 1       ;
-; VgaSync:inst|Add0~8              ; 1       ;
-; VgaSync:inst|Add0~7              ; 1       ;
-; VgaSync:inst|Add0~6              ; 1       ;
-; VgaSync:inst|Add0~5              ; 1       ;
-; VgaSync:inst|Add0~4              ; 1       ;
-; VgaSync:inst|Add0~3              ; 1       ;
-; VgaSync:inst|Add0~2              ; 1       ;
-; VgaSync:inst|Add0~1              ; 1       ;
-; VgaSync:inst|Add0~0              ; 1       ;
-; VgaPixel:inst1|s_rgb_prev[9]~3   ; 1       ;
-; VgaPixel:inst1|s_rgb_prev[10]~2  ; 1       ;
-; VgaPixel:inst1|s_rgb_prev[9]     ; 1       ;
-; VgaPixel:inst1|s_rgb_prev[10]    ; 1       ;
-; VgaPixel:inst1|s_rgb_prev[5]     ; 1       ;
-; VgaPixel:inst1|s_rgb_prev[6]     ; 1       ;
-+----------------------------------+---------+
++-------------------------------------------------------+
+; Non-Global High Fan-Out Signals                       ;
++---------------------------------------------+---------+
+; Name                                        ; Fan-Out ;
++---------------------------------------------+---------+
+; PushBoxMap:instasdf|player_pos_x[0]         ; 315     ;
+; PushBoxMap:instasdf|player_pos_x[1]         ; 174     ;
+; PushBoxMap:instasdf|player_pos_x[2]         ; 173     ;
+; PushBoxMap:instasdf|player_pos_x[3]         ; 168     ;
+; PushBoxMap:instasdf|Add2~0                  ; 93      ;
+; PushBoxMap:instasdf|Add2~1                  ; 92      ;
+; PushBoxMap:instasdf|player_pos_y[2]         ; 88      ;
+; VgaPixel:inst1|Add0~2                       ; 82      ;
+; VgaPixel:inst1|Add0~4                       ; 77      ;
+; VgaPixel:inst1|Add1~12                      ; 77      ;
+; VgaPixel:inst1|Add1~6                       ; 77      ;
+; VgaPixel:inst1|Add0~1                       ; 74      ;
+; VgaPixel:inst1|Add1~10                      ; 74      ;
+; PushBoxMap:instasdf|Add3~0                  ; 69      ;
+; VgaPixel:inst1|Add1~8                       ; 69      ;
+; PushBoxMap:instasdf|Add3~1                  ; 68      ;
+; PushBoxMap:instasdf|Equal4~0                ; 66      ;
+; PushBoxMap:instasdf|player_pos_y[1]         ; 66      ;
+; PushBoxMap:instasdf|Add2~2                  ; 58      ;
+; PushBoxMap:instasdf|player_pos_y[0]         ; 58      ;
+; PushBoxMap:instasdf|map_matrix[15][15][0]~2 ; 50      ;
+; PushBoxMap:instasdf|map_matrix[15][15][0]~0 ; 44      ;
+; PushBoxMap:instasdf|Decoder1~12             ; 40      ;
+; PushBoxMap:instasdf|Decoder2~12             ; 39      ;
+; PushBoxMap:instasdf|Decoder1~4              ; 38      ;
+; PushBoxMap:instasdf|Decoder2~13             ; 36      ;
+; PushBoxMap:instasdf|Decoder1~3              ; 35      ;
+; VgaSync:inst|s_countv_prev[1]               ; 35      ;
+; PushBoxMap:instasdf|Decoder1~5              ; 34      ;
+; VgaPixel:inst1|Add1~4                       ; 34      ;
+; PushBoxMap:instasdf|Decoder1~0              ; 33      ;
+; PushBoxMap:instasdf|Decoder2~0              ; 32      ;
+; VgaPixel:inst1|Add1~0                       ; 32      ;
+; PushBoxMap:instasdf|Decoder2~10             ; 31      ;
+; PushBoxMap:instasdf|Decoder2~9              ; 31      ;
+; PushBoxMap:instasdf|Decoder2~8              ; 31      ;
+; PushBoxMap:instasdf|Decoder2~7              ; 31      ;
+; PushBoxMap:instasdf|Decoder2~6              ; 31      ;
+; PushBoxMap:instasdf|Decoder2~5              ; 31      ;
+; PushBoxMap:instasdf|Decoder2~4              ; 31      ;
+; VgaSync:inst|s_counth_prev[2]               ; 30      ;
+; PushBoxMap:instasdf|map_matrix[5][2][1]~3   ; 28      ;
+; VgaPixel:inst1|Add1~2                       ; 28      ;
+; VgaSync:inst|s_counth_prev[4]               ; 26      ;
+; VgaSync:inst|s_counth_prev[3]               ; 26      ;
+; PushBoxMap:instasdf|player_pos_y[3]         ; 25      ;
+; PushBoxMap:instasdf|Decoder2~15             ; 24      ;
+; PushBoxMap:instasdf|Decoder2~14             ; 23      ;
+; PushBoxMap:instasdf|Decoder2~11             ; 23      ;
+; VgaSync:inst|s_counth_prev[1]               ; 23      ;
+; PushBoxMap:instasdf|Equal0~0                ; 22      ;
+; PushBoxMap:instasdf|Decoder1~2              ; 22      ;
+; PushBoxMap:instasdf|Decoder1~13             ; 21      ;
+; PushBoxMap:instasdf|Decoder1~1              ; 21      ;
+; Rebounce:inst5|counter_out[0]~1             ; 20      ;
+; Rebounce:inst5|result~1                     ; 20      ;
+; Rebounce:inst4|counter_out[0]~1             ; 20      ;
+; Rebounce:inst4|result~1                     ; 20      ;
+; Rebounce:inst3|counter_out[0]~1             ; 20      ;
+; Rebounce:inst3|result~1                     ; 20      ;
+; Rebounce:inst6|counter_out[0]~1             ; 20      ;
+; Rebounce:inst6|result~1                     ; 20      ;
+; PushBoxMap:instasdf|Decoder1~15             ; 20      ;
+; PushBoxMap:instasdf|Decoder1~14             ; 20      ;
+; PushBoxMap:instasdf|Decoder1~11             ; 20      ;
+; PushBoxMap:instasdf|Decoder1~10             ; 20      ;
+; PushBoxMap:instasdf|Decoder1~9              ; 20      ;
+; PushBoxMap:instasdf|Decoder1~8              ; 20      ;
+; PushBoxMap:instasdf|Decoder1~7              ; 20      ;
+; PushBoxMap:instasdf|Decoder1~6              ; 20      ;
+; PushBoxMap:instasdf|Decoder2~3              ; 20      ;
+; PushBoxMap:instasdf|Decoder2~2              ; 20      ;
+; PushBoxMap:instasdf|Decoder2~1              ; 20      ;
+; PushBoxMap:instasdf|Mux42~169               ; 20      ;
+; PushBoxMap:instasdf|Mux41~169               ; 19      ;
+; PushBoxMap:instasdf|map_matrix~247          ; 16      ;
+; PushBoxMap:instasdf|map_matrix[0][11][1]~1  ; 16      ;
+; PushBoxMap:instasdf|map_matrix[12][11][1]~1 ; 16      ;
+; PushBoxMap:instasdf|map_matrix[4][11][0]~1  ; 16      ;
+; PushBoxMap:instasdf|map_matrix[3][8][1]~1   ; 16      ;
+; PushBoxMap:instasdf|map_matrix[15][11][1]~1 ; 16      ;
+; PushBoxMap:instasdf|map_matrix[11][8][1]~1  ; 16      ;
+; PushBoxMap:instasdf|map_matrix[2][10][0]~0  ; 16      ;
+; PushBoxMap:instasdf|map_matrix[14][11][0]~1 ; 16      ;
+; PushBoxMap:instasdf|map_matrix[6][11][1]~1  ; 16      ;
+; PushBoxMap:instasdf|map_matrix[1][9][1]~0   ; 16      ;
+; PushBoxMap:instasdf|map_matrix[13][11][0]~1 ; 16      ;
+; PushBoxMap:instasdf|map_matrix[0][3][0]~0   ; 16      ;
+; PushBoxMap:instasdf|map_matrix[0][0][0]~0   ; 16      ;
+; PushBoxMap:instasdf|map_matrix[0][1][0]~0   ; 16      ;
+; PushBoxMap:instasdf|map_matrix[15][10][1]~0 ; 15      ;
+; PushBoxMap:instasdf|map_matrix~249          ; 15      ;
+; PushBoxMap:instasdf|map_matrix[15][9][1]~0  ; 15      ;
+; PushBoxMap:instasdf|map_matrix[15][5][1]~0  ; 15      ;
+; PushBoxMap:instasdf|map_matrix~179          ; 15      ;
+; PushBoxMap:instasdf|map_matrix[10][15][1]~2 ; 15      ;
+; PushBoxMap:instasdf|map_matrix[9][15][1]~2  ; 15      ;
+; PushBoxMap:instasdf|map_matrix[5][15][0]~2  ; 15      ;
+; PushBoxMap:instasdf|map_matrix[15][8][1]~0  ; 14      ;
+; PushBoxMap:instasdf|map_matrix[15][7][1]~0  ; 13      ;
+; PushBoxMap:instasdf|map_matrix[7][15][0]~2  ; 13      ;
+; PushBoxMap:instasdf|Mux40~2                 ; 13      ;
+; VgaSync:inst|Equal3~2                       ; 13      ;
+; VgaSync:inst|s_activev_prev                 ; 13      ;
+; VgaSync:inst|s_activeh_prev                 ; 13      ;
+; PushBoxMap:instasdf|map_matrix[15][11][1]~2 ; 12      ;
+; PushBoxMap:instasdf|map_matrix[15][4][1]~0  ; 12      ;
+; PushBoxMap:instasdf|map_matrix[15][6][0]~0  ; 12      ;
+; PushBoxMap:instasdf|map_matrix[15][15][0]~4 ; 12      ;
+; PushBoxMap:instasdf|map_matrix[15][12][0]~0 ; 12      ;
+; PushBoxMap:instasdf|map_matrix[15][13][1]~0 ; 12      ;
+; PushBoxMap:instasdf|map_matrix[15][14][0]~0 ; 12      ;
+; PushBoxMap:instasdf|map_matrix[8][15][1]~2  ; 12      ;
+; PushBoxMap:instasdf|map_matrix[15][3][1]~0  ; 12      ;
+; PushBoxMap:instasdf|map_matrix[15][0][0]~0  ; 12      ;
+; PushBoxMap:instasdf|map_matrix[15][1][1]~0  ; 12      ;
+; PushBoxMap:instasdf|map_matrix[15][2][1]~0  ; 12      ;
+; VgaPixel:inst1|s_rgb_next~3                 ; 12      ;
+; PushBoxMap:instasdf|Equal7~0                ; 11      ;
+; VgaSync:inst|Equal7~2                       ; 11      ;
+; PushBoxMap:instasdf|Equal7~2                ; 10      ;
+; PushBoxMap:instasdf|map_matrix[0][11][1]~0  ; 10      ;
+; PushBoxMap:instasdf|map_matrix[12][11][1]~0 ; 10      ;
+; PushBoxMap:instasdf|map_matrix[4][11][0]~0  ; 10      ;
+; PushBoxMap:instasdf|map_matrix[3][8][1]~0   ; 10      ;
+; PushBoxMap:instasdf|map_matrix[15][11][1]~0 ; 10      ;
+; PushBoxMap:instasdf|map_matrix[11][8][1]~0  ; 10      ;
+; PushBoxMap:instasdf|map_matrix[2][8][0]~0   ; 10      ;
+; PushBoxMap:instasdf|map_matrix[14][11][0]~0 ; 10      ;
+; PushBoxMap:instasdf|map_matrix[6][11][1]~0  ; 10      ;
+; PushBoxMap:instasdf|map_matrix[1][11][1]~0  ; 10      ;
+; PushBoxMap:instasdf|map_matrix[13][11][0]~0 ; 10      ;
+; PushBoxMap:instasdf|Add1~0                  ; 10      ;
+; PushBoxMap:instasdf|Equal7~1                ; 10      ;
+; VgaPixel:inst1|Add0~3                       ; 10      ;
+; VgaPixel:inst1|s_rgb_next~4                 ; 9       ;
+; PushBoxMap:instasdf|map_matrix~195          ; 8       ;
+; PushBoxMap:instasdf|s_btn_cima[1]           ; 8       ;
+; VgaSync:inst|s_countv_prev[5]               ; 8       ;
+; VgaSync:inst|s_countv_prev[3]               ; 8       ;
+; PushBoxMap:instasdf|map_matrix[0][15][0]~0  ; 7       ;
+; PushBoxMap:instasdf|map_matrix[12][15][1]~0 ; 7       ;
+; PushBoxMap:instasdf|map_matrix[4][15][1]~0  ; 7       ;
+; PushBoxMap:instasdf|map_matrix[3][15][1]~0  ; 7       ;
+; PushBoxMap:instasdf|map_matrix[15][15][0]~3 ; 7       ;
+; PushBoxMap:instasdf|map_matrix[11][15][0]~0 ; 7       ;
+; PushBoxMap:instasdf|map_matrix[2][15][0]~0  ; 7       ;
+; PushBoxMap:instasdf|map_matrix[14][15][0]~0 ; 7       ;
+; PushBoxMap:instasdf|map_matrix[6][15][1]~0  ; 7       ;
+; PushBoxMap:instasdf|map_matrix[1][15][0]~0  ; 7       ;
+; PushBoxMap:instasdf|map_matrix[13][15][0]~0 ; 7       ;
+; PushBoxMap:instasdf|s_btn_cima[2]           ; 7       ;
+; VgaSync:inst|s_countv_prev[2]               ; 7       ;
+; VgaSync:inst|s_countv_prev[4]               ; 7       ;
+; VgaSync:inst|s_counth_prev[6]               ; 7       ;
+; VgaSync:inst|s_counth_prev[5]               ; 7       ;
+; VgaSync:inst|s_counth_prev[8]               ; 7       ;
+; PushBoxMap:instasdf|map_matrix[7][15][0]~4  ; 6       ;
+; PushBoxMap:instasdf|map_matrix~226          ; 6       ;
+; PushBoxMap:instasdf|map_matrix~169          ; 6       ;
+; PushBoxMap:instasdf|Add1~1                  ; 6       ;
+; PushBoxMap:instasdf|Add0~0                  ; 6       ;
+; VgaPixel:inst1|Mux66~7                      ; 6       ;
+; VgaPixel:inst1|Mux23~0                      ; 6       ;
+; VgaSync:inst|s_countv_prev[0]               ; 6       ;
+; VgaSync:inst|s_countv_prev[6]               ; 6       ;
+; VgaSync:inst|s_countv_prev[8]               ; 6       ;
+; VgaSync:inst|s_countv_prev[7]               ; 6       ;
+; VgaSync:inst|s_counth_prev[7]               ; 6       ;
+; PushBoxMap:instasdf|map_matrix[8][15][1]~4  ; 5       ;
+; Rebounce:inst5|counter_out[20]              ; 5       ;
+; Rebounce:inst5|flipflops[0]                 ; 5       ;
+; Rebounce:inst4|counter_out[20]              ; 5       ;
+; Rebounce:inst4|flipflops[0]                 ; 5       ;
+; Rebounce:inst3|counter_out[20]              ; 5       ;
+; Rebounce:inst3|flipflops[0]                 ; 5       ;
+; Rebounce:inst6|counter_out[20]              ; 5       ;
+; Rebounce:inst6|flipflops[0]                 ; 5       ;
+; PushBoxMap:instasdf|map_matrix~257          ; 5       ;
+; PushBoxMap:instasdf|map_matrix[8][11][0]~1  ; 5       ;
+; PushBoxMap:instasdf|map_matrix[8][11][0]~0  ; 5       ;
+; PushBoxMap:instasdf|map_matrix[8][4][0]~1   ; 5       ;
+; PushBoxMap:instasdf|map_matrix[8][4][0]~0   ; 5       ;
+; PushBoxMap:instasdf|map_matrix[9][6][1]~1   ; 5       ;
+; PushBoxMap:instasdf|map_matrix[9][6][1]~0   ; 5       ;
+; PushBoxMap:instasdf|map_matrix[9][15][1]~4  ; 5       ;
+; PushBoxMap:instasdf|map_matrix[9][15][1]~3  ; 5       ;
+; PushBoxMap:instasdf|map_matrix[9][12][1]~1  ; 5       ;
+; PushBoxMap:instasdf|map_matrix[9][12][1]~0  ; 5       ;
+; PushBoxMap:instasdf|map_matrix[9][13][1]~1  ; 5       ;
+; PushBoxMap:instasdf|map_matrix[9][13][1]~0  ; 5       ;
+; PushBoxMap:instasdf|map_matrix[9][14][1]~1  ; 5       ;
+; PushBoxMap:instasdf|map_matrix[9][14][1]~0  ; 5       ;
+; PushBoxMap:instasdf|map_matrix[8][3][0]~0   ; 5       ;
+; PushBoxMap:instasdf|map_matrix[8][0][1]~0   ; 5       ;
+; PushBoxMap:instasdf|map_matrix[8][1][1]~0   ; 5       ;
+; PushBoxMap:instasdf|map_matrix[8][2][1]~0   ; 5       ;
+; VgaPixel:inst1|Mux22~0                      ; 5       ;
+; VgaPixel:inst1|Mux33~0                      ; 5       ;
+; VgaPixel:inst1|s_rgb_next~9                 ; 5       ;
+; PushBoxMap:instasdf|map_matrix[7][7][1]     ; 5       ;
+; VgaSync:inst|s_countv_prev[9]               ; 5       ;
+; Rebounce:inst5|flipflops[1]                 ; 4       ;
+; Rebounce:inst4|flipflops[1]                 ; 4       ;
+; Rebounce:inst3|flipflops[1]                 ; 4       ;
+; Rebounce:inst6|flipflops[1]                 ; 4       ;
+; PushBoxMap:instasdf|map_matrix~281          ; 4       ;
+; PushBoxMap:instasdf|map_matrix~275          ; 4       ;
+; PushBoxMap:instasdf|map_matrix~274          ; 4       ;
+; PushBoxMap:instasdf|map_matrix~270          ; 4       ;
+; PushBoxMap:instasdf|map_matrix~256          ; 4       ;
+; PushBoxMap:instasdf|map_matrix~255          ; 4       ;
+; PushBoxMap:instasdf|map_matrix[7][8][0]~1   ; 4       ;
+; PushBoxMap:instasdf|map_matrix~241          ; 4       ;
+; PushBoxMap:instasdf|map_matrix~234          ; 4       ;
+; PushBoxMap:instasdf|map_matrix~233          ; 4       ;
+; PushBoxMap:instasdf|map_matrix~230          ; 4       ;
+; PushBoxMap:instasdf|map_matrix~223          ; 4       ;
+; PushBoxMap:instasdf|map_matrix~219          ; 4       ;
+; PushBoxMap:instasdf|map_matrix~217          ; 4       ;
+; PushBoxMap:instasdf|map_matrix~216          ; 4       ;
+; PushBoxMap:instasdf|map_matrix[9][9][1]~0   ; 4       ;
+; PushBoxMap:instasdf|map_matrix~192          ; 4       ;
+; PushBoxMap:instasdf|map_matrix~191          ; 4       ;
+; PushBoxMap:instasdf|map_matrix[5][8][1]~0   ; 4       ;
+; PushBoxMap:instasdf|map_matrix[10][5][1]~0  ; 4       ;
+; PushBoxMap:instasdf|map_matrix~164          ; 4       ;
+; PushBoxMap:instasdf|map_matrix~163          ; 4       ;
+; PushBoxMap:instasdf|map_matrix[7][2][1]~0   ; 4       ;
+; PushBoxMap:instasdf|s_btn_esquerda[1]       ; 4       ;
+; PushBoxMap:instasdf|Equal6~0                ; 4       ;
+; VgaPixel:inst1|Mux15~0                      ; 4       ;
+; VgaPixel:inst1|s_rgb_next~17                ; 4       ;
+; VgaPixel:inst1|s_rgb_next~10                ; 4       ;
+; PushBoxMap:instasdf|map_matrix[10][8][0]    ; 4       ;
+; PushBoxMap:instasdf|map_matrix[9][8][0]     ; 4       ;
+; PushBoxMap:instasdf|map_matrix[7][9][0]     ; 4       ;
+; PushBoxMap:instasdf|map_matrix[7][10][0]    ; 4       ;
+; PushBoxMap:instasdf|map_matrix[8][7][0]     ; 4       ;
+; PushBoxMap:instasdf|map_matrix[5][7][0]     ; 4       ;
+; PushBoxMap:instasdf|map_matrix[8][5][0]     ; 4       ;
+; VgaPixel:inst1|Add0~0                       ; 4       ;
+; VgaSync:inst|s_counth_prev[9]               ; 4       ;
+; VgaSync:inst|s_counth_prev[10]              ; 4       ;
+; PushBoxMap:instasdf|map_matrix[7][10][1]    ; 4       ;
+; PushBoxMap:instasdf|map_matrix[8][5][1]     ; 4       ;
+; PushBoxMap:instasdf|map_matrix[8][7][1]     ; 4       ;
+; PushBoxMap:instasdf|map_matrix[5][7][1]     ; 4       ;
+; PushBoxMap:instasdf|map_matrix[9][8][1]     ; 4       ;
+; PushBoxMap:instasdf|map_matrix[7][9][1]     ; 4       ;
+; PushBoxMap:instasdf|map_matrix[10][8][1]    ; 4       ;
+; PushBoxMap:instasdf|map_matrix[7][7][0]     ; 4       ;
+; PushBoxMap:instasdf|map_matrix~370          ; 3       ;
+; PushBoxMap:instasdf|map_matrix~369          ; 3       ;
+; PushBoxMap:instasdf|map_matrix~368          ; 3       ;
+; PushBoxMap:instasdf|map_matrix~367          ; 3       ;
+; PushBoxMap:instasdf|map_matrix~366          ; 3       ;
+; PushBoxMap:instasdf|map_matrix~365          ; 3       ;
+; PushBoxMap:instasdf|map_matrix~364          ; 3       ;
+; PushBoxMap:instasdf|map_matrix~363          ; 3       ;
+; PushBoxMap:instasdf|map_matrix~362          ; 3       ;
+; PushBoxMap:instasdf|map_matrix~361          ; 3       ;
+; PushBoxMap:instasdf|map_matrix~360          ; 3       ;
+; PushBoxMap:instasdf|map_matrix~359          ; 3       ;
+; PushBoxMap:instasdf|map_matrix~358          ; 3       ;
+; PushBoxMap:instasdf|map_matrix~357          ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][9][1]~0   ; 3       ;
+; PushBoxMap:instasdf|map_matrix~224          ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][15][0]~1 ; 3       ;
+; PushBoxMap:instasdf|Equal3~4                ; 3       ;
+; PushBoxMap:instasdf|Equal1~4                ; 3       ;
+; PushBoxMap:instasdf|Equal5~0                ; 3       ;
+; PushBoxMap:instasdf|s_btn_esquerda[2]       ; 3       ;
+; VgaPixel:inst1|s_rgb_next~28                ; 3       ;
+; VgaPixel:inst1|s_rgb_prev[8]~5              ; 3       ;
+; VgaPixel:inst1|Equal0~0                     ; 3       ;
+; VgaPixel:inst1|s_rgb_next~21                ; 3       ;
+; VgaPixel:inst1|Mux3~0                       ; 3       ;
+; VgaPixel:inst1|s_rgb_next~7                 ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][11][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][11][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][11][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][11][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][2][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][2][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][2][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][2][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][10][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][10][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][10][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][10][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][3][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][3][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][3][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][3][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][11][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][10][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][11][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][3][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][2][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][3][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][2][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][11][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][10][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][10][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][11][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][3][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][2][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][3][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][2][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][11][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][10][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][10][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][11][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][3][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][2][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][3][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][2][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][11][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][10][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][10][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][11][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][3][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][2][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][3][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][2][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][11][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][2][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][10][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][3][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][11][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][2][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][10][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][3][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][11][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][2][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][10][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][3][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][11][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][2][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][10][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][3][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][13][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][5][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][5][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][13][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][13][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][5][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][5][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][13][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][13][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][5][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][5][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][13][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][13][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][5][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][13][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][12][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][4][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][4][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][12][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][4][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][12][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][4][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][12][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][4][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][12][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][4][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][12][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][12][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][4][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][4][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][12][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][13][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][5][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][5][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][13][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][5][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][13][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][5][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][13][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][5][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][13][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][5][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][13][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][13][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][5][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][5][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][13][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][12][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][4][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][4][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][12][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][12][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][4][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][4][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][12][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][12][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][4][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][4][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][12][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][12][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][4][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][4][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][12][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][15][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][15][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][7][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][15][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][7][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][15][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][7][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][15][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][7][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][15][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][7][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][15][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][7][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][15][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][7][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][14][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][6][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][14][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][6][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][14][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][6][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][14][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][6][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][14][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][6][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][14][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][6][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][14][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][6][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][14][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][6][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][14][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][6][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][14][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][6][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][14][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][6][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][14][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][6][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][14][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][6][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][14][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][6][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][14][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][6][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][14][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][6][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][15][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][7][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][15][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][7][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][15][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][7][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][15][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][15][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][7][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][15][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][7][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][15][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][7][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][15][1]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][9][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][0][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][8][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][1][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][9][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][0][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][8][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][1][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][9][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][0][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][8][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][1][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][9][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][0][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][8][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][1][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][9][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][1][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][1][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][9][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][8][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][0][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][0][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][8][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][0][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][0][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][8][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][9][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][1][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][1][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][9][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][9][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][1][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][9][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][1][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][8][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][0][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][8][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][0][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][8][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][0][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][0][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][8][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][9][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][1][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][1][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][9][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][0][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][8][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][1][1]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][9][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][0][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][8][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][1][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][9][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][0][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][1][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][9][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][0][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][8][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][1][1]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][11][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][9][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][9][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][11][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][10][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][8][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][8][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][10][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][10][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][8][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][8][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][10][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][11][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][9][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][9][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][11][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][11][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][8][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][9][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][10][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][11][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][8][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][9][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][10][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][11][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][8][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][9][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][10][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][11][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][8][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][9][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][10][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][11][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][9][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][9][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][11][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][10][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][8][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][10][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][10][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][8][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][10][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][11][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][9][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][9][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][11][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][11][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][8][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][9][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][10][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][11][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][8][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][11][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][8][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][9][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][10][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][11][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][8][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][10][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][9][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][7][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][7][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][7][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][7][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][7][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][7][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][7][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][7][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][7][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][7][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][7][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][7][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][7][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][4][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][4][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][4][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][4][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][4][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][4][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][4][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][4][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][4][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][4][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][4][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][4][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][4][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][4][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][4][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][4][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][5][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][5][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][5][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][5][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][5][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][5][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][5][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][5][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][5][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][5][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][5][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][5][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][5][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][5][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][5][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][6][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][6][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][6][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][6][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][6][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][6][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][6][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][6][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][6][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][6][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][6][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][6][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][6][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][6][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][6][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][6][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][15][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][15][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][15][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][15][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][15][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][15][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][15][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][15][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][15][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][15][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][15][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][15][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][15][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][15][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][15][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][15][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][12][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][12][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][12][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][12][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][12][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][12][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][12][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][12][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][12][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][12][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][12][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][12][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][12][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][12][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][12][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][12][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][13][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][13][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][13][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][13][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][13][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][13][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][13][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][13][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][13][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][13][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][13][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][13][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][13][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][13][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][13][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][13][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][14][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][14][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][14][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][14][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][14][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][14][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][14][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][14][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][14][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][14][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][14][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][14][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][14][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][14][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][14][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][14][0]   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][3][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][0][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][1][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[0][2][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][3][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][0][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][1][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[12][2][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][3][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][0][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][1][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[8][2][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][3][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][0][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][1][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[4][2][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][3][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][0][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][1][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[3][2][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][3][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][0][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][1][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[15][2][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][3][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][0][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][1][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[11][2][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][3][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][0][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][1][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[7][2][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][3][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][0][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][1][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[2][2][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][3][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][0][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][1][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[14][2][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][3][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][0][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][1][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][2][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][3][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][0][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][1][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[6][2][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][3][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][0][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][1][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[1][2][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][3][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][0][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][1][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[13][2][0]    ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][3][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][0][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][1][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[9][2][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][3][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][0][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][1][0]     ; 3       ;
+; PushBoxMap:instasdf|map_matrix[5][2][0]     ; 3       ;
+; VgaPixel:inst1|Mux6~0                       ; 3       ;
+; VgaSync:inst|s_counth_prev[0]               ; 3       ;
+; VgaSync:inst|s_hsync_prev                   ; 3       ;
+; PushBoxMap:instasdf|map_matrix[10][15][1]~4 ; 2       ;
+; PushBoxMap:instasdf|map_matrix[9][15][1]~6  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~354          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[5][15][0]~4  ; 2       ;
+; VgaPixel:inst1|s_rgb_next[0]~40             ; 2       ;
+; Rebounce:inst5|counter_out[0]               ; 2       ;
+; Rebounce:inst5|counter_out[1]               ; 2       ;
+; Rebounce:inst5|counter_out[2]               ; 2       ;
+; Rebounce:inst5|counter_out[3]               ; 2       ;
+; Rebounce:inst5|counter_out[4]               ; 2       ;
+; Rebounce:inst5|counter_out[5]               ; 2       ;
+; Rebounce:inst5|counter_out[6]               ; 2       ;
+; Rebounce:inst5|counter_out[7]               ; 2       ;
+; Rebounce:inst5|counter_out[8]               ; 2       ;
+; Rebounce:inst5|counter_out[9]               ; 2       ;
+; Rebounce:inst5|counter_out[10]              ; 2       ;
+; Rebounce:inst5|counter_out[11]              ; 2       ;
+; Rebounce:inst5|counter_out[12]              ; 2       ;
+; Rebounce:inst5|counter_out[13]              ; 2       ;
+; Rebounce:inst5|counter_out[14]              ; 2       ;
+; Rebounce:inst5|counter_out[15]              ; 2       ;
+; Rebounce:inst5|counter_out[16]              ; 2       ;
+; Rebounce:inst5|counter_out[17]              ; 2       ;
+; Rebounce:inst5|counter_out[18]              ; 2       ;
+; Rebounce:inst5|counter_out[19]              ; 2       ;
+; Rebounce:inst4|counter_out[0]               ; 2       ;
+; Rebounce:inst4|counter_out[1]               ; 2       ;
+; Rebounce:inst4|counter_out[2]               ; 2       ;
+; Rebounce:inst4|counter_out[3]               ; 2       ;
+; Rebounce:inst4|counter_out[4]               ; 2       ;
+; Rebounce:inst4|counter_out[5]               ; 2       ;
+; Rebounce:inst4|counter_out[6]               ; 2       ;
+; Rebounce:inst4|counter_out[7]               ; 2       ;
+; Rebounce:inst4|counter_out[8]               ; 2       ;
+; Rebounce:inst4|counter_out[9]               ; 2       ;
+; Rebounce:inst4|counter_out[10]              ; 2       ;
+; Rebounce:inst4|counter_out[11]              ; 2       ;
+; Rebounce:inst4|counter_out[12]              ; 2       ;
+; Rebounce:inst4|counter_out[13]              ; 2       ;
+; Rebounce:inst4|counter_out[14]              ; 2       ;
+; Rebounce:inst4|counter_out[15]              ; 2       ;
+; Rebounce:inst4|counter_out[16]              ; 2       ;
+; Rebounce:inst4|counter_out[17]              ; 2       ;
+; Rebounce:inst4|counter_out[18]              ; 2       ;
+; Rebounce:inst4|counter_out[19]              ; 2       ;
+; Rebounce:inst3|counter_out[0]               ; 2       ;
+; Rebounce:inst3|counter_out[1]               ; 2       ;
+; Rebounce:inst3|counter_out[2]               ; 2       ;
+; Rebounce:inst3|counter_out[3]               ; 2       ;
+; Rebounce:inst3|counter_out[4]               ; 2       ;
+; Rebounce:inst3|counter_out[5]               ; 2       ;
+; Rebounce:inst3|counter_out[6]               ; 2       ;
+; Rebounce:inst3|counter_out[7]               ; 2       ;
+; Rebounce:inst3|counter_out[8]               ; 2       ;
+; Rebounce:inst3|counter_out[9]               ; 2       ;
+; Rebounce:inst3|counter_out[10]              ; 2       ;
+; Rebounce:inst3|counter_out[11]              ; 2       ;
+; Rebounce:inst3|counter_out[12]              ; 2       ;
+; Rebounce:inst3|counter_out[13]              ; 2       ;
+; Rebounce:inst3|counter_out[14]              ; 2       ;
+; Rebounce:inst3|counter_out[15]              ; 2       ;
+; Rebounce:inst3|counter_out[16]              ; 2       ;
+; Rebounce:inst3|counter_out[17]              ; 2       ;
+; Rebounce:inst3|counter_out[18]              ; 2       ;
+; Rebounce:inst3|counter_out[19]              ; 2       ;
+; Rebounce:inst6|counter_out[0]               ; 2       ;
+; Rebounce:inst6|counter_out[1]               ; 2       ;
+; Rebounce:inst6|counter_out[2]               ; 2       ;
+; Rebounce:inst6|counter_out[3]               ; 2       ;
+; Rebounce:inst6|counter_out[4]               ; 2       ;
+; Rebounce:inst6|counter_out[5]               ; 2       ;
+; Rebounce:inst6|counter_out[6]               ; 2       ;
+; Rebounce:inst6|counter_out[7]               ; 2       ;
+; Rebounce:inst6|counter_out[8]               ; 2       ;
+; Rebounce:inst6|counter_out[9]               ; 2       ;
+; Rebounce:inst6|counter_out[10]              ; 2       ;
+; Rebounce:inst6|counter_out[11]              ; 2       ;
+; Rebounce:inst6|counter_out[12]              ; 2       ;
+; Rebounce:inst6|counter_out[13]              ; 2       ;
+; Rebounce:inst6|counter_out[14]              ; 2       ;
+; Rebounce:inst6|counter_out[15]              ; 2       ;
+; Rebounce:inst6|counter_out[16]              ; 2       ;
+; Rebounce:inst6|counter_out[17]              ; 2       ;
+; Rebounce:inst6|counter_out[18]              ; 2       ;
+; Rebounce:inst6|counter_out[19]              ; 2       ;
+; Rebounce:inst5|result                       ; 2       ;
+; Rebounce:inst4|result                       ; 2       ;
+; Rebounce:inst3|result                       ; 2       ;
+; Rebounce:inst6|result                       ; 2       ;
+; PushBoxMap:instasdf|player_pos_y[1]~4       ; 2       ;
+; PushBoxMap:instasdf|player_pos_x[1]~4       ; 2       ;
+; PushBoxMap:instasdf|Equal5~2                ; 2       ;
+; PushBoxMap:instasdf|map_matrix[0][11][1]~2  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~321          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[1][9][1]~1   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~320          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[0][9][0]~0   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~319          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[1][11][1]~1  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~318          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[2][10][0]~1  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~317          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[3][8][1]~2   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~316          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[2][8][0]~1   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~315          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[3][10][1]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~314          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[0][10][1]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~313          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[1][8][1]~0   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~312          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[0][8][0]~0   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~311          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[1][10][0]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~310          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[2][11][1]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~309          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[3][9][1]~0   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~308          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[2][9][1]~0   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~307          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[3][11][1]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~306          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[12][11][1]~2 ; 2       ;
+; PushBoxMap:instasdf|map_matrix~305          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[12][8][1]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~304          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[12][9][1]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~303          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[12][10][1]~0 ; 2       ;
+; PushBoxMap:instasdf|map_matrix~302          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[15][11][1]~3 ; 2       ;
+; PushBoxMap:instasdf|map_matrix~301          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[15][8][1]~1  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~300          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[15][9][1]~1  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~299          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[15][10][1]~1 ; 2       ;
+; PushBoxMap:instasdf|map_matrix~298          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[13][11][0]~2 ; 2       ;
+; PushBoxMap:instasdf|map_matrix~297          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[13][8][0]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~296          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[13][9][1]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~295          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[13][10][0]~0 ; 2       ;
+; PushBoxMap:instasdf|map_matrix~294          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[14][11][0]~2 ; 2       ;
+; PushBoxMap:instasdf|map_matrix~293          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[14][8][1]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~292          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[14][9][1]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~291          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[14][10][0]~0 ; 2       ;
+; PushBoxMap:instasdf|map_matrix~290          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[8][11][0]~2  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~289          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[9][9][1]~1   ; 2       ;
+; PushBoxMap:instasdf|map_matrix[8][9][1]~1   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~288          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[9][11][0]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~287          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[10][10][0]~0 ; 2       ;
+; PushBoxMap:instasdf|map_matrix~286          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[11][8][1]~2  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~285          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[11][10][1]~0 ; 2       ;
+; PushBoxMap:instasdf|map_matrix~280          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[8][10][1]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~279          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[8][8][1]~1   ; 2       ;
+; PushBoxMap:instasdf|map_matrix[9][10][1]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~273          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[10][11][0]~0 ; 2       ;
+; PushBoxMap:instasdf|map_matrix~272          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[11][9][0]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~271          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[10][9][0]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix[11][11][1]~0 ; 2       ;
+; PushBoxMap:instasdf|map_matrix~269          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[4][11][0]~2  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~268          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[4][8][1]~0   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~267          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[4][9][0]~0   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~266          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[4][10][1]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~265          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[7][11][1]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix[7][8][0]~2   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~262          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[5][11][1]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~254          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[5][8][1]~1   ; 2       ;
+; PushBoxMap:instasdf|map_matrix[5][9][0]~0   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~253          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[5][10][1]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~252          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[6][11][1]~2  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~251          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[6][8][1]~0   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~250          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[6][10][1]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~248          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[6][9][1]~0   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~246          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[0][7][0]~0   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~245          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[6][7][0]~0   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~244          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[4][7][1]~0   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~243          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[2][7][1]~0   ; 2       ;
+; PushBoxMap:instasdf|map_matrix~242          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[9][7][1]~0   ; 2       ;
+; PushBoxMap:instasdf|map_matrix[15][7][1]~1  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~240          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[11][7][0]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~239          ; 2       ;
+; PushBoxMap:instasdf|map_matrix[13][7][0]~0  ; 2       ;
+; PushBoxMap:instasdf|map_matrix~238          ; 2       ;
++---------------------------------------------+---------+
 
 
 +------------------------------------------------------+
@@ -1641,141 +2647,153 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 259 / 54,004 ( < 1 % ) ;
-; C16 interconnects           ; 0 / 2,100 ( 0 % )      ;
-; C4 interconnects            ; 112 / 36,000 ( < 1 % ) ;
-; Direct links                ; 63 / 54,004 ( < 1 % )  ;
+; Block interconnects         ; 4,853 / 54,004 ( 9 % ) ;
+; C16 interconnects           ; 47 / 2,100 ( 2 % )     ;
+; C4 interconnects            ; 3,060 / 36,000 ( 9 % ) ;
+; Direct links                ; 521 / 54,004 ( < 1 % ) ;
 ; Global clocks               ; 2 / 16 ( 13 % )        ;
-; Local interconnects         ; 124 / 18,752 ( < 1 % ) ;
-; R24 interconnects           ; 0 / 1,900 ( 0 % )      ;
-; R4 interconnects            ; 97 / 46,920 ( < 1 % )  ;
+; Local interconnects         ; 1,714 / 18,752 ( 9 % ) ;
+; R24 interconnects           ; 80 / 1,900 ( 4 % )     ;
+; R4 interconnects            ; 3,501 / 46,920 ( 7 % ) ;
 +-----------------------------+------------------------+
 
 
-+----------------------------------------------------------------------------+
-; LAB Logic Elements                                                         ;
-+---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 14.36) ; Number of LABs  (Total = 14) ;
-+---------------------------------------------+------------------------------+
-; 1                                           ; 0                            ;
-; 2                                           ; 0                            ;
-; 3                                           ; 0                            ;
-; 4                                           ; 0                            ;
-; 5                                           ; 0                            ;
-; 6                                           ; 0                            ;
-; 7                                           ; 0                            ;
-; 8                                           ; 0                            ;
-; 9                                           ; 1                            ;
-; 10                                          ; 0                            ;
-; 11                                          ; 1                            ;
-; 12                                          ; 1                            ;
-; 13                                          ; 0                            ;
-; 14                                          ; 3                            ;
-; 15                                          ; 1                            ;
-; 16                                          ; 7                            ;
-+---------------------------------------------+------------------------------+
-
-
-+-------------------------------------------------------------------+
-; LAB-wide Signals                                                  ;
-+------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.71) ; Number of LABs  (Total = 14) ;
-+------------------------------------+------------------------------+
-; 1 Async. clear                     ; 11                           ;
-; 1 Clock                            ; 11                           ;
-; 1 Sync. clear                      ; 1                            ;
-; 1 Sync. load                       ; 1                            ;
-+------------------------------------+------------------------------+
-
-
 +-----------------------------------------------------------------------------+
-; LAB Signals Sourced                                                         ;
-+----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 17.00) ; Number of LABs  (Total = 14) ;
-+----------------------------------------------+------------------------------+
-; 0                                            ; 0                            ;
-; 1                                            ; 0                            ;
-; 2                                            ; 0                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 0                            ;
-; 5                                            ; 0                            ;
-; 6                                            ; 0                            ;
-; 7                                            ; 0                            ;
-; 8                                            ; 0                            ;
-; 9                                            ; 0                            ;
-; 10                                           ; 0                            ;
-; 11                                           ; 2                            ;
-; 12                                           ; 1                            ;
-; 13                                           ; 0                            ;
-; 14                                           ; 0                            ;
-; 15                                           ; 1                            ;
-; 16                                           ; 1                            ;
-; 17                                           ; 1                            ;
-; 18                                           ; 3                            ;
-; 19                                           ; 3                            ;
-; 20                                           ; 1                            ;
-; 21                                           ; 0                            ;
-; 22                                           ; 0                            ;
-; 23                                           ; 0                            ;
-; 24                                           ; 0                            ;
-; 25                                           ; 1                            ;
-+----------------------------------------------+------------------------------+
+; LAB Logic Elements                                                          ;
++---------------------------------------------+-------------------------------+
+; Number of Logic Elements  (Average = 13.54) ; Number of LABs  (Total = 205) ;
++---------------------------------------------+-------------------------------+
+; 1                                           ; 3                             ;
+; 2                                           ; 3                             ;
+; 3                                           ; 3                             ;
+; 4                                           ; 4                             ;
+; 5                                           ; 4                             ;
+; 6                                           ; 2                             ;
+; 7                                           ; 2                             ;
+; 8                                           ; 7                             ;
+; 9                                           ; 2                             ;
+; 10                                          ; 8                             ;
+; 11                                          ; 8                             ;
+; 12                                          ; 7                             ;
+; 13                                          ; 6                             ;
+; 14                                          ; 11                            ;
+; 15                                          ; 22                            ;
+; 16                                          ; 113                           ;
++---------------------------------------------+-------------------------------+
 
 
-+--------------------------------------------------------------------------------+
-; LAB Signals Sourced Out                                                        ;
-+-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 8.57) ; Number of LABs  (Total = 14) ;
-+-------------------------------------------------+------------------------------+
-; 0                                               ; 0                            ;
-; 1                                               ; 0                            ;
-; 2                                               ; 0                            ;
-; 3                                               ; 1                            ;
-; 4                                               ; 1                            ;
-; 5                                               ; 1                            ;
-; 6                                               ; 1                            ;
-; 7                                               ; 2                            ;
-; 8                                               ; 2                            ;
-; 9                                               ; 0                            ;
-; 10                                              ; 0                            ;
-; 11                                              ; 1                            ;
-; 12                                              ; 4                            ;
-; 13                                              ; 1                            ;
-+-------------------------------------------------+------------------------------+
++--------------------------------------------------------------------+
+; LAB-wide Signals                                                   ;
++------------------------------------+-------------------------------+
+; LAB-wide Signals  (Average = 1.28) ; Number of LABs  (Total = 205) ;
++------------------------------------+-------------------------------+
+; 1 Async. clear                     ; 7                             ;
+; 1 Clock                            ; 180                           ;
+; 1 Clock enable                     ; 48                            ;
+; 1 Sync. load                       ; 4                             ;
+; 2 Clock enables                    ; 24                            ;
++------------------------------------+-------------------------------+
 
 
-+-----------------------------------------------------------------------------+
-; LAB Distinct Inputs                                                         ;
-+----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 16.29) ; Number of LABs  (Total = 14) ;
-+----------------------------------------------+------------------------------+
-; 0                                            ; 0                            ;
-; 1                                            ; 0                            ;
-; 2                                            ; 0                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 0                            ;
-; 5                                            ; 0                            ;
-; 6                                            ; 1                            ;
-; 7                                            ; 0                            ;
-; 8                                            ; 0                            ;
-; 9                                            ; 1                            ;
-; 10                                           ; 2                            ;
-; 11                                           ; 0                            ;
-; 12                                           ; 0                            ;
-; 13                                           ; 0                            ;
-; 14                                           ; 2                            ;
-; 15                                           ; 0                            ;
-; 16                                           ; 0                            ;
-; 17                                           ; 1                            ;
-; 18                                           ; 1                            ;
-; 19                                           ; 0                            ;
-; 20                                           ; 3                            ;
-; 21                                           ; 1                            ;
-; 22                                           ; 0                            ;
-; 23                                           ; 0                            ;
-; 24                                           ; 1                            ;
-; 25                                           ; 1                            ;
-+----------------------------------------------+------------------------------+
++------------------------------------------------------------------------------+
+; LAB Signals Sourced                                                          ;
++----------------------------------------------+-------------------------------+
+; Number of Signals Sourced  (Average = 16.64) ; Number of LABs  (Total = 205) ;
++----------------------------------------------+-------------------------------+
+; 0                                            ; 0                             ;
+; 1                                            ; 0                             ;
+; 2                                            ; 4                             ;
+; 3                                            ; 3                             ;
+; 4                                            ; 1                             ;
+; 5                                            ; 1                             ;
+; 6                                            ; 2                             ;
+; 7                                            ; 2                             ;
+; 8                                            ; 7                             ;
+; 9                                            ; 2                             ;
+; 10                                           ; 2                             ;
+; 11                                           ; 3                             ;
+; 12                                           ; 3                             ;
+; 13                                           ; 5                             ;
+; 14                                           ; 11                            ;
+; 15                                           ; 12                            ;
+; 16                                           ; 15                            ;
+; 17                                           ; 13                            ;
+; 18                                           ; 25                            ;
+; 19                                           ; 27                            ;
+; 20                                           ; 52                            ;
+; 21                                           ; 4                             ;
+; 22                                           ; 8                             ;
+; 23                                           ; 1                             ;
+; 24                                           ; 1                             ;
+; 25                                           ; 0                             ;
+; 26                                           ; 0                             ;
+; 27                                           ; 1                             ;
++----------------------------------------------+-------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                         ;
++-------------------------------------------------+-------------------------------+
+; Number of Signals Sourced Out  (Average = 8.10) ; Number of LABs  (Total = 205) ;
++-------------------------------------------------+-------------------------------+
+; 0                                               ; 0                             ;
+; 1                                               ; 9                             ;
+; 2                                               ; 9                             ;
+; 3                                               ; 9                             ;
+; 4                                               ; 17                            ;
+; 5                                               ; 12                            ;
+; 6                                               ; 17                            ;
+; 7                                               ; 20                            ;
+; 8                                               ; 15                            ;
+; 9                                               ; 20                            ;
+; 10                                              ; 15                            ;
+; 11                                              ; 14                            ;
+; 12                                              ; 14                            ;
+; 13                                              ; 16                            ;
+; 14                                              ; 15                            ;
+; 15                                              ; 1                             ;
+; 16                                              ; 2                             ;
++-------------------------------------------------+-------------------------------+
+
+
++------------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                          ;
++----------------------------------------------+-------------------------------+
+; Number of Distinct Inputs  (Average = 22.64) ; Number of LABs  (Total = 205) ;
++----------------------------------------------+-------------------------------+
+; 0                                            ; 0                             ;
+; 1                                            ; 0                             ;
+; 2                                            ; 0                             ;
+; 3                                            ; 2                             ;
+; 4                                            ; 4                             ;
+; 5                                            ; 2                             ;
+; 6                                            ; 4                             ;
+; 7                                            ; 7                             ;
+; 8                                            ; 6                             ;
+; 9                                            ; 0                             ;
+; 10                                           ; 6                             ;
+; 11                                           ; 7                             ;
+; 12                                           ; 1                             ;
+; 13                                           ; 3                             ;
+; 14                                           ; 5                             ;
+; 15                                           ; 5                             ;
+; 16                                           ; 5                             ;
+; 17                                           ; 6                             ;
+; 18                                           ; 1                             ;
+; 19                                           ; 2                             ;
+; 20                                           ; 3                             ;
+; 21                                           ; 7                             ;
+; 22                                           ; 1                             ;
+; 23                                           ; 10                            ;
+; 24                                           ; 2                             ;
+; 25                                           ; 2                             ;
+; 26                                           ; 8                             ;
+; 27                                           ; 8                             ;
+; 28                                           ; 11                            ;
+; 29                                           ; 17                            ;
+; 30                                           ; 35                            ;
+; 31                                           ; 35                            ;
++----------------------------------------------+-------------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -1947,10 +2965,6 @@ Warning (15709): Ignored I/O standard assignments to the following nodes
     Warning (15710): Ignored I/O standard assignment to node "HEX3[6]"
     Warning (15710): Ignored I/O standard assignment to node "I2C_SCLK"
     Warning (15710): Ignored I/O standard assignment to node "I2C_SDAT"
-    Warning (15710): Ignored I/O standard assignment to node "KEY[0]"
-    Warning (15710): Ignored I/O standard assignment to node "KEY[1]"
-    Warning (15710): Ignored I/O standard assignment to node "KEY[2]"
-    Warning (15710): Ignored I/O standard assignment to node "KEY[3]"
     Warning (15710): Ignored I/O standard assignment to node "LEDG[0]"
     Warning (15710): Ignored I/O standard assignment to node "LEDG[1]"
     Warning (15710): Ignored I/O standard assignment to node "LEDG[2]"
@@ -2172,10 +3186,6 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "HEX3[6]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "I2C_SCLK" is assigned to location or region, but does not exist in design
     Warning (15706): Node "I2C_SDAT" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "KEY[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "KEY[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "KEY[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "KEY[3]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "LEDG[0]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "LEDG[1]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "LEDG[2]" is assigned to location or region, but does not exist in design
@@ -2250,19 +3260,19 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "TDO" is assigned to location or region, but does not exist in design
     Warning (15706): Node "UART_RXD" is assigned to location or region, but does not exist in design
     Warning (15706): Node "UART_TXD" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:04
 Info (170193): Fitter routing operations beginning
-Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X12_Y14 to location X24_Y27
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
+Info (170195): Router estimated average interconnect usage is 6% of the available device resources
+    Info (170196): Router estimated peak interconnect usage is 13% of the available device resources in the region that extends from location X12_Y14 to location X24_Y27
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:07
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.20 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 1.33 seconds.
 Info (306004): Started post-fitting delay annotation
 Warning (306006): Found 14 output pins without output pin load capacitance assignment
     Info (306007): Pin "VGA_HS" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -2282,15 +3292,15 @@ Warning (306006): Found 14 output pins without output pin load capacitance assig
 Info (306005): Delay annotation completed successfully
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file D:/altera/projects/PushBox/output_files/PushBox.fit.smsg
-Info: Quartus II 64-Bit Fitter was successful. 0 errors, 422 warnings
-    Info: Peak virtual memory: 4767 megabytes
-    Info: Processing ended: Fri Jun 08 22:16:15 2018
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 414 warnings
+    Info: Peak virtual memory: 4783 megabytes
+    Info: Processing ended: Sat Jun 09 17:08:17 2018
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:19
 
 
 +----------------------------+

@@ -181,12 +181,12 @@ begin
 	                          column >= MAP_END_COL  or
 	                          row < MAP_START_ROW or
 	                          row >= MAP_END_ROW else
-	              tile_box(to_integer(s_x_image), to_integer(s_y_image)) when map_pos_value = "000" else
-				  tile_box_objective(to_integer(s_x_image), to_integer(s_y_image)) when map_pos_value = "001" else
-				  tile_floor(to_integer(s_x_image), to_integer(s_y_image)) when map_pos_value = "010" else
-				  tile_objective(to_integer(s_x_image), to_integer(s_y_image)) when map_pos_value = "011" else
-				  tile_player(to_integer(s_x_image), to_integer(s_y_image)) when map_pos_value = "100" else
-				  tile_wall(to_integer(s_x_image), to_integer(s_y_image)) when map_pos_value = "101" else
+	              tile_box(to_integer(s_x_image), to_integer(s_y_image))           when map_pos_value = "011" else
+				  tile_box_objective(to_integer(s_x_image), to_integer(s_y_image)) when map_pos_value = "111" else
+				  tile_floor(to_integer(s_x_image), to_integer(s_y_image))         when map_pos_value = "001" else
+				  tile_objective(to_integer(s_x_image), to_integer(s_y_image))     when map_pos_value = "101" else
+				  tile_player(to_integer(s_x_image), to_integer(s_y_image))        when map_pos_value(1 downto 0) = "10" else
+				  tile_wall(to_integer(s_x_image), to_integer(s_y_image))          when map_pos_value = "000" else
 				  x"000";
 	
 	-- Atualiza o registrador de cor
