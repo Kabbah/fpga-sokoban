@@ -1,0 +1,1101 @@
+TimeQuest Timing Analyzer report for PushBox
+Fri Jun 08 22:16:20 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'CLOCK_50'
+ 12. Slow Model Hold: 'CLOCK_50'
+ 13. Slow Model Minimum Pulse Width: 'CLOCK_50'
+ 14. Clock to Output Times
+ 15. Minimum Clock to Output Times
+ 16. Fast Model Setup Summary
+ 17. Fast Model Hold Summary
+ 18. Fast Model Recovery Summary
+ 19. Fast Model Removal Summary
+ 20. Fast Model Minimum Pulse Width Summary
+ 21. Fast Model Setup: 'CLOCK_50'
+ 22. Fast Model Hold: 'CLOCK_50'
+ 23. Fast Model Minimum Pulse Width: 'CLOCK_50'
+ 24. Clock to Output Times
+ 25. Minimum Clock to Output Times
+ 26. Multicorner Timing Analysis Summary
+ 27. Clock to Output Times
+ 28. Minimum Clock to Output Times
+ 29. Setup Transfers
+ 30. Hold Transfers
+ 31. Report TCCS
+ 32. Report RSKM
+ 33. Unconstrained Paths
+ 34. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; PushBox                                                           ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; CLOCK_50   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 162.5 MHz ; 162.5 MHz       ; CLOCK_50   ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------+
+; Slow Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -5.154 ; -120.320      ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Slow Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.445 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.631 ; -46.845            ;
++----------+--------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLOCK_50'                                                                                                                 ;
++--------+-------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                     ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; -5.154 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 6.178      ;
+; -5.124 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 6.148      ;
+; -5.116 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 6.139      ;
+; -5.115 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 6.138      ;
+; -5.094 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 6.117      ;
+; -5.093 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 6.116      ;
+; -5.088 ; VgaSync:inst|s_counth_prev[6] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 6.114      ;
+; -5.062 ; VgaSync:inst|s_counth_prev[3] ; VgaPixel:inst1|s_rgb_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 6.087      ;
+; -5.061 ; VgaSync:inst|s_counth_prev[3] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 6.086      ;
+; -5.042 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 6.066      ;
+; -5.041 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 6.065      ;
+; -5.037 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.069      ;
+; -5.025 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 6.049      ;
+; -5.014 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 6.037      ;
+; -5.013 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 6.036      ;
+; -4.965 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 5.988      ;
+; -4.927 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.951      ;
+; -4.882 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 5.905      ;
+; -4.881 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 5.904      ;
+; -4.868 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.900      ;
+; -4.859 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.891      ;
+; -4.837 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.869      ;
+; -4.805 ; VgaSync:inst|s_counth_prev[3] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 5.839      ;
+; -4.802 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 5.835      ;
+; -4.789 ; VgaSync:inst|s_counth_prev[6] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 5.814      ;
+; -4.773 ; VgaSync:inst|s_counth_prev[3] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.799      ;
+; -4.772 ; VgaSync:inst|s_counth_prev[2] ; VgaPixel:inst1|s_rgb_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 5.797      ;
+; -4.771 ; VgaSync:inst|s_counth_prev[2] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 5.796      ;
+; -4.762 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 5.800      ;
+; -4.760 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.784      ;
+; -4.758 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.782      ;
+; -4.753 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 5.778      ;
+; -4.751 ; VgaSync:inst|s_counth_prev[5] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.777      ;
+; -4.738 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.762      ;
+; -4.736 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.760      ;
+; -4.706 ; VgaSync:inst|s_counth_prev[3] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.732      ;
+; -4.704 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 5.727      ;
+; -4.704 ; VgaSync:inst|s_counth_prev[3] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.730      ;
+; -4.691 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.715      ;
+; -4.686 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 5.711      ;
+; -4.684 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 5.709      ;
+; -4.674 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 5.697      ;
+; -4.667 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.699      ;
+; -4.661 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.685      ;
+; -4.658 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.682      ;
+; -4.657 ; VgaSync:inst|s_counth_prev[1] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 5.690      ;
+; -4.636 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 5.674      ;
+; -4.630 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 5.653      ;
+; -4.627 ; VgaSync:inst|s_counth_prev[6] ; VgaPixel:inst1|s_rgb_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 5.661      ;
+; -4.607 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.631      ;
+; -4.601 ; VgaSync:inst|s_counth_prev[6] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 5.635      ;
+; -4.593 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.617      ;
+; -4.590 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.622      ;
+; -4.582 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.614      ;
+; -4.560 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.592      ;
+; -4.558 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 5.596      ;
+; -4.553 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 5.576      ;
+; -4.552 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.584      ;
+; -4.531 ; VgaSync:inst|s_counth_prev[6] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.557      ;
+; -4.524 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.548      ;
+; -4.524 ; VgaSync:inst|s_counth_prev[6] ; VgaPixel:inst1|s_rgb_prev[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 5.558      ;
+; -4.515 ; VgaSync:inst|s_counth_prev[2] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 5.549      ;
+; -4.507 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 5.546      ;
+; -4.500 ; VgaSync:inst|s_counth_prev[7] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 5.525      ;
+; -4.487 ; VgaSync:inst|s_countv_prev[6] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 5.512      ;
+; -4.483 ; VgaSync:inst|s_counth_prev[2] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.509      ;
+; -4.477 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 5.500      ;
+; -4.472 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.496      ;
+; -4.463 ; VgaSync:inst|s_counth_prev[1] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 5.488      ;
+; -4.461 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.493      ;
+; -4.453 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.485      ;
+; -4.452 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.476      ;
+; -4.452 ; VgaSync:inst|s_counth_prev[5] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 5.477      ;
+; -4.418 ; VgaSync:inst|s_counth_prev[1] ; VgaPixel:inst1|s_rgb_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.442      ;
+; -4.417 ; VgaSync:inst|s_counth_prev[1] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.441      ;
+; -4.416 ; VgaSync:inst|s_counth_prev[2] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.442      ;
+; -4.414 ; VgaSync:inst|s_counth_prev[2] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.440      ;
+; -4.399 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.431      ;
+; -4.393 ; VgaSync:inst|s_counth_prev[6] ; VgaPixel:inst1|s_rgb_prev[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 5.433      ;
+; -4.393 ; VgaSync:inst|s_counth_prev[1] ; VgaPixel:inst1|s_rgb_prev[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 5.432      ;
+; -4.377 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.409      ;
+; -4.367 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 5.392      ;
+; -4.363 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.395      ;
+; -4.362 ; VgaSync:inst|s_counth_prev[2] ; VgaPixel:inst1|s_rgb_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 5.387      ;
+; -4.355 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.387      ;
+; -4.348 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 5.386      ;
+; -4.345 ; VgaSync:inst|s_counth_prev[3] ; VgaPixel:inst1|s_rgb_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 5.379      ;
+; -4.338 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.370      ;
+; -4.332 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 5.370      ;
+; -4.327 ; VgaSync:inst|s_counth_prev[6] ; VgaPixel:inst1|s_rgb_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 5.352      ;
+; -4.325 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 5.358      ;
+; -4.318 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 5.341      ;
+; -4.303 ; VgaSync:inst|s_counth_prev[3] ; VgaPixel:inst1|s_rgb_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 5.328      ;
+; -4.300 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.324      ;
+; -4.297 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.329      ;
+; -4.294 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.318      ;
+; -4.290 ; VgaSync:inst|s_counth_prev[5] ; VgaPixel:inst1|s_rgb_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 5.324      ;
+; -4.279 ; VgaSync:inst|s_counth_prev[7] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.305      ;
+; -4.264 ; VgaSync:inst|s_counth_prev[5] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 5.298      ;
+; -4.258 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 5.282      ;
++--------+-------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLOCK_50'                                                                                                                   ;
++-------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                      ; To Node                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; VgaSync:inst|s_countv_prev[0]  ; VgaSync:inst|s_countv_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; VgaSync:inst|s_countv_prev[1]  ; VgaSync:inst|s_countv_prev[1]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; VgaSync:inst|s_countv_prev[2]  ; VgaSync:inst|s_countv_prev[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; VgaSync:inst|s_countv_prev[4]  ; VgaSync:inst|s_countv_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; VgaSync:inst|s_countv_prev[5]  ; VgaSync:inst|s_countv_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; VgaSync:inst|s_countv_prev[6]  ; VgaSync:inst|s_countv_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; VgaSync:inst|s_countv_prev[7]  ; VgaSync:inst|s_countv_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; VgaSync:inst|s_countv_prev[8]  ; VgaSync:inst|s_countv_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; VgaSync:inst|s_countv_prev[9]  ; VgaSync:inst|s_countv_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; VgaSync:inst|s_countv_prev[3]  ; VgaSync:inst|s_countv_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; VgaSync:inst|s_hsync_prev      ; VgaSync:inst|s_hsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; VgaSync:inst|s_vsync_prev      ; VgaSync:inst|s_vsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; VgaSync:inst|s_activeh_prev    ; VgaSync:inst|s_activeh_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; VgaSync:inst|s_activev_prev    ; VgaSync:inst|s_activev_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.975 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.261      ;
+; 0.977 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_counth_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.263      ;
+; 0.980 ; VgaSync:inst|s_counth_prev[6]  ; VgaSync:inst|s_counth_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.266      ;
+; 0.983 ; VgaSync:inst|s_counth_prev[8]  ; VgaSync:inst|s_counth_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.269      ;
+; 1.026 ; VgaSync:inst|s_counth_prev[7]  ; VgaSync:inst|s_counth_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.312      ;
+; 1.027 ; VgaSync:inst|s_counth_prev[9]  ; VgaSync:inst|s_counth_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.313      ;
+; 1.031 ; VgaSync:inst|s_counth_prev[5]  ; VgaSync:inst|s_counth_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.317      ;
+; 1.036 ; VgaSync:inst|s_counth_prev[2]  ; VgaSync:inst|s_counth_prev[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.322      ;
+; 1.217 ; VgaSync:inst|s_counth_prev[7]  ; VgaSync:inst|s_hsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.504      ;
+; 1.342 ; VgaSync:inst|s_counth_prev[8]  ; VgaSync:inst|s_activeh_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.629      ;
+; 1.343 ; VgaSync:inst|s_counth_prev[8]  ; VgaSync:inst|s_hsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.630      ;
+; 1.349 ; VgaSync:inst|s_counth_prev[8]  ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.636      ;
+; 1.415 ; VgaSync:inst|s_counth_prev[8]  ; VgaSync:inst|s_counth_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.701      ;
+; 1.457 ; VgaSync:inst|s_counth_prev[9]  ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.744      ;
+; 1.459 ; VgaSync:inst|s_counth_prev[7]  ; VgaSync:inst|s_counth_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.745      ;
+; 1.464 ; VgaSync:inst|s_counth_prev[5]  ; VgaSync:inst|s_counth_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.750      ;
+; 1.469 ; VgaSync:inst|s_counth_prev[2]  ; VgaSync:inst|s_counth_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.755      ;
+; 1.474 ; VgaSync:inst|s_counth_prev[5]  ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.760      ;
+; 1.482 ; VgaSync:inst|s_counth_prev[6]  ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.769      ;
+; 1.487 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.773      ;
+; 1.489 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_counth_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.775      ;
+; 1.495 ; VgaSync:inst|s_counth_prev[9]  ; VgaSync:inst|s_activeh_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.782      ;
+; 1.496 ; VgaSync:inst|s_counth_prev[9]  ; VgaSync:inst|s_hsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.783      ;
+; 1.502 ; VgaSync:inst|s_counth_prev[4]  ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.788      ;
+; 1.513 ; VgaSync:inst|s_counth_prev[6]  ; VgaSync:inst|s_counth_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.799      ;
+; 1.530 ; VgaSync:inst|s_counth_prev[8]  ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.816      ;
+; 1.539 ; VgaSync:inst|s_counth_prev[7]  ; VgaSync:inst|s_counth_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.825      ;
+; 1.567 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.853      ;
+; 1.569 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_counth_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.855      ;
+; 1.589 ; VgaSync:inst|s_counth_prev[10] ; VgaSync:inst|s_activeh_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.876      ;
+; 1.590 ; VgaSync:inst|s_counth_prev[10] ; VgaSync:inst|s_hsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.877      ;
+; 1.593 ; VgaSync:inst|s_counth_prev[6]  ; VgaSync:inst|s_counth_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.879      ;
+; 1.613 ; VgaSync:inst|s_counth_prev[4]  ; VgaSync:inst|s_counth_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 1.898      ;
+; 1.629 ; VgaSync:inst|s_counth_prev[2]  ; VgaSync:inst|s_counth_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.915      ;
+; 1.638 ; VgaSync:inst|s_counth_prev[5]  ; VgaSync:inst|s_counth_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.924      ;
+; 1.638 ; VgaSync:inst|s_counth_prev[9]  ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.924      ;
+; 1.646 ; VgaSync:inst|s_counth_prev[4]  ; VgaSync:inst|s_activeh_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.932      ;
+; 1.652 ; VgaSync:inst|s_counth_prev[6]  ; VgaSync:inst|s_activeh_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.939      ;
+; 1.673 ; VgaSync:inst|s_counth_prev[6]  ; VgaSync:inst|s_counth_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.959      ;
+; 1.683 ; VgaSync:inst|s_counth_prev[4]  ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 1.968      ;
+; 1.693 ; VgaSync:inst|s_counth_prev[4]  ; VgaSync:inst|s_counth_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 1.978      ;
+; 1.694 ; VgaSync:inst|s_counth_prev[6]  ; VgaSync:inst|s_hsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.981      ;
+; 1.698 ; VgaSync:inst|s_counth_prev[6]  ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.984      ;
+; 1.706 ; VgaSync:inst|s_counth_prev[10] ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.992      ;
+; 1.709 ; VgaSync:inst|s_counth_prev[2]  ; VgaSync:inst|s_counth_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.995      ;
+; 1.718 ; VgaSync:inst|s_counth_prev[5]  ; VgaSync:inst|s_counth_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.004      ;
+; 1.722 ; VgaSync:inst|s_countv_prev[0]  ; VgaSync:inst|s_activev_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.008      ;
+; 1.727 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.013      ;
+; 1.742 ; VgaSync:inst|s_countv_prev[4]  ; VgaSync:inst|s_vsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 2.027      ;
+; 1.743 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_counth_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.029      ;
+; 1.754 ; VgaSync:inst|s_counth_prev[5]  ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 2.041      ;
+; 1.798 ; VgaSync:inst|s_counth_prev[5]  ; VgaSync:inst|s_counth_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.084      ;
+; 1.804 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.090      ;
+; 1.807 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.093      ;
+; 1.823 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_counth_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.109      ;
+; 1.845 ; VgaSync:inst|s_counth_prev[4]  ; VgaSync:inst|s_hsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.131      ;
+; 1.867 ; VgaSync:inst|s_counth_prev[4]  ; VgaSync:inst|s_counth_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 2.152      ;
+; 1.868 ; VgaSync:inst|s_counth_prev[2]  ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.154      ;
+; 1.871 ; VgaSync:inst|s_counth_prev[7]  ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 2.158      ;
+; 1.883 ; VgaSync:inst|s_counth_prev[2]  ; VgaSync:inst|s_counth_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.169      ;
+; 1.903 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_counth_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.189      ;
+; 1.925 ; VgaSync:inst|s_countv_prev[8]  ; VgaSync:inst|s_countv_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.211      ;
+; 1.925 ; VgaSync:inst|s_counth_prev[10] ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 2.212      ;
+; 1.928 ; VgaSync:inst|s_countv_prev[2]  ; VgaSync:inst|s_countv_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.214      ;
+; 1.929 ; VgaSync:inst|s_countv_prev[2]  ; VgaSync:inst|s_countv_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.215      ;
+; 1.931 ; VgaSync:inst|s_countv_prev[5]  ; VgaSync:inst|s_countv_prev[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.217      ;
+; 1.933 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 2.220      ;
+; 1.933 ; VgaSync:inst|s_countv_prev[5]  ; VgaSync:inst|s_countv_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.219      ;
+; 1.947 ; VgaSync:inst|s_counth_prev[4]  ; VgaSync:inst|s_counth_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 2.232      ;
+; 1.963 ; VgaSync:inst|s_counth_prev[2]  ; VgaSync:inst|s_counth_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.249      ;
+; 1.981 ; VgaSync:inst|s_counth_prev[7]  ; VgaSync:inst|s_activeh_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 2.268      ;
+; 1.981 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.267      ;
+; 1.991 ; VgaSync:inst|s_counth_prev[1]  ; VgaSync:inst|s_counth_prev[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 2.276      ;
+; 2.027 ; VgaSync:inst|s_counth_prev[4]  ; VgaSync:inst|s_counth_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 2.312      ;
+; 2.043 ; VgaSync:inst|s_counth_prev[2]  ; VgaSync:inst|s_counth_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.329      ;
+; 2.045 ; VgaSync:inst|s_countv_prev[2]  ; VgaSync:inst|s_vsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 2.330      ;
+; 2.061 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.067 ; VgaSync:inst|s_countv_prev[7]  ; VgaSync:inst|s_countv_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.353      ;
+; 2.071 ; VgaSync:inst|s_counth_prev[1]  ; VgaSync:inst|s_counth_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 2.356      ;
+; 2.084 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 2.371      ;
+; 2.087 ; VgaSync:inst|s_counth_prev[7]  ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.373      ;
+; 2.104 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_activeh_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 2.391      ;
+; 2.107 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_hsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 2.394      ;
+; 2.116 ; VgaSync:inst|s_countv_prev[1]  ; VgaSync:inst|s_vsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 2.401      ;
+; 2.141 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 2.427      ;
+; 2.144 ; VgaSync:inst|s_countv_prev[5]  ; VgaSync:inst|s_vsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 2.429      ;
++-------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLOCK_50'                                                                         ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[0]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[0]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[10]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[10]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[11]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[11]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[1]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[1]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[2]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[2]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[3]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[3]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[4]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[4]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[5]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[5]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[6]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[6]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[7]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[7]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[8]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[8]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[9]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[9]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_activeh_prev    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_activeh_prev    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_activev_prev    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_activev_prev    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[10] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[10] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[3]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[3]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[4]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[4]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[5]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[5]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[6]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[6]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[7]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[7]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[8]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[8]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[9]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[9]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[2]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[3]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[3]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[4]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[4]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[5]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[5]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[6]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[6]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[7]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[7]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[8]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[8]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[9]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[9]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_hsync_prev      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_hsync_prev      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_vsync_prev      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_vsync_prev      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50|combout               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50|combout               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0]      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0]      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[10]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[10]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[11]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[11]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[7]|clk        ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; VGA_B[*]  ; CLOCK_50   ; 8.956 ; 8.956 ; Rise       ; CLOCK_50        ;
+;  VGA_B[0] ; CLOCK_50   ; 8.956 ; 8.956 ; Rise       ; CLOCK_50        ;
+;  VGA_B[1] ; CLOCK_50   ; 8.900 ; 8.900 ; Rise       ; CLOCK_50        ;
+;  VGA_B[2] ; CLOCK_50   ; 8.653 ; 8.653 ; Rise       ; CLOCK_50        ;
+;  VGA_B[3] ; CLOCK_50   ; 8.628 ; 8.628 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]  ; CLOCK_50   ; 9.249 ; 9.249 ; Rise       ; CLOCK_50        ;
+;  VGA_G[0] ; CLOCK_50   ; 9.229 ; 9.229 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1] ; CLOCK_50   ; 8.949 ; 8.949 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2] ; CLOCK_50   ; 8.964 ; 8.964 ; Rise       ; CLOCK_50        ;
+;  VGA_G[3] ; CLOCK_50   ; 9.249 ; 9.249 ; Rise       ; CLOCK_50        ;
+; VGA_HS    ; CLOCK_50   ; 8.149 ; 8.149 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]  ; CLOCK_50   ; 9.521 ; 9.521 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0] ; CLOCK_50   ; 9.229 ; 9.229 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1] ; CLOCK_50   ; 9.521 ; 9.521 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2] ; CLOCK_50   ; 9.244 ; 9.244 ; Rise       ; CLOCK_50        ;
+;  VGA_R[3] ; CLOCK_50   ; 9.371 ; 9.371 ; Rise       ; CLOCK_50        ;
+; VGA_VS    ; CLOCK_50   ; 7.560 ; 7.560 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; VGA_B[*]  ; CLOCK_50   ; 8.018 ; 8.018 ; Rise       ; CLOCK_50        ;
+;  VGA_B[0] ; CLOCK_50   ; 8.290 ; 8.290 ; Rise       ; CLOCK_50        ;
+;  VGA_B[1] ; CLOCK_50   ; 8.256 ; 8.256 ; Rise       ; CLOCK_50        ;
+;  VGA_B[2] ; CLOCK_50   ; 8.018 ; 8.018 ; Rise       ; CLOCK_50        ;
+;  VGA_B[3] ; CLOCK_50   ; 8.368 ; 8.368 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]  ; CLOCK_50   ; 8.280 ; 8.280 ; Rise       ; CLOCK_50        ;
+;  VGA_G[0] ; CLOCK_50   ; 8.569 ; 8.569 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1] ; CLOCK_50   ; 8.280 ; 8.280 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2] ; CLOCK_50   ; 8.714 ; 8.714 ; Rise       ; CLOCK_50        ;
+;  VGA_G[3] ; CLOCK_50   ; 8.983 ; 8.983 ; Rise       ; CLOCK_50        ;
+; VGA_HS    ; CLOCK_50   ; 8.149 ; 8.149 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]  ; CLOCK_50   ; 8.550 ; 8.550 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0] ; CLOCK_50   ; 8.550 ; 8.550 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1] ; CLOCK_50   ; 8.853 ; 8.853 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2] ; CLOCK_50   ; 8.574 ; 8.574 ; Rise       ; CLOCK_50        ;
+;  VGA_R[3] ; CLOCK_50   ; 8.861 ; 8.861 ; Rise       ; CLOCK_50        ;
+; VGA_VS    ; CLOCK_50   ; 7.560 ; 7.560 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------+
+; Fast Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -1.324 ; -23.136       ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Fast Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.215 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.380 ; -38.380            ;
++----------+--------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLOCK_50'                                                                                                                 ;
++--------+-------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                     ; To Node                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.324 ; VgaSync:inst|s_counth_prev[6] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.347      ;
+; -1.313 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.334      ;
+; -1.309 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.330      ;
+; -1.279 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.300      ;
+; -1.270 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.291      ;
+; -1.268 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.289      ;
+; -1.268 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.289      ;
+; -1.266 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.287      ;
+; -1.263 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.284      ;
+; -1.261 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.282      ;
+; -1.240 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.261      ;
+; -1.238 ; VgaSync:inst|s_counth_prev[3] ; VgaPixel:inst1|s_rgb_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.261      ;
+; -1.237 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 2.259      ;
+; -1.236 ; VgaSync:inst|s_counth_prev[3] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.259      ;
+; -1.235 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 2.257      ;
+; -1.231 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.258      ;
+; -1.201 ; VgaSync:inst|s_counth_prev[5] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.224      ;
+; -1.192 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.219      ;
+; -1.182 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.203      ;
+; -1.182 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.203      ;
+; -1.182 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.209      ;
+; -1.180 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.201      ;
+; -1.179 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 2.201      ;
+; -1.175 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.202      ;
+; -1.159 ; VgaSync:inst|s_counth_prev[6] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.182      ;
+; -1.150 ; VgaSync:inst|s_counth_prev[3] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 2.179      ;
+; -1.149 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.177      ;
+; -1.144 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.165      ;
+; -1.143 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.164      ;
+; -1.142 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.163      ;
+; -1.141 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.162      ;
+; -1.140 ; VgaSync:inst|s_counth_prev[3] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.163      ;
+; -1.137 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.158      ;
+; -1.136 ; VgaSync:inst|s_counth_prev[6] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.159      ;
+; -1.136 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.157      ;
+; -1.134 ; VgaSync:inst|s_counth_prev[2] ; VgaPixel:inst1|s_rgb_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.157      ;
+; -1.132 ; VgaSync:inst|s_counth_prev[2] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.155      ;
+; -1.127 ; VgaSync:inst|s_counth_prev[6] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 2.156      ;
+; -1.125 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.146      ;
+; -1.116 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.143      ;
+; -1.112 ; VgaSync:inst|s_counth_prev[3] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.135      ;
+; -1.111 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 2.133      ;
+; -1.111 ; VgaSync:inst|s_counth_prev[3] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.134      ;
+; -1.110 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 2.132      ;
+; -1.107 ; VgaSync:inst|s_counth_prev[6] ; VgaPixel:inst1|s_rgb_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 2.136      ;
+; -1.107 ; VgaSync:inst|s_counth_prev[1] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.135      ;
+; -1.104 ; VgaSync:inst|s_counth_prev[6] ; VgaPixel:inst1|s_rgb_prev[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 2.133      ;
+; -1.102 ; VgaSync:inst|s_countv_prev[6] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 2.124      ;
+; -1.096 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.123      ;
+; -1.093 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.120      ;
+; -1.092 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.119      ;
+; -1.089 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.116      ;
+; -1.085 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.117      ;
+; -1.084 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.105      ;
+; -1.081 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.102      ;
+; -1.080 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.101      ;
+; -1.062 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.089      ;
+; -1.062 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.083      ;
+; -1.059 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.086      ;
+; -1.059 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.080      ;
+; -1.058 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.090      ;
+; -1.055 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.076      ;
+; -1.049 ; VgaSync:inst|s_counth_prev[7] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.072      ;
+; -1.046 ; VgaSync:inst|s_counth_prev[2] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 2.075      ;
+; -1.043 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.064      ;
+; -1.036 ; VgaSync:inst|s_counth_prev[5] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.059      ;
+; -1.034 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 2.056      ;
+; -1.033 ; VgaSync:inst|s_counth_prev[2] ; VgaPixel:inst1|s_rgb_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.056      ;
+; -1.029 ; VgaSync:inst|s_countv_prev[3] ; VgaPixel:inst1|s_rgb_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.056      ;
+; -1.023 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.050      ;
+; -1.023 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.050      ;
+; -1.020 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.047      ;
+; -1.019 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.040      ;
+; -1.018 ; VgaSync:inst|s_counth_prev[1] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 2.040      ;
+; -1.018 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.045      ;
+; -1.013 ; VgaSync:inst|s_counth_prev[5] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.036      ;
+; -1.011 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.044      ;
+; -1.008 ; VgaSync:inst|s_counth_prev[1] ; VgaPixel:inst1|s_rgb_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 2.030      ;
+; -1.008 ; VgaSync:inst|s_counth_prev[2] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.031      ;
+; -1.007 ; VgaSync:inst|s_counth_prev[2] ; VgaPixel:inst1|s_rgb_prev[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.030      ;
+; -1.006 ; VgaSync:inst|s_counth_prev[1] ; VgaPixel:inst1|s_rgb_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 2.028      ;
+; -1.006 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.038      ;
+; -1.005 ; VgaSync:inst|s_countv_prev[4] ; VgaPixel:inst1|s_rgb_prev[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.026      ;
+; -1.004 ; VgaSync:inst|s_counth_prev[5] ; VgaPixel:inst1|s_rgb_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 2.033      ;
+; -1.003 ; VgaSync:inst|s_counth_prev[6] ; VgaPixel:inst1|s_rgb_prev[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 2.037      ;
+; -1.000 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.027      ;
+; -0.993 ; VgaSync:inst|s_counth_prev[3] ; VgaPixel:inst1|s_rgb_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 2.022      ;
+; -0.992 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.020      ;
+; -0.992 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.024      ;
+; -0.986 ; VgaSync:inst|s_counth_prev[6] ; VgaPixel:inst1|s_rgb_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.009      ;
+; -0.984 ; VgaSync:inst|s_counth_prev[5] ; VgaPixel:inst1|s_rgb_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 2.013      ;
+; -0.981 ; VgaSync:inst|s_counth_prev[5] ; VgaPixel:inst1|s_rgb_prev[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 2.010      ;
+; -0.980 ; VgaSync:inst|s_counth_prev[7] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 2.003      ;
+; -0.975 ; VgaSync:inst|s_counth_prev[4] ; VgaPixel:inst1|s_rgb_prev[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 1.997      ;
+; -0.974 ; VgaSync:inst|s_counth_prev[3] ; VgaPixel:inst1|s_rgb_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 1.997      ;
+; -0.974 ; VgaSync:inst|s_countv_prev[1] ; VgaPixel:inst1|s_rgb_prev[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 1.995      ;
+; -0.972 ; VgaSync:inst|s_counth_prev[6] ; VgaPixel:inst1|s_rgb_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 1.995      ;
+; -0.964 ; VgaSync:inst|s_counth_prev[6] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 1.987      ;
+; -0.963 ; VgaSync:inst|s_countv_prev[5] ; VgaPixel:inst1|s_rgb_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 1.984      ;
+; -0.963 ; VgaSync:inst|s_countv_prev[2] ; VgaPixel:inst1|s_rgb_prev[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 1.984      ;
++--------+-------------------------------+-------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLOCK_50'                                                                                                                   ;
++-------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                      ; To Node                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; VgaSync:inst|s_countv_prev[0]  ; VgaSync:inst|s_countv_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; VgaSync:inst|s_countv_prev[1]  ; VgaSync:inst|s_countv_prev[1]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; VgaSync:inst|s_countv_prev[2]  ; VgaSync:inst|s_countv_prev[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; VgaSync:inst|s_countv_prev[4]  ; VgaSync:inst|s_countv_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; VgaSync:inst|s_countv_prev[5]  ; VgaSync:inst|s_countv_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; VgaSync:inst|s_countv_prev[6]  ; VgaSync:inst|s_countv_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; VgaSync:inst|s_countv_prev[7]  ; VgaSync:inst|s_countv_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; VgaSync:inst|s_countv_prev[8]  ; VgaSync:inst|s_countv_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; VgaSync:inst|s_countv_prev[9]  ; VgaSync:inst|s_countv_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; VgaSync:inst|s_countv_prev[3]  ; VgaSync:inst|s_countv_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; VgaSync:inst|s_hsync_prev      ; VgaSync:inst|s_hsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; VgaSync:inst|s_vsync_prev      ; VgaSync:inst|s_vsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; VgaSync:inst|s_activeh_prev    ; VgaSync:inst|s_activeh_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; VgaSync:inst|s_activev_prev    ; VgaSync:inst|s_activev_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.360 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_counth_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.362 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[0]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362 ; VgaSync:inst|s_counth_prev[6]  ; VgaSync:inst|s_counth_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.514      ;
+; 0.363 ; VgaSync:inst|s_counth_prev[8]  ; VgaSync:inst|s_counth_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.377 ; VgaSync:inst|s_counth_prev[7]  ; VgaSync:inst|s_counth_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.529      ;
+; 0.378 ; VgaSync:inst|s_counth_prev[9]  ; VgaSync:inst|s_counth_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.530      ;
+; 0.380 ; VgaSync:inst|s_counth_prev[5]  ; VgaSync:inst|s_counth_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.532      ;
+; 0.381 ; VgaSync:inst|s_counth_prev[2]  ; VgaSync:inst|s_counth_prev[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.533      ;
+; 0.448 ; VgaSync:inst|s_counth_prev[7]  ; VgaSync:inst|s_hsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.601      ;
+; 0.495 ; VgaSync:inst|s_counth_prev[8]  ; VgaSync:inst|s_activeh_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.648      ;
+; 0.496 ; VgaSync:inst|s_counth_prev[8]  ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.649      ;
+; 0.496 ; VgaSync:inst|s_counth_prev[8]  ; VgaSync:inst|s_hsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.649      ;
+; 0.501 ; VgaSync:inst|s_counth_prev[8]  ; VgaSync:inst|s_counth_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.653      ;
+; 0.517 ; VgaSync:inst|s_counth_prev[7]  ; VgaSync:inst|s_counth_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.669      ;
+; 0.520 ; VgaSync:inst|s_counth_prev[5]  ; VgaSync:inst|s_counth_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.672      ;
+; 0.521 ; VgaSync:inst|s_counth_prev[2]  ; VgaSync:inst|s_counth_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.673      ;
+; 0.533 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_counth_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.685      ;
+; 0.535 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.687      ;
+; 0.544 ; VgaSync:inst|s_counth_prev[5]  ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.696      ;
+; 0.549 ; VgaSync:inst|s_counth_prev[9]  ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.702      ;
+; 0.552 ; VgaSync:inst|s_counth_prev[4]  ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.704      ;
+; 0.552 ; VgaSync:inst|s_counth_prev[7]  ; VgaSync:inst|s_counth_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.704      ;
+; 0.555 ; VgaSync:inst|s_counth_prev[6]  ; VgaSync:inst|s_counth_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.707      ;
+; 0.560 ; VgaSync:inst|s_counth_prev[6]  ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.713      ;
+; 0.568 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_counth_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.720      ;
+; 0.570 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.722      ;
+; 0.573 ; VgaSync:inst|s_counth_prev[8]  ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.725      ;
+; 0.575 ; VgaSync:inst|s_counth_prev[9]  ; VgaSync:inst|s_activeh_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.728      ;
+; 0.576 ; VgaSync:inst|s_counth_prev[9]  ; VgaSync:inst|s_hsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.729      ;
+; 0.586 ; VgaSync:inst|s_counth_prev[4]  ; VgaSync:inst|s_counth_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.737      ;
+; 0.590 ; VgaSync:inst|s_counth_prev[6]  ; VgaSync:inst|s_counth_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.742      ;
+; 0.591 ; VgaSync:inst|s_counth_prev[2]  ; VgaSync:inst|s_counth_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.743      ;
+; 0.614 ; VgaSync:inst|s_counth_prev[10] ; VgaSync:inst|s_activeh_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.767      ;
+; 0.614 ; VgaSync:inst|s_counth_prev[5]  ; VgaSync:inst|s_counth_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.766      ;
+; 0.615 ; VgaSync:inst|s_counth_prev[10] ; VgaSync:inst|s_hsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.768      ;
+; 0.616 ; VgaSync:inst|s_counth_prev[6]  ; VgaSync:inst|s_activeh_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.769      ;
+; 0.619 ; VgaSync:inst|s_countv_prev[0]  ; VgaSync:inst|s_activev_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.772      ;
+; 0.621 ; VgaSync:inst|s_counth_prev[10] ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.773      ;
+; 0.621 ; VgaSync:inst|s_counth_prev[4]  ; VgaSync:inst|s_counth_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.772      ;
+; 0.625 ; VgaSync:inst|s_counth_prev[6]  ; VgaSync:inst|s_counth_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.777      ;
+; 0.626 ; VgaSync:inst|s_counth_prev[2]  ; VgaSync:inst|s_counth_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.778      ;
+; 0.626 ; VgaSync:inst|s_counth_prev[9]  ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.778      ;
+; 0.627 ; VgaSync:inst|s_countv_prev[4]  ; VgaSync:inst|s_vsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.778      ;
+; 0.627 ; VgaSync:inst|s_counth_prev[6]  ; VgaSync:inst|s_hsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.780      ;
+; 0.628 ; VgaSync:inst|s_counth_prev[4]  ; VgaSync:inst|s_activeh_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.780      ;
+; 0.629 ; VgaSync:inst|s_counth_prev[4]  ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.780      ;
+; 0.636 ; VgaSync:inst|s_counth_prev[5]  ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.789      ;
+; 0.637 ; VgaSync:inst|s_counth_prev[6]  ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.789      ;
+; 0.640 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.792      ;
+; 0.649 ; VgaSync:inst|s_counth_prev[5]  ; VgaSync:inst|s_counth_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.801      ;
+; 0.658 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.810      ;
+; 0.662 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_counth_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.814      ;
+; 0.675 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[6]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.827      ;
+; 0.679 ; VgaSync:inst|s_counth_prev[2]  ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.831      ;
+; 0.679 ; VgaSync:inst|s_counth_prev[7]  ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.832      ;
+; 0.680 ; VgaSync:inst|s_countv_prev[8]  ; VgaSync:inst|s_countv_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.832      ;
+; 0.682 ; VgaSync:inst|s_counth_prev[4]  ; VgaSync:inst|s_hsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.834      ;
+; 0.684 ; VgaSync:inst|s_counth_prev[5]  ; VgaSync:inst|s_counth_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.836      ;
+; 0.697 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_counth_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.849      ;
+; 0.701 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.854      ;
+; 0.701 ; VgaSync:inst|s_counth_prev[10] ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.854      ;
+; 0.715 ; VgaSync:inst|s_counth_prev[4]  ; VgaSync:inst|s_counth_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.866      ;
+; 0.718 ; VgaSync:inst|s_counth_prev[1]  ; VgaSync:inst|s_counth_prev[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.869      ;
+; 0.720 ; VgaSync:inst|s_counth_prev[2]  ; VgaSync:inst|s_counth_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.872      ;
+; 0.732 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_counth_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.884      ;
+; 0.737 ; VgaSync:inst|s_countv_prev[5]  ; VgaSync:inst|s_countv_prev[2]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.889      ;
+; 0.739 ; VgaSync:inst|s_countv_prev[5]  ; VgaSync:inst|s_countv_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.891      ;
+; 0.741 ; VgaSync:inst|s_counth_prev[7]  ; VgaSync:inst|s_activeh_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.894      ;
+; 0.750 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.903      ;
+; 0.750 ; VgaSync:inst|s_counth_prev[4]  ; VgaSync:inst|s_counth_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.901      ;
+; 0.750 ; VgaSync:inst|s_countv_prev[2]  ; VgaSync:inst|s_countv_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.902      ;
+; 0.751 ; VgaSync:inst|s_countv_prev[2]  ; VgaSync:inst|s_countv_prev[5]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.903      ;
+; 0.752 ; VgaSync:inst|s_countv_prev[2]  ; VgaSync:inst|s_vsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.903      ;
+; 0.753 ; VgaSync:inst|s_counth_prev[1]  ; VgaSync:inst|s_counth_prev[3]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.904      ;
+; 0.755 ; VgaSync:inst|s_counth_prev[2]  ; VgaSync:inst|s_counth_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.907      ;
+; 0.756 ; VgaSync:inst|s_counth_prev[7]  ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.908      ;
+; 0.759 ; VgaSync:inst|s_countv_prev[7]  ; VgaSync:inst|s_countv_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.911      ;
+; 0.765 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_activeh_prev    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.918      ;
+; 0.768 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_hsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.921      ;
+; 0.769 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[7]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.921      ;
+; 0.771 ; VgaSync:inst|s_counth_prev[2]  ; VgaSync:inst|s_counth_prev[4]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.924      ;
+; 0.778 ; VgaSync:inst|s_counth_prev[3]  ; VgaSync:inst|s_counth_prev[10] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.930      ;
+; 0.780 ; VgaSync:inst|s_countv_prev[1]  ; VgaSync:inst|s_vsync_prev      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.931      ;
+; 0.785 ; VgaSync:inst|s_counth_prev[4]  ; VgaSync:inst|s_counth_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.936      ;
+; 0.790 ; VgaSync:inst|s_counth_prev[2]  ; VgaSync:inst|s_counth_prev[9]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.942      ;
+; 0.804 ; VgaSync:inst|s_counth_prev[0]  ; VgaSync:inst|s_counth_prev[8]  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.956      ;
++-------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLOCK_50'                                                                         ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaPixel:inst1|s_rgb_prev[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_activeh_prev    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_activeh_prev    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_activev_prev    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_activev_prev    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_counth_prev[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_countv_prev[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_hsync_prev      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_hsync_prev      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; VgaSync:inst|s_vsync_prev      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; VgaSync:inst|s_vsync_prev      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50|combout               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50|combout               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0]      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0]      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[10]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[10]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[11]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[11]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; inst1|s_rgb_prev[7]|clk        ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; VGA_B[*]  ; CLOCK_50   ; 4.622 ; 4.622 ; Rise       ; CLOCK_50        ;
+;  VGA_B[0] ; CLOCK_50   ; 4.622 ; 4.622 ; Rise       ; CLOCK_50        ;
+;  VGA_B[1] ; CLOCK_50   ; 4.578 ; 4.578 ; Rise       ; CLOCK_50        ;
+;  VGA_B[2] ; CLOCK_50   ; 4.501 ; 4.501 ; Rise       ; CLOCK_50        ;
+;  VGA_B[3] ; CLOCK_50   ; 4.475 ; 4.475 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]  ; CLOCK_50   ; 4.738 ; 4.738 ; Rise       ; CLOCK_50        ;
+;  VGA_G[0] ; CLOCK_50   ; 4.721 ; 4.721 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1] ; CLOCK_50   ; 4.615 ; 4.615 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2] ; CLOCK_50   ; 4.629 ; 4.629 ; Rise       ; CLOCK_50        ;
+;  VGA_G[3] ; CLOCK_50   ; 4.738 ; 4.738 ; Rise       ; CLOCK_50        ;
+; VGA_HS    ; CLOCK_50   ; 4.261 ; 4.261 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]  ; CLOCK_50   ; 4.830 ; 4.830 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0] ; CLOCK_50   ; 4.720 ; 4.720 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1] ; CLOCK_50   ; 4.830 ; 4.830 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2] ; CLOCK_50   ; 4.737 ; 4.737 ; Rise       ; CLOCK_50        ;
+;  VGA_R[3] ; CLOCK_50   ; 4.745 ; 4.745 ; Rise       ; CLOCK_50        ;
+; VGA_VS    ; CLOCK_50   ; 4.034 ; 4.034 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; VGA_B[*]  ; CLOCK_50   ; 4.206 ; 4.206 ; Rise       ; CLOCK_50        ;
+;  VGA_B[0] ; CLOCK_50   ; 4.309 ; 4.309 ; Rise       ; CLOCK_50        ;
+;  VGA_B[1] ; CLOCK_50   ; 4.278 ; 4.278 ; Rise       ; CLOCK_50        ;
+;  VGA_B[2] ; CLOCK_50   ; 4.206 ; 4.206 ; Rise       ; CLOCK_50        ;
+;  VGA_B[3] ; CLOCK_50   ; 4.305 ; 4.305 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]  ; CLOCK_50   ; 4.296 ; 4.296 ; Rise       ; CLOCK_50        ;
+;  VGA_G[0] ; CLOCK_50   ; 4.412 ; 4.412 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1] ; CLOCK_50   ; 4.296 ; 4.296 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2] ; CLOCK_50   ; 4.468 ; 4.468 ; Rise       ; CLOCK_50        ;
+;  VGA_G[3] ; CLOCK_50   ; 4.564 ; 4.564 ; Rise       ; CLOCK_50        ;
+; VGA_HS    ; CLOCK_50   ; 4.261 ; 4.261 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]  ; CLOCK_50   ; 4.394 ; 4.394 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0] ; CLOCK_50   ; 4.394 ; 4.394 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1] ; CLOCK_50   ; 4.509 ; 4.509 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2] ; CLOCK_50   ; 4.416 ; 4.416 ; Rise       ; CLOCK_50        ;
+;  VGA_R[3] ; CLOCK_50   ; 4.555 ; 4.555 ; Rise       ; CLOCK_50        ;
+; VGA_VS    ; CLOCK_50   ; 4.034 ; 4.034 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -5.154   ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+;  CLOCK_50        ; -5.154   ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -120.32  ; 0.0   ; 0.0      ; 0.0     ; -46.845             ;
+;  CLOCK_50        ; -120.320 ; 0.000 ; N/A      ; N/A     ; -46.845             ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; VGA_B[*]  ; CLOCK_50   ; 8.956 ; 8.956 ; Rise       ; CLOCK_50        ;
+;  VGA_B[0] ; CLOCK_50   ; 8.956 ; 8.956 ; Rise       ; CLOCK_50        ;
+;  VGA_B[1] ; CLOCK_50   ; 8.900 ; 8.900 ; Rise       ; CLOCK_50        ;
+;  VGA_B[2] ; CLOCK_50   ; 8.653 ; 8.653 ; Rise       ; CLOCK_50        ;
+;  VGA_B[3] ; CLOCK_50   ; 8.628 ; 8.628 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]  ; CLOCK_50   ; 9.249 ; 9.249 ; Rise       ; CLOCK_50        ;
+;  VGA_G[0] ; CLOCK_50   ; 9.229 ; 9.229 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1] ; CLOCK_50   ; 8.949 ; 8.949 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2] ; CLOCK_50   ; 8.964 ; 8.964 ; Rise       ; CLOCK_50        ;
+;  VGA_G[3] ; CLOCK_50   ; 9.249 ; 9.249 ; Rise       ; CLOCK_50        ;
+; VGA_HS    ; CLOCK_50   ; 8.149 ; 8.149 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]  ; CLOCK_50   ; 9.521 ; 9.521 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0] ; CLOCK_50   ; 9.229 ; 9.229 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1] ; CLOCK_50   ; 9.521 ; 9.521 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2] ; CLOCK_50   ; 9.244 ; 9.244 ; Rise       ; CLOCK_50        ;
+;  VGA_R[3] ; CLOCK_50   ; 9.371 ; 9.371 ; Rise       ; CLOCK_50        ;
+; VGA_VS    ; CLOCK_50   ; 7.560 ; 7.560 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; VGA_B[*]  ; CLOCK_50   ; 4.206 ; 4.206 ; Rise       ; CLOCK_50        ;
+;  VGA_B[0] ; CLOCK_50   ; 4.309 ; 4.309 ; Rise       ; CLOCK_50        ;
+;  VGA_B[1] ; CLOCK_50   ; 4.278 ; 4.278 ; Rise       ; CLOCK_50        ;
+;  VGA_B[2] ; CLOCK_50   ; 4.206 ; 4.206 ; Rise       ; CLOCK_50        ;
+;  VGA_B[3] ; CLOCK_50   ; 4.305 ; 4.305 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]  ; CLOCK_50   ; 4.296 ; 4.296 ; Rise       ; CLOCK_50        ;
+;  VGA_G[0] ; CLOCK_50   ; 4.412 ; 4.412 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1] ; CLOCK_50   ; 4.296 ; 4.296 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2] ; CLOCK_50   ; 4.468 ; 4.468 ; Rise       ; CLOCK_50        ;
+;  VGA_G[3] ; CLOCK_50   ; 4.564 ; 4.564 ; Rise       ; CLOCK_50        ;
+; VGA_HS    ; CLOCK_50   ; 4.261 ; 4.261 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]  ; CLOCK_50   ; 4.394 ; 4.394 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0] ; CLOCK_50   ; 4.394 ; 4.394 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1] ; CLOCK_50   ; 4.509 ; 4.509 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2] ; CLOCK_50   ; 4.416 ; 4.416 ; Rise       ; CLOCK_50        ;
+;  VGA_R[3] ; CLOCK_50   ; 4.555 ; 4.555 ; Rise       ; CLOCK_50        ;
+; VGA_VS    ; CLOCK_50   ; 4.034 ; 4.034 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 2848     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 2848     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 37    ; 37   ;
+; Unconstrained Output Ports      ; 14    ; 14   ;
+; Unconstrained Output Port Paths ; 38    ; 38   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Jun 08 22:16:18 2018
+Info: Command: quartus_sta PushBox -c PushBox
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'PushBox.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -5.154
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -5.154      -120.320 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -46.845 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.324
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.324       -23.136 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -38.380 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4538 megabytes
+    Info: Processing ended: Fri Jun 08 22:16:20 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
