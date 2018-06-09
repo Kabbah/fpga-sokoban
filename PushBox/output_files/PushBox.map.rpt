@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PushBox
-Sat Jun 09 17:07:57 2018
+Sat Jun 09 17:38:42 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -49,13 +49,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jun 09 17:07:57 2018           ;
+; Analysis & Synthesis Status        ; Successful - Sat Jun 09 17:38:42 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; PushBox                                         ;
 ; Top-level Entity Name              ; PushBox                                         ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 2,696                                           ;
-;     Total combinational functions  ; 2,676                                           ;
+; Total logic elements               ; 5,502                                           ;
+;     Total combinational functions  ; 5,482                                           ;
 ;     Dedicated logic registers      ; 665                                             ;
 ; Total registers                    ; 665                                             ;
 ; Total pins                         ; 20                                              ;
@@ -180,16 +180,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimated Total logic elements              ; 2,696    ;
+; Estimated Total logic elements              ; 5,502    ;
 ;                                             ;          ;
-; Total combinational functions               ; 2676     ;
+; Total combinational functions               ; 5482     ;
 ; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 1669     ;
-;     -- 3 input functions                    ; 340      ;
-;     -- <=2 input functions                  ; 667      ;
+;     -- 4 input functions                    ; 3779     ;
+;     -- 3 input functions                    ; 1239     ;
+;     -- <=2 input functions                  ; 464      ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 2571     ;
+;     -- normal mode                          ; 5377     ;
 ;     -- arithmetic mode                      ; 105      ;
 ;                                             ;          ;
 ; Total registers                             ; 665      ;
@@ -200,8 +200,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0        ;
 ; Maximum fan-out node                        ; CLOCK_50 ;
 ; Maximum fan-out                             ; 665      ;
-; Total fan-out                               ; 10683    ;
-; Average fan-out                             ; 3.18     ;
+; Total fan-out                               ; 21666    ;
+; Average fan-out                             ; 3.51     ;
 +---------------------------------------------+----------+
 
 
@@ -210,13 +210,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name          ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+--------------+
-; |PushBox                   ; 2676 (0)          ; 665 (0)      ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |PushBox                     ; work         ;
-;    |PushBoxMap:instasdf|   ; 2299 (2299)       ; 532 (532)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|PushBoxMap:instasdf ; work         ;
+; |PushBox                   ; 5482 (0)          ; 665 (0)      ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |PushBox                     ; work         ;
+;    |PushBoxMap:instasdf|   ; 5103 (5103)       ; 532 (532)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|PushBoxMap:instasdf ; work         ;
 ;    |Rebounce:inst3|        ; 45 (45)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|Rebounce:inst3      ; work         ;
 ;    |Rebounce:inst4|        ; 45 (45)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|Rebounce:inst4      ; work         ;
 ;    |Rebounce:inst5|        ; 45 (45)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|Rebounce:inst5      ; work         ;
 ;    |Rebounce:inst6|        ; 45 (45)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|Rebounce:inst6      ; work         ;
-;    |VgaPixel:inst1|        ; 144 (144)         ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|VgaPixel:inst1      ; work         ;
+;    |VgaPixel:inst1|        ; 146 (146)         ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|VgaPixel:inst1      ; work         ;
 ;    |VgaSync:inst|          ; 53 (53)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|VgaSync:inst        ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -229,7 +229,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Total registers                              ; 665   ;
 ; Number of registers using Synchronous Clear  ; 5     ;
-; Number of registers using Synchronous Load   ; 13    ;
+; Number of registers using Synchronous Load   ; 15    ;
 ; Number of registers using Asynchronous Clear ; 37    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 496   ;
@@ -256,14 +256,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; PushBoxMap:instasdf|map_matrix[8][8][1]  ; 3       ;
 ; PushBoxMap:instasdf|map_matrix[7][8][1]  ; 3       ;
 ; PushBoxMap:instasdf|map_matrix[6][7][1]  ; 3       ;
-; PushBoxMap:instasdf|map_matrix[7][7][1]  ; 5       ;
+; PushBoxMap:instasdf|map_matrix[7][7][1]  ; 4       ;
 ; PushBoxMap:instasdf|map_matrix[8][6][1]  ; 3       ;
-; PushBoxMap:instasdf|player_pos_x[0]      ; 315     ;
-; PushBoxMap:instasdf|player_pos_x[1]      ; 174     ;
-; PushBoxMap:instasdf|player_pos_x[2]      ; 173     ;
-; PushBoxMap:instasdf|player_pos_y[0]      ; 58      ;
-; PushBoxMap:instasdf|player_pos_y[1]      ; 66      ;
-; PushBoxMap:instasdf|player_pos_y[2]      ; 88      ;
+; PushBoxMap:instasdf|player_pos_y[0]      ; 96      ;
+; PushBoxMap:instasdf|player_pos_y[1]      ; 92      ;
+; PushBoxMap:instasdf|player_pos_y[2]      ; 84      ;
+; PushBoxMap:instasdf|player_pos_x[0]      ; 570     ;
+; PushBoxMap:instasdf|player_pos_x[1]      ; 250     ;
+; PushBoxMap:instasdf|player_pos_x[2]      ; 184     ;
 ; Total number of inverted registers = 22  ;         ;
 +------------------------------------------+---------+
 
@@ -273,269 +273,274 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |PushBox|VgaSync:inst|s_countv_prev[2]             ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PushBox|Rebounce:inst5|counter_out[4]             ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PushBox|Rebounce:inst4|counter_out[16]            ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PushBox|Rebounce:inst6|counter_out[9]             ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PushBox|Rebounce:inst3|counter_out[9]             ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |PushBox|VgaSync:inst|s_countv_prev[1]             ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PushBox|Rebounce:inst5|counter_out[1]             ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PushBox|Rebounce:inst4|counter_out[6]             ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PushBox|Rebounce:inst6|counter_out[6]             ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PushBox|Rebounce:inst3|counter_out[17]            ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |PushBox|VgaPixel:inst1|s_rgb_prev[8]              ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][0][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][0][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][0][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][1][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][15][0] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][1][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][1][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][2][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][2][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][2][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][3][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][3][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][3][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][4][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][4][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][4][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][5][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][5][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][5][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][6][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][6][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][6][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][7][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][7][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][7][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][8][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][8][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][8][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][9][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][9][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][9][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][10][0] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][10][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][10][0] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][11][0] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][11][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][11][0] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][12][0] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][12][0] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][12][0] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][13][0] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][13][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][13][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][14][0] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][14][0] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][14][0] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][15][0] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][15][0] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][0][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][1][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][2][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][3][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][4][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][5][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][6][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][7][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][8][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][9][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][10][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][11][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][12][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][13][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][14][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][15][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][0][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][1][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][2][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][3][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][4][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][5][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][6][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][7][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][8][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][9][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][10][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][11][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][12][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][13][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][14][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][15][0] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][0][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][1][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][2][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][3][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][4][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][5][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][6][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][7][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][9][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][10][0] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][11][0] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][12][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][13][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][14][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][15][1] ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][0][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][1][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][2][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][3][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][4][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][5][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][6][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][7][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][9][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][10][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][11][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][12][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][13][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][14][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][15][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][0][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][1][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][2][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][3][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][4][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][9][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][10][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][11][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][12][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][13][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][14][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][15][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][0][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][1][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][2][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][3][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][4][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][5][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][6][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][11][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][12][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][13][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][14][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][15][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][0][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][1][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][2][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][3][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][4][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][5][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][6][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][8][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][9][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][10][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][11][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][12][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][13][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][14][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][15][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][0][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][1][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][2][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][3][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][4][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][5][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][6][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][8][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][9][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][10][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][11][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][12][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][13][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][14][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][15][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][0][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][1][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][2][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][3][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][4][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][5][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][6][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][7][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][8][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][9][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][10][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][11][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][12][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][13][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][14][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][15][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][0][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][1][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][2][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][3][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][4][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][5][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][6][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][7][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][8][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][9][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][10][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][11][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][12][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][13][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][14][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][15][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][0][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][1][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][2][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][3][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][4][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][5][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][6][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][7][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][8][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][9][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][10][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][11][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][12][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][13][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][14][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][15][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][0][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][1][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][2][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][3][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][4][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][5][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][6][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][7][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][8][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][9][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][10][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][11][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][12][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][13][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][14][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][15][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][0][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][1][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][2][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][3][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][4][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][5][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][6][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][7][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][8][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][9][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][10][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][11][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][12][1]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][13][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][14][0]  ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][15][0]  ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |PushBox|PushBoxMap:instasdf|player_pos_y[1]       ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |PushBox|PushBoxMap:instasdf|player_pos_x[1]       ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][6][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][8][1]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][8][0]   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][7][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][0][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][0][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][0][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][1][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][15][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][1][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][1][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][2][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][2][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][2][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][3][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][3][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][3][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][4][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][4][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][4][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][5][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][5][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][5][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][6][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][6][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][6][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][7][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][7][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][7][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][8][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][8][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][8][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][9][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][9][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][9][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][10][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][10][0] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][10][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][11][0] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][11][0] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][11][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][12][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][12][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][12][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][13][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][13][0] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][13][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[14][14][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][14][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][14][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[15][15][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[13][15][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][0][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][1][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][2][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][3][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][4][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][5][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][6][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][7][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][8][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][9][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][10][0] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][11][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][12][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][13][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][14][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[12][15][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][0][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][1][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][2][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][3][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][4][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][5][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][6][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][7][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][8][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][9][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][10][0] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][11][0] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][12][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][13][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][14][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[11][15][0] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][0][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][1][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][2][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][3][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][4][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][5][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][6][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][7][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][9][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][10][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][11][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][12][0] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][13][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][14][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[10][15][1] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][0][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][1][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][2][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][3][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][4][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][5][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][6][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][7][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][9][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][10][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][11][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][12][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][13][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][14][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[9][15][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][0][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][1][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][2][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][3][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][4][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][9][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][10][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][11][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][12][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][13][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][14][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][15][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][0][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][1][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][2][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][3][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][4][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][5][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][6][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][11][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][12][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][13][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][14][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][15][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][0][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][1][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][2][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][3][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][4][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][5][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][6][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][8][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][9][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][10][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][11][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][12][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][13][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][14][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][15][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][0][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][1][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][2][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][3][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][4][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][5][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][6][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][8][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][9][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][10][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][11][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][12][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][13][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][14][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[5][15][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][0][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][1][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][2][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][3][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][4][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][5][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][6][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][7][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][8][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][9][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][10][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][11][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][12][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][13][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][14][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[4][15][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][0][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][1][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][2][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][3][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][4][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][5][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][6][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][7][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][8][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][9][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][10][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][11][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][12][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][13][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][14][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[3][15][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][0][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][1][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][2][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][3][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][4][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][5][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][6][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][7][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][8][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][9][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][10][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][11][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][12][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][13][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][14][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[2][15][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][0][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][1][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][2][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][3][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][4][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][5][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][6][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][7][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][8][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][9][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][10][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][11][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][12][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][13][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][14][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[1][15][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][0][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][1][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][2][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][3][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][4][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][5][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][6][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][7][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][8][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][9][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][10][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][11][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][12][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][13][1]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][14][0]  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[0][15][0]  ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |PushBox|PushBoxMap:instasdf|player_pos_y[1]       ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |PushBox|PushBoxMap:instasdf|player_pos_x[2]       ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][6][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[8][8][1]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[7][8][0]   ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:instasdf|map_matrix[6][7][1]   ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:instasdf|Mux48                 ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:instasdf|Mux44                 ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |PushBox|VgaPixel:inst1|s_rgb_next                 ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |PushBox|VgaPixel:inst1|Mux26                      ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:instasdf|Mux77                 ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:instasdf|Mux43                 ;
-; 32:1               ; 16 bits   ; 336 LEs       ; 336 LEs              ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:instasdf|Mux77                 ;
-; 128:1              ; 2 bits    ; 170 LEs       ; 170 LEs              ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:instasdf|Mux145                ;
-; 128:1              ; 2 bits    ; 170 LEs       ; 170 LEs              ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:instasdf|Mux111                ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:instasdf|Mux43                 ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:instasdf|Mux82                 ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:instasdf|Mux45                 ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:instasdf|Mux60                 ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:instasdf|Mux183                ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:instasdf|Mux115                ;
+; 128:1              ; 2 bits    ; 170 LEs       ; 170 LEs              ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:instasdf|Mux218                ;
+; 128:1              ; 2 bits    ; 170 LEs       ; 170 LEs              ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:instasdf|Mux149                ;
 ; 256:1              ; 2 bits    ; 340 LEs       ; 340 LEs              ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:instasdf|Mux41                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 
@@ -610,7 +615,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:10     ;
+; Top            ; 00:00:47     ;
 +----------------+--------------+
 
 
@@ -620,7 +625,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Jun 09 17:07:45 2018
+    Info: Processing started: Sat Jun 09 17:37:51 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PushBox -c PushBox
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file pushbox.bdf
@@ -645,14 +650,14 @@ Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup
 Info (12128): Elaborating entity "Rebounce" for hierarchy "Rebounce:inst4"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2964 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5522 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 2944 logic cells
+    Info (21061): Implemented 5502 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4662 megabytes
-    Info: Processing ended: Sat Jun 09 17:07:57 2018
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:12
+    Info: Peak virtual memory: 4714 megabytes
+    Info: Processing ended: Sat Jun 09 17:38:42 2018
+    Info: Elapsed time: 00:00:51
+    Info: Total CPU time (on all processors): 00:00:50
 
 

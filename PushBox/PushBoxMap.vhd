@@ -91,32 +91,84 @@ begin
 			s_btn_direita  <= s_btn_direita (1 downto 0) & btn_direita;
 			
 			if s_btn_cima(2 downto 1) = "10" then
-				if map_matrix(to_integer(player_pos_y + 1), to_integer(player_pos_x))(1 downto 0) /= "00" then
+				if map_matrix(to_integer(player_pos_y + 1), to_integer(player_pos_x))(1 downto 0) = "11" and
+				   map_matrix(to_integer(player_pos_y + 2), to_integer(player_pos_x))(1 downto 0) = "01" then
+				    
+					-- Altera posição do player
+					map_matrix(to_integer(player_pos_y + 1), to_integer(player_pos_x))(1 downto 0) <= "10";
+					-- Altera posição da caixa
+					map_matrix(to_integer(player_pos_y + 2), to_integer(player_pos_x))(1 downto 0) <= "11";
+					-- Limpa local anterior do player
+					map_matrix(to_integer(player_pos_y), to_integer(player_pos_x))(1 downto 0) <= "01";
+					player_pos_y <= player_pos_y + 1;
+					
+				elsif map_matrix(to_integer(player_pos_y + 1), to_integer(player_pos_x))(1 downto 0) = "01" then
+					
 					-- Altera posição do player
 					map_matrix(to_integer(player_pos_y + 1), to_integer(player_pos_x))(1 downto 0) <= "10";
 					-- Limpa local anterior do player
 					map_matrix(to_integer(player_pos_y), to_integer(player_pos_x))(1 downto 0) <= "01";
 					player_pos_y <= player_pos_y + 1;
+					
 				end if;
 			elsif s_btn_baixo(2 downto 1) = "10" then
-				if map_matrix(to_integer(player_pos_y - 1), to_integer(player_pos_x))(1 downto 0) /= "00" then
+				if map_matrix(to_integer(player_pos_y - 1), to_integer(player_pos_x))(1 downto 0) = "11" and
+				   map_matrix(to_integer(player_pos_y - 2), to_integer(player_pos_x))(1 downto 0) = "01" then
+				    
+					-- Altera posição do player
+					map_matrix(to_integer(player_pos_y - 1), to_integer(player_pos_x))(1 downto 0) <= "10";
+					-- Altera posição da caixa
+					map_matrix(to_integer(player_pos_y - 2), to_integer(player_pos_x))(1 downto 0) <= "11";
+					-- Limpa local anterior do player
+					map_matrix(to_integer(player_pos_y), to_integer(player_pos_x))(1 downto 0) <= "01";
+					player_pos_y <= player_pos_y - 1;
+				
+				elsif map_matrix(to_integer(player_pos_y - 1), to_integer(player_pos_x))(1 downto 0) = "01" then
+					
 					map_matrix(to_integer(player_pos_y - 1), to_integer(player_pos_x))(1 downto 0) <= "10";
 					map_matrix(to_integer(player_pos_y), to_integer(player_pos_x))(1 downto 0) <= "01";
 					player_pos_y <= player_pos_y - 1;
+					
 				end if;
 			end if;
 			
 			if s_btn_esquerda(2 downto 1) = "10" then
-				if map_matrix(to_integer(player_pos_y), to_integer(player_pos_x + 1))(1 downto 0) /= "00" then
+				if map_matrix(to_integer(player_pos_y), to_integer(player_pos_x + 1))(1 downto 0) = "11" and
+				   map_matrix(to_integer(player_pos_y), to_integer(player_pos_x + 2))(1 downto 0) = "01" then
+				    
+					-- Altera posição do player
+					map_matrix(to_integer(player_pos_y), to_integer(player_pos_x + 1))(1 downto 0) <= "10";
+					-- Altera posição da caixa
+					map_matrix(to_integer(player_pos_y), to_integer(player_pos_x + 2))(1 downto 0) <= "11";
+					-- Limpa local anterior do player
+					map_matrix(to_integer(player_pos_y), to_integer(player_pos_x))(1 downto 0) <= "01";
+					player_pos_x <= player_pos_x + 1;
+					
+				elsif map_matrix(to_integer(player_pos_y), to_integer(player_pos_x + 1))(1 downto 0) = "01" then
+					
 					map_matrix(to_integer(player_pos_y), to_integer(player_pos_x + 1))(1 downto 0) <= "10";
 					map_matrix(to_integer(player_pos_y), to_integer(player_pos_x))(1 downto 0) <= "01";
 					player_pos_x <= player_pos_x + 1;
+					
 				end if;
 			elsif s_btn_direita(2 downto 1) = "10" then
-				if map_matrix(to_integer(player_pos_y), to_integer(player_pos_x - 1))(1 downto 0) /= "00" then
+				if map_matrix(to_integer(player_pos_y), to_integer(player_pos_x - 1))(1 downto 0) = "11" and
+				   map_matrix(to_integer(player_pos_y), to_integer(player_pos_x - 2))(1 downto 0) = "01" then
+				    
+					-- Altera posição do player
+					map_matrix(to_integer(player_pos_y), to_integer(player_pos_x - 1))(1 downto 0) <= "10";
+					-- Altera posição da caixa
+					map_matrix(to_integer(player_pos_y), to_integer(player_pos_x - 2))(1 downto 0) <= "11";
+					-- Limpa local anterior do player
+					map_matrix(to_integer(player_pos_y), to_integer(player_pos_x))(1 downto 0) <= "01";
+					player_pos_x <= player_pos_x - 1;
+					
+				elsif map_matrix(to_integer(player_pos_y), to_integer(player_pos_x - 1))(1 downto 0) = "01" then
+					
 					map_matrix(to_integer(player_pos_y), to_integer(player_pos_x - 1))(1 downto 0) <= "10";
 					map_matrix(to_integer(player_pos_y), to_integer(player_pos_x))(1 downto 0) <= "01";
 					player_pos_x <= player_pos_x - 1;
+					
 				end if;
 			end if;
 		end if;
