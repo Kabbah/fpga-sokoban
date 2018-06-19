@@ -75,9 +75,16 @@ applicable agreement for further details.
 	(port
 		(pt 256 32)
 		(output)
+		(text "victory" (rect 0 0 28 12)(font "Arial" ))
+		(text "victory" (rect 207 27 235 39)(font "Arial" ))
+		(line (pt 256 32)(pt 240 32)(line_width 1))
+	)
+	(port
+		(pt 256 48)
+		(output)
 		(text "display_pos_value[2..0]" (rect 0 0 94 12)(font "Arial" ))
-		(text "display_pos_value[2..0]" (rect 141 27 235 39)(font "Arial" ))
-		(line (pt 256 32)(pt 240 32)(line_width 3))
+		(text "display_pos_value[2..0]" (rect 141 43 235 55)(font "Arial" ))
+		(line (pt 256 48)(pt 240 48)(line_width 3))
 	)
 	(parameter
 		"MAP_WIDTH_BITS"

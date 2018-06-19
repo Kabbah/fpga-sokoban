@@ -1,5 +1,5 @@
 Flow report for PushBox
-Sat Jun 09 17:39:28 2018
+Mon Jun 18 21:16:09 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Sat Jun 09 17:39:26 2018           ;
+; Flow Status                        ; Successful - Mon Jun 18 21:16:06 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; PushBox                                         ;
 ; Top-level Entity Name              ; PushBox                                         ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C20F484C7                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 5,497 / 18,752 ( 29 % )                         ;
-;     Total combinational functions  ; 5,482 / 18,752 ( 29 % )                         ;
-;     Dedicated logic registers      ; 665 / 18,752 ( 4 % )                            ;
-; Total registers                    ; 665                                             ;
-; Total pins                         ; 20 / 315 ( 6 % )                                ;
+; Total logic elements               ; 5,678 / 18,752 ( 30 % )                         ;
+;     Total combinational functions  ; 5,662 / 18,752 ( 30 % )                         ;
+;     Dedicated logic registers      ; 667 / 18,752 ( 4 % )                            ;
+; Total registers                    ; 667                                             ;
+; Total pins                         ; 21 / 315 ( 7 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                             ;
 ; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                                  ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/09/2018 17:37:53 ;
+; Start date & time ; 06/18/2018 21:14:23 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PushBox             ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 128454780008195.152857667200232 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 128454780008195.152936726209848 ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; 16764057                        ; --            ; --          ; Top        ;
@@ -90,11 +90,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:50     ; 1.0                     ; 4714 MB             ; 00:00:50                           ;
-; Fitter                    ; 00:00:40     ; 1.0                     ; 4819 MB             ; 00:00:40                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4577 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4598 MB             ; 00:00:02                           ;
-; Total                     ; 00:01:34     ; --                      ; --                  ; 00:01:33                           ;
+; Analysis & Synthesis      ; 00:00:57     ; 1.0                     ; 4719 MB             ; 00:00:56                           ;
+; Fitter                    ; 00:00:43     ; 1.0                     ; 4819 MB             ; 00:00:43                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4577 MB             ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4600 MB             ; 00:00:02                           ;
+; Total                     ; 00:01:44     ; --                      ; --                  ; 00:01:43                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
