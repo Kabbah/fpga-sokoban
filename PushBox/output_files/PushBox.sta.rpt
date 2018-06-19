@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for PushBox
-Mon Jun 18 21:16:09 2018
+Mon Jun 18 21:56:56 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -101,13 +101,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
 
 
-+-------------------------------------------------+
-; Slow Model Fmax Summary                         ;
-+-----------+-----------------+------------+------+
-; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
-+-----------+-----------------+------------+------+
-; 60.81 MHz ; 60.81 MHz       ; CLOCK_50   ;      ;
-+-----------+-----------------+------------+------+
++------------------------------------------------+
+; Slow Model Fmax Summary                        ;
++----------+-----------------+------------+------+
+; Fmax     ; Restricted Fmax ; Clock Name ; Note ;
++----------+-----------------+------------+------+
+; 61.2 MHz ; 61.2 MHz        ; CLOCK_50   ;      ;
++----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -116,7 +116,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+---------+---------------+
 ; Clock    ; Slack   ; End Point TNS ;
 +----------+---------+---------------+
-; CLOCK_50 ; -15.445 ; -7805.481     ;
+; CLOCK_50 ; -15.339 ; -7937.016     ;
 +----------+---------+---------------+
 
 
@@ -155,106 +155,106 @@ No paths to report.
 +---------+----------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack   ; From Node                              ; To Node                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +---------+----------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
-; -15.445 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 16.463     ;
-; -15.445 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 16.463     ;
-; -15.429 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 16.447     ;
-; -15.429 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 16.447     ;
-; -15.273 ; PushBoxMap:inst2|map_matrix[6][7][0]   ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.024     ; 16.287     ;
-; -15.273 ; PushBoxMap:inst2|map_matrix[6][7][0]   ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.024     ; 16.287     ;
-; -15.271 ; PushBoxMap:inst2|map_matrix[1][15][0]  ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 16.306     ;
-; -15.271 ; PushBoxMap:inst2|map_matrix[1][15][0]  ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 16.306     ;
-; -15.241 ; PushBoxMap:inst2|player_pos_x[1]       ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 16.259     ;
-; -15.241 ; PushBoxMap:inst2|player_pos_x[1]       ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 16.259     ;
-; -15.160 ; PushBoxMap:inst2|player_pos_x[3]       ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 16.178     ;
-; -15.160 ; PushBoxMap:inst2|player_pos_x[3]       ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 16.178     ;
-; -15.150 ; PushBoxMap:inst2|map_matrix[6][6][0]   ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 16.188     ;
-; -15.150 ; PushBoxMap:inst2|map_matrix[6][6][0]   ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 16.188     ;
-; -15.148 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 16.177     ;
-; -15.143 ; PushBoxMap:inst2|map_matrix[12][6][0]  ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 16.187     ;
-; -15.143 ; PushBoxMap:inst2|map_matrix[12][6][0]  ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 16.187     ;
-; -15.140 ; PushBoxMap:inst2|map_matrix[12][15][0] ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 16.174     ;
-; -15.140 ; PushBoxMap:inst2|map_matrix[12][15][0] ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 16.174     ;
-; -15.137 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[0][12][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 16.174     ;
-; -15.137 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[0][12][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 16.174     ;
-; -15.133 ; PushBoxMap:inst2|map_matrix[14][7][0]  ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.016     ; 16.155     ;
-; -15.133 ; PushBoxMap:inst2|map_matrix[14][7][0]  ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.016     ; 16.155     ;
-; -15.130 ; PushBoxMap:inst2|map_matrix[4][7][0]   ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 16.156     ;
-; -15.130 ; PushBoxMap:inst2|map_matrix[4][7][0]   ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 16.156     ;
-; -15.121 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][12][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 16.158     ;
-; -15.121 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][12][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 16.158     ;
-; -15.115 ; PushBoxMap:inst2|map_matrix[4][6][0]   ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 16.153     ;
-; -15.115 ; PushBoxMap:inst2|map_matrix[4][6][0]   ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 16.153     ;
-; -15.089 ; PushBoxMap:inst2|map_matrix[1][2][0]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 16.115     ;
-; -15.072 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[14][10][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 16.101     ;
-; -15.072 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[14][10][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 16.101     ;
-; -15.020 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[14][10][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 16.049     ;
-; -15.020 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[14][10][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 16.049     ;
-; -15.013 ; PushBoxMap:inst2|map_matrix[1][2][0]   ; PushBoxMap:inst2|map_matrix[14][10][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 16.039     ;
-; -15.013 ; PushBoxMap:inst2|map_matrix[1][2][0]   ; PushBoxMap:inst2|map_matrix[14][10][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 16.039     ;
-; -14.969 ; PushBoxMap:inst2|map_matrix[4][11][1]  ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 15.996     ;
-; -14.969 ; PushBoxMap:inst2|map_matrix[4][11][1]  ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 15.996     ;
-; -14.965 ; PushBoxMap:inst2|map_matrix[6][7][0]   ; PushBoxMap:inst2|map_matrix[0][12][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 15.998     ;
-; -14.965 ; PushBoxMap:inst2|map_matrix[6][7][0]   ; PushBoxMap:inst2|map_matrix[0][12][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 15.998     ;
-; -14.963 ; PushBoxMap:inst2|map_matrix[1][15][0]  ; PushBoxMap:inst2|map_matrix[0][12][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.016      ; 16.017     ;
-; -14.963 ; PushBoxMap:inst2|map_matrix[1][15][0]  ; PushBoxMap:inst2|map_matrix[0][12][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.016      ; 16.017     ;
-; -14.957 ; PushBoxMap:inst2|map_matrix[12][10][1] ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.019     ; 15.976     ;
-; -14.957 ; PushBoxMap:inst2|map_matrix[12][10][1] ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.019     ; 15.976     ;
-; -14.945 ; PushBoxMap:inst2|player_pos_x[1]       ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 15.974     ;
-; -14.933 ; PushBoxMap:inst2|player_pos_x[1]       ; PushBoxMap:inst2|map_matrix[0][12][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 15.970     ;
-; -14.933 ; PushBoxMap:inst2|player_pos_x[1]       ; PushBoxMap:inst2|map_matrix[0][12][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 15.970     ;
-; -14.928 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[2][4][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 15.966     ;
-; -14.928 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[2][4][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 15.966     ;
-; -14.920 ; PushBoxMap:inst2|map_matrix[1][2][0]   ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.023     ; 15.935     ;
-; -14.920 ; PushBoxMap:inst2|map_matrix[1][2][0]   ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.023     ; 15.935     ;
-; -14.917 ; PushBoxMap:inst2|map_matrix[4][9][1]   ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 15.935     ;
-; -14.917 ; PushBoxMap:inst2|map_matrix[4][9][1]   ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 15.935     ;
-; -14.912 ; PushBoxMap:inst2|map_matrix[4][10][1]  ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 15.939     ;
-; -14.912 ; PushBoxMap:inst2|map_matrix[4][10][1]  ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 15.939     ;
-; -14.912 ; PushBoxMap:inst2|map_matrix[5][7][0]   ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.025     ; 15.925     ;
-; -14.912 ; PushBoxMap:inst2|map_matrix[5][7][0]   ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.025     ; 15.925     ;
-; -14.912 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[2][4][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 15.950     ;
-; -14.912 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[2][4][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 15.950     ;
-; -14.911 ; PushBoxMap:inst2|map_matrix[4][11][1]  ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 15.949     ;
-; -14.910 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[12][4][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 15.945     ;
-; -14.910 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[12][4][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 15.945     ;
-; -14.901 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[11][9][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 15.928     ;
-; -14.901 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[11][9][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 15.928     ;
-; -14.898 ; PushBoxMap:inst2|map_matrix[3][6][0]   ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.024     ; 15.912     ;
-; -14.898 ; PushBoxMap:inst2|map_matrix[3][6][0]   ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.024     ; 15.912     ;
-; -14.896 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[2][14][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 15.934     ;
-; -14.896 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[2][14][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 15.934     ;
-; -14.896 ; PushBoxMap:inst2|map_matrix[1][7][0]   ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 15.914     ;
-; -14.896 ; PushBoxMap:inst2|map_matrix[1][7][0]   ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 15.914     ;
-; -14.894 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[12][4][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 15.929     ;
-; -14.894 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[12][4][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 15.929     ;
-; -14.893 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 15.922     ;
-; -14.885 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[11][9][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 15.912     ;
-; -14.885 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[11][9][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 15.912     ;
-; -14.881 ; PushBoxMap:inst2|map_matrix[14][15][0] ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 15.916     ;
-; -14.881 ; PushBoxMap:inst2|map_matrix[14][15][0] ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 15.916     ;
-; -14.880 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[2][14][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 15.918     ;
-; -14.880 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[2][14][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 15.918     ;
-; -14.879 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[13][13][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 15.905     ;
-; -14.879 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[13][13][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 15.905     ;
-; -14.874 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[6][4][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 15.907     ;
-; -14.874 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[6][4][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 15.907     ;
-; -14.874 ; PushBoxMap:inst2|map_matrix[6][12][0]  ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.017     ; 15.895     ;
-; -14.874 ; PushBoxMap:inst2|map_matrix[6][12][0]  ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.017     ; 15.895     ;
-; -14.871 ; PushBoxMap:inst2|map_matrix[12][0][0]  ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.019     ; 15.890     ;
-; -14.871 ; PushBoxMap:inst2|map_matrix[12][0][0]  ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.019     ; 15.890     ;
-; -14.870 ; PushBoxMap:inst2|map_matrix[3][14][0]  ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 15.904     ;
-; -14.870 ; PushBoxMap:inst2|map_matrix[3][14][0]  ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 15.904     ;
-; -14.869 ; PushBoxMap:inst2|player_pos_x[1]       ; PushBoxMap:inst2|map_matrix[14][10][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 15.898     ;
-; -14.869 ; PushBoxMap:inst2|player_pos_x[1]       ; PushBoxMap:inst2|map_matrix[14][10][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 15.898     ;
-; -14.864 ; PushBoxMap:inst2|map_matrix[12][14][0] ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 15.893     ;
-; -14.864 ; PushBoxMap:inst2|map_matrix[12][14][0] ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 15.893     ;
-; -14.863 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[3][8][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 15.899     ;
-; -14.863 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[3][8][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 15.899     ;
-; -14.863 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[13][13][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 15.889     ;
-; -14.863 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[13][13][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 15.889     ;
-; -14.860 ; PushBoxMap:inst2|map_matrix[2][10][1]  ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 15.884     ;
-; -14.860 ; PushBoxMap:inst2|map_matrix[2][10][1]  ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 15.884     ;
-; -14.859 ; PushBoxMap:inst2|map_matrix[12][11][1] ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 15.906     ;
+; -15.339 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[10][14][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 16.386     ;
+; -15.293 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[3][8][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 16.328     ;
+; -15.293 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[3][8][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 16.328     ;
+; -15.254 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[15][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 16.288     ;
+; -15.254 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[15][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 16.288     ;
+; -15.244 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][15][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 16.279     ;
+; -15.244 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 16.279     ;
+; -15.173 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[15][4][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 16.211     ;
+; -15.153 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[7][6][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 16.190     ;
+; -15.137 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[14][8][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 16.178     ;
+; -15.137 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[14][8][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 16.178     ;
+; -15.103 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][14][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 16.141     ;
+; -15.081 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[12][11][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.022     ; 16.097     ;
+; -15.068 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[1][14][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 16.105     ;
+; -15.063 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[1][14][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 16.100     ;
+; -15.045 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[10][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 16.092     ;
+; -15.044 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[12][2][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 16.081     ;
+; -15.044 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[12][2][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 16.081     ;
+; -15.034 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[4][10][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.008      ; 16.080     ;
+; -15.034 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[4][10][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.008      ; 16.080     ;
+; -15.027 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[13][13][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 16.068     ;
+; -15.027 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[13][13][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 16.068     ;
+; -15.022 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][11][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.019     ; 16.041     ;
+; -15.012 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[7][6][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 16.049     ;
+; -15.005 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[12][0][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 16.034     ;
+; -15.005 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[13][2][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 16.038     ;
+; -14.990 ; PushBoxMap:inst2|map_matrix[1][0][1]   ; PushBoxMap:inst2|map_matrix[10][14][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 16.020     ;
+; -14.985 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[10][14][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 16.027     ;
+; -14.984 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[14][11][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 16.029     ;
+; -14.984 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[14][11][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 16.029     ;
+; -14.984 ; PushBoxMap:inst2|map_matrix[8][9][1]   ; PushBoxMap:inst2|map_matrix[7][6][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 16.031     ;
+; -14.975 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[5][5][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 16.009     ;
+; -14.975 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[5][5][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 16.009     ;
+; -14.959 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][2][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 15.993     ;
+; -14.952 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[11][5][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 15.990     ;
+; -14.952 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[11][5][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 15.990     ;
+; -14.944 ; PushBoxMap:inst2|map_matrix[1][0][1]   ; PushBoxMap:inst2|map_matrix[3][8][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 15.962     ;
+; -14.944 ; PushBoxMap:inst2|map_matrix[1][0][1]   ; PushBoxMap:inst2|map_matrix[3][8][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 15.962     ;
+; -14.935 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[15][4][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 15.973     ;
+; -14.931 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[3][11][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 15.970     ;
+; -14.931 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[3][11][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 15.970     ;
+; -14.923 ; PushBoxMap:inst2|map_matrix[12][13][0] ; PushBoxMap:inst2|map_matrix[7][6][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.016      ; 15.977     ;
+; -14.920 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[1][11][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 15.963     ;
+; -14.919 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[10][6][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 15.959     ;
+; -14.910 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[1][11][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 15.953     ;
+; -14.905 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[10][14][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 15.952     ;
+; -14.905 ; PushBoxMap:inst2|map_matrix[1][0][1]   ; PushBoxMap:inst2|map_matrix[15][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 15.922     ;
+; -14.905 ; PushBoxMap:inst2|map_matrix[1][0][1]   ; PushBoxMap:inst2|map_matrix[15][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 15.922     ;
+; -14.901 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][10][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.016     ; 15.923     ;
+; -14.895 ; PushBoxMap:inst2|map_matrix[1][0][1]   ; PushBoxMap:inst2|map_matrix[0][15][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 15.913     ;
+; -14.895 ; PushBoxMap:inst2|map_matrix[1][0][1]   ; PushBoxMap:inst2|map_matrix[0][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 15.913     ;
+; -14.884 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[14][10][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.008      ; 15.930     ;
+; -14.884 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[14][10][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.008      ; 15.930     ;
+; -14.880 ; PushBoxMap:inst2|map_matrix[3][3][0]   ; PushBoxMap:inst2|map_matrix[6][3][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 15.919     ;
+; -14.880 ; PushBoxMap:inst2|map_matrix[3][3][0]   ; PushBoxMap:inst2|map_matrix[6][3][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 15.919     ;
+; -14.879 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[1][3][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.013      ; 15.930     ;
+; -14.879 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[1][3][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.013      ; 15.930     ;
+; -14.878 ; PushBoxMap:inst2|map_matrix[12][2][0]  ; PushBoxMap:inst2|map_matrix[10][14][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 15.926     ;
+; -14.877 ; PushBoxMap:inst2|map_matrix[8][9][1]   ; PushBoxMap:inst2|map_matrix[10][14][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.019      ; 15.934     ;
+; -14.876 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[2][11][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.022     ; 15.892     ;
+; -14.876 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[2][11][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.022     ; 15.892     ;
+; -14.871 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[15][14][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 15.905     ;
+; -14.868 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[3][12][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.016     ; 15.890     ;
+; -14.868 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[3][12][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.016     ; 15.890     ;
+; -14.859 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[3][8][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 15.894     ;
+; -14.859 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[3][8][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 15.894     ;
+; -14.858 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][14][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 15.895     ;
+; -14.857 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[14][2][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.018     ; 15.877     ;
+; -14.857 ; PushBoxMap:inst2|map_matrix[10][5][1]  ; PushBoxMap:inst2|map_matrix[10][14][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 15.894     ;
+; -14.843 ; PushBoxMap:inst2|map_matrix[8][8][1]   ; PushBoxMap:inst2|map_matrix[7][6][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 15.880     ;
+; -14.841 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[13][12][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 15.882     ;
+; -14.841 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[13][12][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 15.882     ;
+; -14.840 ; PushBoxMap:inst2|map_matrix[3][3][0]   ; PushBoxMap:inst2|map_matrix[6][2][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 15.879     ;
+; -14.840 ; PushBoxMap:inst2|map_matrix[3][3][0]   ; PushBoxMap:inst2|map_matrix[6][2][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 15.879     ;
+; -14.836 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[3][14][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 15.881     ;
+; -14.836 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[3][14][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 15.881     ;
+; -14.833 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[6][10][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 15.868     ;
+; -14.832 ; PushBoxMap:inst2|map_matrix[12][2][0]  ; PushBoxMap:inst2|map_matrix[3][8][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 15.868     ;
+; -14.832 ; PushBoxMap:inst2|map_matrix[12][2][0]  ; PushBoxMap:inst2|map_matrix[3][8][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 15.868     ;
+; -14.831 ; PushBoxMap:inst2|map_matrix[8][9][1]   ; PushBoxMap:inst2|map_matrix[3][8][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 15.876     ;
+; -14.831 ; PushBoxMap:inst2|map_matrix[8][9][1]   ; PushBoxMap:inst2|map_matrix[3][8][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 15.876     ;
+; -14.825 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[15][14][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 15.859     ;
+; -14.824 ; PushBoxMap:inst2|map_matrix[1][0][1]   ; PushBoxMap:inst2|map_matrix[15][4][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.017     ; 15.845     ;
+; -14.823 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[1][8][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.008      ; 15.869     ;
+; -14.822 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[3][15][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 15.867     ;
+; -14.821 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[10][5][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 15.869     ;
+; -14.821 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[10][5][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 15.869     ;
+; -14.820 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[8][11][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 15.848     ;
+; -14.820 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[15][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 15.854     ;
+; -14.820 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[15][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 15.854     ;
+; -14.816 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][1][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.026     ; 15.828     ;
+; -14.816 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][1][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.026     ; 15.828     ;
+; -14.816 ; PushBoxMap:inst2|map_matrix[12][13][0] ; PushBoxMap:inst2|map_matrix[10][14][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.026      ; 15.880     ;
+; -14.815 ; PushBoxMap:inst2|map_matrix[5][10][1]  ; PushBoxMap:inst2|map_matrix[10][14][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 15.855     ;
+; -14.811 ; PushBoxMap:inst2|map_matrix[10][5][1]  ; PushBoxMap:inst2|map_matrix[3][8][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 15.836     ;
+; -14.811 ; PushBoxMap:inst2|map_matrix[10][5][1]  ; PushBoxMap:inst2|map_matrix[3][8][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 15.836     ;
+; -14.811 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[15][4][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 15.849     ;
+; -14.810 ; PushBoxMap:inst2|map_matrix[6][3][1]   ; PushBoxMap:inst2|map_matrix[10][14][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 15.853     ;
+; -14.810 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[0][15][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 15.845     ;
+; -14.810 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[0][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 15.845     ;
 +---------+----------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -267,36 +267,11 @@ No paths to report.
 ; 0.445 ; VgaSync:inst|s_countv_prev[1]    ; VgaSync:inst|s_countv_prev[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; VgaSync:inst|s_countv_prev[3]    ; VgaSync:inst|s_countv_prev[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; VgaSync:inst|s_countv_prev[4]    ; VgaSync:inst|s_countv_prev[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; VgaSync:inst|s_countv_prev[5]    ; VgaSync:inst|s_countv_prev[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; VgaSync:inst|s_countv_prev[6]    ; VgaSync:inst|s_countv_prev[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; VgaSync:inst|s_countv_prev[7]    ; VgaSync:inst|s_countv_prev[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; VgaSync:inst|s_countv_prev[8]    ; VgaSync:inst|s_countv_prev[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; VgaSync:inst|s_countv_prev[9]    ; VgaSync:inst|s_countv_prev[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; VgaSync:inst|s_countv_prev[2]    ; VgaSync:inst|s_countv_prev[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[0]    ; Rebounce:inst3|counter_out[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[1]    ; Rebounce:inst3|counter_out[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[2]    ; Rebounce:inst3|counter_out[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[3]    ; Rebounce:inst3|counter_out[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[4]    ; Rebounce:inst3|counter_out[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[5]    ; Rebounce:inst3|counter_out[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[6]    ; Rebounce:inst3|counter_out[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[7]    ; Rebounce:inst3|counter_out[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[8]    ; Rebounce:inst3|counter_out[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[9]    ; Rebounce:inst3|counter_out[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[10]   ; Rebounce:inst3|counter_out[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[11]   ; Rebounce:inst3|counter_out[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[12]   ; Rebounce:inst3|counter_out[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[13]   ; Rebounce:inst3|counter_out[13]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[14]   ; Rebounce:inst3|counter_out[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[15]   ; Rebounce:inst3|counter_out[15]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[16]   ; Rebounce:inst3|counter_out[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[17]   ; Rebounce:inst3|counter_out[17]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[18]   ; Rebounce:inst3|counter_out[18]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[19]   ; Rebounce:inst3|counter_out[19]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|counter_out[20]   ; Rebounce:inst3|counter_out[20]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst3|result            ; Rebounce:inst3|result            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; PushBoxMap:inst2|player_pos_x[1] ; PushBoxMap:inst2|player_pos_x[1] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; PushBoxMap:inst2|player_pos_x[3] ; PushBoxMap:inst2|player_pos_x[3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; Rebounce:inst4|counter_out[0]    ; Rebounce:inst4|counter_out[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; Rebounce:inst4|counter_out[1]    ; Rebounce:inst4|counter_out[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; Rebounce:inst4|counter_out[2]    ; Rebounce:inst4|counter_out[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
@@ -319,28 +294,28 @@ No paths to report.
 ; 0.445 ; Rebounce:inst4|counter_out[19]   ; Rebounce:inst4|counter_out[19]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; Rebounce:inst4|counter_out[20]   ; Rebounce:inst4|counter_out[20]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; Rebounce:inst4|result            ; Rebounce:inst4|result            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[0]    ; Rebounce:inst5|counter_out[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[1]    ; Rebounce:inst5|counter_out[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[2]    ; Rebounce:inst5|counter_out[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[3]    ; Rebounce:inst5|counter_out[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[4]    ; Rebounce:inst5|counter_out[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[5]    ; Rebounce:inst5|counter_out[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[6]    ; Rebounce:inst5|counter_out[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[7]    ; Rebounce:inst5|counter_out[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[8]    ; Rebounce:inst5|counter_out[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[9]    ; Rebounce:inst5|counter_out[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[10]   ; Rebounce:inst5|counter_out[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[11]   ; Rebounce:inst5|counter_out[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[12]   ; Rebounce:inst5|counter_out[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[13]   ; Rebounce:inst5|counter_out[13]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[14]   ; Rebounce:inst5|counter_out[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[15]   ; Rebounce:inst5|counter_out[15]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[16]   ; Rebounce:inst5|counter_out[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[17]   ; Rebounce:inst5|counter_out[17]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[18]   ; Rebounce:inst5|counter_out[18]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[19]   ; Rebounce:inst5|counter_out[19]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|counter_out[20]   ; Rebounce:inst5|counter_out[20]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
-; 0.445 ; Rebounce:inst5|result            ; Rebounce:inst5|result            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[0]    ; Rebounce:inst3|counter_out[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[1]    ; Rebounce:inst3|counter_out[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[2]    ; Rebounce:inst3|counter_out[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[3]    ; Rebounce:inst3|counter_out[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[4]    ; Rebounce:inst3|counter_out[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[5]    ; Rebounce:inst3|counter_out[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[6]    ; Rebounce:inst3|counter_out[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[7]    ; Rebounce:inst3|counter_out[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[8]    ; Rebounce:inst3|counter_out[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[9]    ; Rebounce:inst3|counter_out[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[10]   ; Rebounce:inst3|counter_out[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[11]   ; Rebounce:inst3|counter_out[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[12]   ; Rebounce:inst3|counter_out[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[13]   ; Rebounce:inst3|counter_out[13]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[14]   ; Rebounce:inst3|counter_out[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[15]   ; Rebounce:inst3|counter_out[15]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[16]   ; Rebounce:inst3|counter_out[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[17]   ; Rebounce:inst3|counter_out[17]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[18]   ; Rebounce:inst3|counter_out[18]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[19]   ; Rebounce:inst3|counter_out[19]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|counter_out[20]   ; Rebounce:inst3|counter_out[20]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst3|result            ; Rebounce:inst3|result            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; Rebounce:inst6|counter_out[0]    ; Rebounce:inst6|counter_out[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; Rebounce:inst6|counter_out[1]    ; Rebounce:inst6|counter_out[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; Rebounce:inst6|counter_out[2]    ; Rebounce:inst6|counter_out[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
@@ -363,6 +338,31 @@ No paths to report.
 ; 0.445 ; Rebounce:inst6|counter_out[19]   ; Rebounce:inst6|counter_out[19]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; Rebounce:inst6|counter_out[20]   ; Rebounce:inst6|counter_out[20]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
 ; 0.445 ; Rebounce:inst6|result            ; Rebounce:inst6|result            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[0]    ; Rebounce:inst5|counter_out[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[1]    ; Rebounce:inst5|counter_out[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[2]    ; Rebounce:inst5|counter_out[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[3]    ; Rebounce:inst5|counter_out[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[4]    ; Rebounce:inst5|counter_out[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[5]    ; Rebounce:inst5|counter_out[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[6]    ; Rebounce:inst5|counter_out[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[7]    ; Rebounce:inst5|counter_out[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[8]    ; Rebounce:inst5|counter_out[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[9]    ; Rebounce:inst5|counter_out[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[10]   ; Rebounce:inst5|counter_out[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[11]   ; Rebounce:inst5|counter_out[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[12]   ; Rebounce:inst5|counter_out[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[13]   ; Rebounce:inst5|counter_out[13]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[14]   ; Rebounce:inst5|counter_out[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[15]   ; Rebounce:inst5|counter_out[15]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[16]   ; Rebounce:inst5|counter_out[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[17]   ; Rebounce:inst5|counter_out[17]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[18]   ; Rebounce:inst5|counter_out[18]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[19]   ; Rebounce:inst5|counter_out[19]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|counter_out[20]   ; Rebounce:inst5|counter_out[20]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Rebounce:inst5|result            ; Rebounce:inst5|result            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; PushBoxMap:inst2|player_pos_x[2] ; PushBoxMap:inst2|player_pos_x[2] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; PushBoxMap:inst2|player_pos_x[3] ; PushBoxMap:inst2|player_pos_x[3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; PushBoxMap:inst2|player_pos_y[2] ; PushBoxMap:inst2|player_pos_y[2] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
 +-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -479,11 +479,11 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; KEY[*]    ; CLOCK_50   ; 4.645 ; 4.645 ; Rise       ; CLOCK_50        ;
-;  KEY[0]   ; CLOCK_50   ; 3.079 ; 3.079 ; Rise       ; CLOCK_50        ;
-;  KEY[1]   ; CLOCK_50   ; 3.077 ; 3.077 ; Rise       ; CLOCK_50        ;
-;  KEY[2]   ; CLOCK_50   ; 3.083 ; 3.083 ; Rise       ; CLOCK_50        ;
-;  KEY[3]   ; CLOCK_50   ; 4.645 ; 4.645 ; Rise       ; CLOCK_50        ;
+; KEY[*]    ; CLOCK_50   ; 4.201 ; 4.201 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 3.701 ; 3.701 ; Rise       ; CLOCK_50        ;
+;  KEY[1]   ; CLOCK_50   ; 3.779 ; 3.779 ; Rise       ; CLOCK_50        ;
+;  KEY[2]   ; CLOCK_50   ; 4.047 ; 4.047 ; Rise       ; CLOCK_50        ;
+;  KEY[3]   ; CLOCK_50   ; 4.201 ; 4.201 ; Rise       ; CLOCK_50        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -492,11 +492,11 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; KEY[*]    ; CLOCK_50   ; -2.829 ; -2.829 ; Rise       ; CLOCK_50        ;
-;  KEY[0]   ; CLOCK_50   ; -2.831 ; -2.831 ; Rise       ; CLOCK_50        ;
-;  KEY[1]   ; CLOCK_50   ; -2.829 ; -2.829 ; Rise       ; CLOCK_50        ;
-;  KEY[2]   ; CLOCK_50   ; -2.835 ; -2.835 ; Rise       ; CLOCK_50        ;
-;  KEY[3]   ; CLOCK_50   ; -4.397 ; -4.397 ; Rise       ; CLOCK_50        ;
+; KEY[*]    ; CLOCK_50   ; -3.453 ; -3.453 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; -3.453 ; -3.453 ; Rise       ; CLOCK_50        ;
+;  KEY[1]   ; CLOCK_50   ; -3.531 ; -3.531 ; Rise       ; CLOCK_50        ;
+;  KEY[2]   ; CLOCK_50   ; -3.799 ; -3.799 ; Rise       ; CLOCK_50        ;
+;  KEY[3]   ; CLOCK_50   ; -3.953 ; -3.953 ; Rise       ; CLOCK_50        ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -505,25 +505,25 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDG[*]   ; CLOCK_50   ; 7.685 ; 7.685 ; Rise       ; CLOCK_50        ;
-;  LEDG[0]  ; CLOCK_50   ; 7.685 ; 7.685 ; Rise       ; CLOCK_50        ;
-; VGA_B[*]  ; CLOCK_50   ; 9.034 ; 9.034 ; Rise       ; CLOCK_50        ;
-;  VGA_B[0] ; CLOCK_50   ; 8.323 ; 8.323 ; Rise       ; CLOCK_50        ;
-;  VGA_B[1] ; CLOCK_50   ; 9.034 ; 9.034 ; Rise       ; CLOCK_50        ;
-;  VGA_B[2] ; CLOCK_50   ; 8.797 ; 8.797 ; Rise       ; CLOCK_50        ;
-;  VGA_B[3] ; CLOCK_50   ; 8.669 ; 8.669 ; Rise       ; CLOCK_50        ;
-; VGA_G[*]  ; CLOCK_50   ; 9.326 ; 9.326 ; Rise       ; CLOCK_50        ;
-;  VGA_G[0] ; CLOCK_50   ; 9.099 ; 9.099 ; Rise       ; CLOCK_50        ;
-;  VGA_G[1] ; CLOCK_50   ; 8.774 ; 8.774 ; Rise       ; CLOCK_50        ;
-;  VGA_G[2] ; CLOCK_50   ; 9.326 ; 9.326 ; Rise       ; CLOCK_50        ;
-;  VGA_G[3] ; CLOCK_50   ; 8.591 ; 8.591 ; Rise       ; CLOCK_50        ;
-; VGA_HS    ; CLOCK_50   ; 7.854 ; 7.854 ; Rise       ; CLOCK_50        ;
-; VGA_R[*]  ; CLOCK_50   ; 9.390 ; 9.390 ; Rise       ; CLOCK_50        ;
-;  VGA_R[0] ; CLOCK_50   ; 8.637 ; 8.637 ; Rise       ; CLOCK_50        ;
-;  VGA_R[1] ; CLOCK_50   ; 9.378 ; 9.378 ; Rise       ; CLOCK_50        ;
-;  VGA_R[2] ; CLOCK_50   ; 9.390 ; 9.390 ; Rise       ; CLOCK_50        ;
-;  VGA_R[3] ; CLOCK_50   ; 8.577 ; 8.577 ; Rise       ; CLOCK_50        ;
-; VGA_VS    ; CLOCK_50   ; 7.847 ; 7.847 ; Rise       ; CLOCK_50        ;
+; LEDG[*]   ; CLOCK_50   ; 8.195 ; 8.195 ; Rise       ; CLOCK_50        ;
+;  LEDG[0]  ; CLOCK_50   ; 8.195 ; 8.195 ; Rise       ; CLOCK_50        ;
+; VGA_B[*]  ; CLOCK_50   ; 9.065 ; 9.065 ; Rise       ; CLOCK_50        ;
+;  VGA_B[0] ; CLOCK_50   ; 9.065 ; 9.065 ; Rise       ; CLOCK_50        ;
+;  VGA_B[1] ; CLOCK_50   ; 9.015 ; 9.015 ; Rise       ; CLOCK_50        ;
+;  VGA_B[2] ; CLOCK_50   ; 8.771 ; 8.771 ; Rise       ; CLOCK_50        ;
+;  VGA_B[3] ; CLOCK_50   ; 8.722 ; 8.722 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]  ; CLOCK_50   ; 9.358 ; 9.358 ; Rise       ; CLOCK_50        ;
+;  VGA_G[0] ; CLOCK_50   ; 9.358 ; 9.358 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1] ; CLOCK_50   ; 8.754 ; 8.754 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2] ; CLOCK_50   ; 9.067 ; 9.067 ; Rise       ; CLOCK_50        ;
+;  VGA_G[3] ; CLOCK_50   ; 9.336 ; 9.336 ; Rise       ; CLOCK_50        ;
+; VGA_HS    ; CLOCK_50   ; 7.226 ; 7.226 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]  ; CLOCK_50   ; 9.353 ; 9.353 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0] ; CLOCK_50   ; 9.119 ; 9.119 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1] ; CLOCK_50   ; 9.328 ; 9.328 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2] ; CLOCK_50   ; 9.353 ; 9.353 ; Rise       ; CLOCK_50        ;
+;  VGA_R[3] ; CLOCK_50   ; 9.323 ; 9.323 ; Rise       ; CLOCK_50        ;
+; VGA_VS    ; CLOCK_50   ; 7.831 ; 7.831 ; Rise       ; CLOCK_50        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -532,25 +532,25 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDG[*]   ; CLOCK_50   ; 7.685 ; 7.685 ; Rise       ; CLOCK_50        ;
-;  LEDG[0]  ; CLOCK_50   ; 7.685 ; 7.685 ; Rise       ; CLOCK_50        ;
-; VGA_B[*]  ; CLOCK_50   ; 7.589 ; 7.589 ; Rise       ; CLOCK_50        ;
-;  VGA_B[0] ; CLOCK_50   ; 7.934 ; 7.934 ; Rise       ; CLOCK_50        ;
-;  VGA_B[1] ; CLOCK_50   ; 7.943 ; 7.943 ; Rise       ; CLOCK_50        ;
-;  VGA_B[2] ; CLOCK_50   ; 7.975 ; 7.975 ; Rise       ; CLOCK_50        ;
-;  VGA_B[3] ; CLOCK_50   ; 7.589 ; 7.589 ; Rise       ; CLOCK_50        ;
-; VGA_G[*]  ; CLOCK_50   ; 7.695 ; 7.695 ; Rise       ; CLOCK_50        ;
-;  VGA_G[0] ; CLOCK_50   ; 8.240 ; 8.240 ; Rise       ; CLOCK_50        ;
-;  VGA_G[1] ; CLOCK_50   ; 7.695 ; 7.695 ; Rise       ; CLOCK_50        ;
-;  VGA_G[2] ; CLOCK_50   ; 8.378 ; 8.378 ; Rise       ; CLOCK_50        ;
-;  VGA_G[3] ; CLOCK_50   ; 8.213 ; 8.213 ; Rise       ; CLOCK_50        ;
-; VGA_HS    ; CLOCK_50   ; 7.854 ; 7.854 ; Rise       ; CLOCK_50        ;
-; VGA_R[*]  ; CLOCK_50   ; 8.187 ; 8.187 ; Rise       ; CLOCK_50        ;
-;  VGA_R[0] ; CLOCK_50   ; 8.262 ; 8.262 ; Rise       ; CLOCK_50        ;
-;  VGA_R[1] ; CLOCK_50   ; 8.304 ; 8.304 ; Rise       ; CLOCK_50        ;
-;  VGA_R[2] ; CLOCK_50   ; 8.532 ; 8.532 ; Rise       ; CLOCK_50        ;
-;  VGA_R[3] ; CLOCK_50   ; 8.187 ; 8.187 ; Rise       ; CLOCK_50        ;
-; VGA_VS    ; CLOCK_50   ; 7.847 ; 7.847 ; Rise       ; CLOCK_50        ;
+; LEDG[*]   ; CLOCK_50   ; 8.195 ; 8.195 ; Rise       ; CLOCK_50        ;
+;  LEDG[0]  ; CLOCK_50   ; 8.195 ; 8.195 ; Rise       ; CLOCK_50        ;
+; VGA_B[*]  ; CLOCK_50   ; 7.864 ; 7.864 ; Rise       ; CLOCK_50        ;
+;  VGA_B[0] ; CLOCK_50   ; 8.169 ; 8.169 ; Rise       ; CLOCK_50        ;
+;  VGA_B[1] ; CLOCK_50   ; 8.128 ; 8.128 ; Rise       ; CLOCK_50        ;
+;  VGA_B[2] ; CLOCK_50   ; 7.948 ; 7.948 ; Rise       ; CLOCK_50        ;
+;  VGA_B[3] ; CLOCK_50   ; 7.864 ; 7.864 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]  ; CLOCK_50   ; 7.846 ; 7.846 ; Rise       ; CLOCK_50        ;
+;  VGA_G[0] ; CLOCK_50   ; 8.470 ; 8.470 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1] ; CLOCK_50   ; 7.846 ; 7.846 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2] ; CLOCK_50   ; 8.243 ; 8.243 ; Rise       ; CLOCK_50        ;
+;  VGA_G[3] ; CLOCK_50   ; 8.483 ; 8.483 ; Rise       ; CLOCK_50        ;
+; VGA_HS    ; CLOCK_50   ; 7.226 ; 7.226 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]  ; CLOCK_50   ; 8.412 ; 8.412 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0] ; CLOCK_50   ; 8.545 ; 8.545 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1] ; CLOCK_50   ; 8.468 ; 8.468 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2] ; CLOCK_50   ; 8.485 ; 8.485 ; Rise       ; CLOCK_50        ;
+;  VGA_R[3] ; CLOCK_50   ; 8.412 ; 8.412 ; Rise       ; CLOCK_50        ;
+; VGA_VS    ; CLOCK_50   ; 7.831 ; 7.831 ; Rise       ; CLOCK_50        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -559,7 +559,7 @@ No paths to report.
 +----------+--------+---------------+
 ; Clock    ; Slack  ; End Point TNS ;
 +----------+--------+---------------+
-; CLOCK_50 ; -5.322 ; -2581.204     ;
+; CLOCK_50 ; -5.356 ; -2683.873     ;
 +----------+--------+---------------+
 
 
@@ -598,106 +598,106 @@ No paths to report.
 +--------+----------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                              ; To Node                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+----------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
-; -5.322 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 6.346      ;
-; -5.282 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 6.294      ;
-; -5.282 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 6.294      ;
-; -5.264 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 6.276      ;
-; -5.264 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 6.276      ;
-; -5.256 ; PushBoxMap:inst2|map_matrix[4][11][1]  ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 6.289      ;
-; -5.256 ; PushBoxMap:inst2|player_pos_x[1]       ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 6.280      ;
-; -5.246 ; PushBoxMap:inst2|map_matrix[4][7][1]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.278      ;
-; -5.241 ; PushBoxMap:inst2|map_matrix[4][10][1]  ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 6.274      ;
-; -5.235 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 6.259      ;
-; -5.228 ; PushBoxMap:inst2|map_matrix[6][6][0]   ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.259      ;
-; -5.228 ; PushBoxMap:inst2|map_matrix[6][6][0]   ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.259      ;
-; -5.212 ; PushBoxMap:inst2|player_pos_x[1]       ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 6.224      ;
-; -5.212 ; PushBoxMap:inst2|player_pos_x[1]       ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 6.224      ;
-; -5.206 ; PushBoxMap:inst2|map_matrix[6][7][0]   ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.023     ; 6.215      ;
-; -5.206 ; PushBoxMap:inst2|map_matrix[6][7][0]   ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.023     ; 6.215      ;
-; -5.205 ; PushBoxMap:inst2|map_matrix[1][2][0]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 6.227      ;
-; -5.196 ; PushBoxMap:inst2|map_matrix[14][7][0]  ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.016     ; 6.212      ;
-; -5.196 ; PushBoxMap:inst2|map_matrix[14][7][0]  ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.016     ; 6.212      ;
-; -5.189 ; PushBoxMap:inst2|player_pos_x[3]       ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 6.201      ;
-; -5.189 ; PushBoxMap:inst2|player_pos_x[3]       ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 6.201      ;
-; -5.187 ; PushBoxMap:inst2|map_matrix[4][9][1]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 6.212      ;
-; -5.184 ; PushBoxMap:inst2|map_matrix[6][8][0]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 6.206      ;
-; -5.184 ; PushBoxMap:inst2|map_matrix[6][10][0]  ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 6.208      ;
-; -5.181 ; PushBoxMap:inst2|map_matrix[4][7][0]   ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 6.201      ;
-; -5.181 ; PushBoxMap:inst2|map_matrix[4][7][0]   ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 6.201      ;
-; -5.177 ; PushBoxMap:inst2|map_matrix[6][11][0]  ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 6.216      ;
-; -5.177 ; PushBoxMap:inst2|map_matrix[12][0][0]  ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.018     ; 6.191      ;
-; -5.177 ; PushBoxMap:inst2|map_matrix[12][0][0]  ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.018     ; 6.191      ;
-; -5.175 ; PushBoxMap:inst2|player_pos_x[3]       ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 6.199      ;
-; -5.174 ; PushBoxMap:inst2|map_matrix[15][5][0]  ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 6.211      ;
-; -5.173 ; PushBoxMap:inst2|map_matrix[7][2][1]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.013      ; 6.218      ;
-; -5.169 ; PushBoxMap:inst2|map_matrix[4][11][1]  ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 6.190      ;
-; -5.169 ; PushBoxMap:inst2|map_matrix[4][11][1]  ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 6.190      ;
-; -5.162 ; PushBoxMap:inst2|map_matrix[1][15][0]  ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 6.190      ;
-; -5.162 ; PushBoxMap:inst2|map_matrix[1][15][0]  ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 6.190      ;
-; -5.157 ; PushBoxMap:inst2|map_matrix[1][8][1]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 6.181      ;
-; -5.155 ; PushBoxMap:inst2|map_matrix[4][7][1]   ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 6.175      ;
-; -5.155 ; PushBoxMap:inst2|map_matrix[4][7][1]   ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 6.175      ;
-; -5.154 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[14][10][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 6.178      ;
-; -5.154 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[14][10][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 6.178      ;
-; -5.154 ; PushBoxMap:inst2|map_matrix[4][10][1]  ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 6.175      ;
-; -5.154 ; PushBoxMap:inst2|map_matrix[4][10][1]  ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 6.175      ;
-; -5.152 ; PushBoxMap:inst2|map_matrix[7][9][1]   ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.024     ; 6.160      ;
-; -5.152 ; PushBoxMap:inst2|map_matrix[7][9][1]   ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.024     ; 6.160      ;
-; -5.151 ; PushBoxMap:inst2|map_matrix[5][9][1]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 6.189      ;
-; -5.150 ; PushBoxMap:inst2|map_matrix[7][6][1]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.011      ; 6.193      ;
-; -5.149 ; PushBoxMap:inst2|map_matrix[1][9][0]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 6.173      ;
-; -5.144 ; PushBoxMap:inst2|map_matrix[4][6][0]   ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.175      ;
-; -5.144 ; PushBoxMap:inst2|map_matrix[4][6][0]   ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.175      ;
-; -5.142 ; PushBoxMap:inst2|map_matrix[10][4][1]  ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 6.169      ;
-; -5.138 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[10][1][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 6.160      ;
-; -5.138 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[10][1][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 6.160      ;
-; -5.136 ; PushBoxMap:inst2|map_matrix[15][5][0]  ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 6.161      ;
-; -5.136 ; PushBoxMap:inst2|map_matrix[15][5][0]  ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 6.161      ;
-; -5.136 ; PushBoxMap:inst2|map_matrix[12][11][1] ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 6.174      ;
-; -5.136 ; PushBoxMap:inst2|map_matrix[12][11][1] ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 6.174      ;
-; -5.134 ; PushBoxMap:inst2|map_matrix[0][9][0]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 6.157      ;
-; -5.130 ; PushBoxMap:inst2|map_matrix[12][15][0] ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.156      ;
-; -5.130 ; PushBoxMap:inst2|map_matrix[12][15][0] ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.156      ;
-; -5.125 ; PushBoxMap:inst2|map_matrix[7][1][1]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.151      ;
-; -5.125 ; PushBoxMap:inst2|map_matrix[7][1][0]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.151      ;
-; -5.124 ; PushBoxMap:inst2|map_matrix[1][9][1]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 6.148      ;
-; -5.120 ; PushBoxMap:inst2|map_matrix[1][13][1]  ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.013      ; 6.165      ;
-; -5.120 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[10][1][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 6.142      ;
-; -5.120 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[10][1][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 6.142      ;
-; -5.119 ; PushBoxMap:inst2|map_matrix[4][2][1]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.151      ;
-; -5.118 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[11][7][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 6.135      ;
-; -5.118 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[11][7][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 6.135      ;
-; -5.117 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[11][6][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 6.134      ;
-; -5.117 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[11][6][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 6.134      ;
-; -5.117 ; PushBoxMap:inst2|map_matrix[5][9][1]   ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.143      ;
-; -5.117 ; PushBoxMap:inst2|map_matrix[5][9][1]   ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.143      ;
-; -5.116 ; PushBoxMap:inst2|map_matrix[3][2][0]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 6.154      ;
-; -5.112 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[0][12][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 6.142      ;
-; -5.112 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[0][12][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 6.142      ;
-; -5.110 ; PushBoxMap:inst2|map_matrix[15][4][0]  ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 6.131      ;
-; -5.106 ; PushBoxMap:inst2|map_matrix[5][7][0]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 6.126      ;
-; -5.105 ; PushBoxMap:inst2|map_matrix[0][9][0]   ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 6.116      ;
-; -5.105 ; PushBoxMap:inst2|map_matrix[0][9][0]   ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 6.116      ;
-; -5.104 ; PushBoxMap:inst2|map_matrix[12][11][1] ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.018      ; 6.154      ;
-; -5.102 ; PushBoxMap:inst2|map_matrix[7][5][1]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.134      ;
-; -5.100 ; PushBoxMap:inst2|map_matrix[4][9][1]   ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.019     ; 6.113      ;
-; -5.100 ; PushBoxMap:inst2|map_matrix[4][9][1]   ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.019     ; 6.113      ;
-; -5.100 ; PushBoxMap:inst2|map_matrix[12][10][1] ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.018     ; 6.114      ;
-; -5.100 ; PushBoxMap:inst2|map_matrix[12][10][1] ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.018     ; 6.114      ;
-; -5.099 ; PushBoxMap:inst2|map_matrix[12][6][0]  ; PushBoxMap:inst2|map_matrix[13][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.133      ;
-; -5.099 ; PushBoxMap:inst2|map_matrix[12][6][0]  ; PushBoxMap:inst2|map_matrix[13][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.133      ;
-; -5.097 ; PushBoxMap:inst2|map_matrix[1][3][0]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 6.119      ;
-; -5.097 ; PushBoxMap:inst2|map_matrix[1][8][0]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 6.121      ;
-; -5.097 ; PushBoxMap:inst2|map_matrix[3][4][1]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 6.125      ;
-; -5.096 ; PushBoxMap:inst2|map_matrix[11][0][0]  ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 6.123      ;
-; -5.094 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][12][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 6.124      ;
-; -5.094 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][12][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 6.124      ;
-; -5.093 ; PushBoxMap:inst2|map_matrix[4][8][1]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 6.115      ;
-; -5.090 ; PushBoxMap:inst2|map_matrix[6][6][0]   ; PushBoxMap:inst2|map_matrix[7][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.011      ; 6.133      ;
-; -5.088 ; PushBoxMap:inst2|map_matrix[4][11][1]  ; PushBoxMap:inst2|map_matrix[14][10][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 6.121      ;
-; -5.088 ; PushBoxMap:inst2|map_matrix[4][11][1]  ; PushBoxMap:inst2|map_matrix[14][10][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 6.121      ;
-; -5.088 ; PushBoxMap:inst2|player_pos_x[1]       ; PushBoxMap:inst2|map_matrix[14][10][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 6.112      ;
-; -5.088 ; PushBoxMap:inst2|player_pos_x[1]       ; PushBoxMap:inst2|map_matrix[14][10][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 6.112      ;
+; -5.356 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[10][14][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 6.395      ;
+; -5.338 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[15][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 6.366      ;
+; -5.338 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[15][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 6.366      ;
+; -5.337 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][15][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.366      ;
+; -5.337 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][15][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.366      ;
+; -5.309 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[7][6][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.340      ;
+; -5.307 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[3][8][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 6.337      ;
+; -5.307 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[3][8][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 6.337      ;
+; -5.297 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[14][8][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.331      ;
+; -5.297 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[14][8][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.331      ;
+; -5.289 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[15][4][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.321      ;
+; -5.244 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[13][2][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 6.271      ;
+; -5.232 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[12][11][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 6.244      ;
+; -5.231 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[14][11][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 6.268      ;
+; -5.231 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[14][11][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 6.268      ;
+; -5.224 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[12][2][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 6.254      ;
+; -5.224 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[12][2][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 6.254      ;
+; -5.220 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[5][5][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 6.248      ;
+; -5.220 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[5][5][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 6.248      ;
+; -5.217 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[10][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 6.256      ;
+; -5.215 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[3][11][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 6.248      ;
+; -5.215 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[3][11][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 6.248      ;
+; -5.206 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[5][11][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 6.218      ;
+; -5.206 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[5][11][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 6.218      ;
+; -5.204 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[15][4][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.236      ;
+; -5.202 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[10][6][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 6.235      ;
+; -5.202 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[1][14][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.233      ;
+; -5.200 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[11][5][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.231      ;
+; -5.200 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[11][5][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.231      ;
+; -5.198 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[1][14][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.229      ;
+; -5.198 ; PushBoxMap:inst2|player_pos_x[2]       ; PushBoxMap:inst2|map_matrix[7][6][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.229      ;
+; -5.193 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[13][13][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.227      ;
+; -5.193 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[13][0][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.225      ;
+; -5.193 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[13][13][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.227      ;
+; -5.193 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[13][0][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.225      ;
+; -5.191 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[15][6][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 6.224      ;
+; -5.191 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[15][6][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 6.224      ;
+; -5.188 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[1][11][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.222      ;
+; -5.188 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[1][11][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.222      ;
+; -5.187 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][1][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.023     ; 6.196      ;
+; -5.187 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][1][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.023     ; 6.196      ;
+; -5.177 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[1][12][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 6.188      ;
+; -5.177 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[1][12][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 6.188      ;
+; -5.176 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][14][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.208      ;
+; -5.173 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[13][11][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.028     ; 6.177      ;
+; -5.173 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[15][2][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 6.203      ;
+; -5.173 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[13][11][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.028     ; 6.177      ;
+; -5.171 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[9][9][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 6.193      ;
+; -5.171 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[12][13][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 6.189      ;
+; -5.171 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[12][13][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.014     ; 6.189      ;
+; -5.168 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[12][0][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.010     ; 6.190      ;
+; -5.167 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[2][11][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 6.179      ;
+; -5.167 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][10][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 6.184      ;
+; -5.167 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[2][11][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.020     ; 6.179      ;
+; -5.165 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[14][1][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 6.176      ;
+; -5.165 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[14][1][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 6.176      ;
+; -5.164 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[3][14][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 6.201      ;
+; -5.164 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[4][10][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 6.202      ;
+; -5.164 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[3][14][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 6.201      ;
+; -5.164 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[4][10][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 6.202      ;
+; -5.161 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][11][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.016     ; 6.177      ;
+; -5.160 ; PushBoxMap:inst2|map_matrix[15][9][1]  ; PushBoxMap:inst2|map_matrix[7][6][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 6.184      ;
+; -5.153 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[9][4][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 6.172      ;
+; -5.153 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[9][4][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 6.172      ;
+; -5.152 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[1][3][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 6.193      ;
+; -5.152 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[1][3][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.009      ; 6.193      ;
+; -5.151 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][2][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 6.179      ;
+; -5.149 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[3][12][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 6.168      ;
+; -5.149 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[3][12][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.013     ; 6.168      ;
+; -5.147 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[0][11][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.009     ; 6.170      ;
+; -5.147 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[2][11][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.028     ; 6.151      ;
+; -5.147 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[2][11][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.028     ; 6.151      ;
+; -5.145 ; PushBoxMap:inst2|map_matrix[1][0][1]   ; PushBoxMap:inst2|map_matrix[10][14][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.171      ;
+; -5.144 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[3][1][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.018     ; 6.158      ;
+; -5.144 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[3][1][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.018     ; 6.158      ;
+; -5.143 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[15][0][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 6.167      ;
+; -5.143 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[15][0][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.008     ; 6.167      ;
+; -5.143 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[3][11][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 6.168      ;
+; -5.143 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[3][11][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 6.168      ;
+; -5.141 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[9][5][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 6.171      ;
+; -5.141 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[9][5][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 6.171      ;
+; -5.140 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[3][10][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 6.165      ;
+; -5.140 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[3][10][1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 6.165      ;
+; -5.139 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[14][2][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.015     ; 6.156      ;
+; -5.139 ; PushBoxMap:inst2|map_matrix[12][13][0] ; PushBoxMap:inst2|map_matrix[7][6][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.013      ; 6.184      ;
+; -5.134 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[10][14][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.168      ;
+; -5.133 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[3][2][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.018     ; 6.147      ;
+; -5.133 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[3][2][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.018     ; 6.147      ;
+; -5.130 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[15][14][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 6.158      ;
+; -5.130 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[1][2][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 6.166      ;
+; -5.130 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[1][2][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 6.166      ;
+; -5.129 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[1][6][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.163      ;
+; -5.129 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[1][6][1]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.163      ;
+; -5.127 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[15][14][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 6.155      ;
+; -5.127 ; PushBoxMap:inst2|map_matrix[1][0][1]   ; PushBoxMap:inst2|map_matrix[15][15][0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.017     ; 6.142      ;
+; -5.127 ; PushBoxMap:inst2|map_matrix[1][0][1]   ; PushBoxMap:inst2|map_matrix[15][15][1] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.017     ; 6.142      ;
+; -5.126 ; PushBoxMap:inst2|player_pos_x[0]       ; PushBoxMap:inst2|map_matrix[10][5][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.008      ; 6.166      ;
+; -5.126 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[11][0][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 6.146      ;
+; -5.126 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[1][13][0]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.021     ; 6.137      ;
+; -5.126 ; PushBoxMap:inst2|map_matrix[9][8][1]   ; PushBoxMap:inst2|map_matrix[4][0][0]   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.019     ; 6.139      ;
 +--------+----------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -710,36 +710,11 @@ No paths to report.
 ; 0.215 ; VgaSync:inst|s_countv_prev[1]    ; VgaSync:inst|s_countv_prev[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; VgaSync:inst|s_countv_prev[3]    ; VgaSync:inst|s_countv_prev[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; VgaSync:inst|s_countv_prev[4]    ; VgaSync:inst|s_countv_prev[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; VgaSync:inst|s_countv_prev[5]    ; VgaSync:inst|s_countv_prev[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; VgaSync:inst|s_countv_prev[6]    ; VgaSync:inst|s_countv_prev[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; VgaSync:inst|s_countv_prev[7]    ; VgaSync:inst|s_countv_prev[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; VgaSync:inst|s_countv_prev[8]    ; VgaSync:inst|s_countv_prev[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; VgaSync:inst|s_countv_prev[9]    ; VgaSync:inst|s_countv_prev[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; VgaSync:inst|s_countv_prev[2]    ; VgaSync:inst|s_countv_prev[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[0]    ; Rebounce:inst3|counter_out[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[1]    ; Rebounce:inst3|counter_out[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[2]    ; Rebounce:inst3|counter_out[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[3]    ; Rebounce:inst3|counter_out[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[4]    ; Rebounce:inst3|counter_out[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[5]    ; Rebounce:inst3|counter_out[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[6]    ; Rebounce:inst3|counter_out[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[7]    ; Rebounce:inst3|counter_out[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[8]    ; Rebounce:inst3|counter_out[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[9]    ; Rebounce:inst3|counter_out[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[10]   ; Rebounce:inst3|counter_out[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[11]   ; Rebounce:inst3|counter_out[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[12]   ; Rebounce:inst3|counter_out[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[13]   ; Rebounce:inst3|counter_out[13]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[14]   ; Rebounce:inst3|counter_out[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[15]   ; Rebounce:inst3|counter_out[15]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[16]   ; Rebounce:inst3|counter_out[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[17]   ; Rebounce:inst3|counter_out[17]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[18]   ; Rebounce:inst3|counter_out[18]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[19]   ; Rebounce:inst3|counter_out[19]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|counter_out[20]   ; Rebounce:inst3|counter_out[20]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst3|result            ; Rebounce:inst3|result            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; PushBoxMap:inst2|player_pos_x[1] ; PushBoxMap:inst2|player_pos_x[1] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; PushBoxMap:inst2|player_pos_x[3] ; PushBoxMap:inst2|player_pos_x[3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; Rebounce:inst4|counter_out[0]    ; Rebounce:inst4|counter_out[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; Rebounce:inst4|counter_out[1]    ; Rebounce:inst4|counter_out[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; Rebounce:inst4|counter_out[2]    ; Rebounce:inst4|counter_out[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
@@ -762,28 +737,28 @@ No paths to report.
 ; 0.215 ; Rebounce:inst4|counter_out[19]   ; Rebounce:inst4|counter_out[19]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; Rebounce:inst4|counter_out[20]   ; Rebounce:inst4|counter_out[20]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; Rebounce:inst4|result            ; Rebounce:inst4|result            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[0]    ; Rebounce:inst5|counter_out[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[1]    ; Rebounce:inst5|counter_out[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[2]    ; Rebounce:inst5|counter_out[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[3]    ; Rebounce:inst5|counter_out[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[4]    ; Rebounce:inst5|counter_out[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[5]    ; Rebounce:inst5|counter_out[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[6]    ; Rebounce:inst5|counter_out[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[7]    ; Rebounce:inst5|counter_out[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[8]    ; Rebounce:inst5|counter_out[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[9]    ; Rebounce:inst5|counter_out[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[10]   ; Rebounce:inst5|counter_out[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[11]   ; Rebounce:inst5|counter_out[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[12]   ; Rebounce:inst5|counter_out[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[13]   ; Rebounce:inst5|counter_out[13]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[14]   ; Rebounce:inst5|counter_out[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[15]   ; Rebounce:inst5|counter_out[15]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[16]   ; Rebounce:inst5|counter_out[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[17]   ; Rebounce:inst5|counter_out[17]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[18]   ; Rebounce:inst5|counter_out[18]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[19]   ; Rebounce:inst5|counter_out[19]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|counter_out[20]   ; Rebounce:inst5|counter_out[20]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; Rebounce:inst5|result            ; Rebounce:inst5|result            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[0]    ; Rebounce:inst3|counter_out[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[1]    ; Rebounce:inst3|counter_out[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[2]    ; Rebounce:inst3|counter_out[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[3]    ; Rebounce:inst3|counter_out[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[4]    ; Rebounce:inst3|counter_out[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[5]    ; Rebounce:inst3|counter_out[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[6]    ; Rebounce:inst3|counter_out[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[7]    ; Rebounce:inst3|counter_out[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[8]    ; Rebounce:inst3|counter_out[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[9]    ; Rebounce:inst3|counter_out[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[10]   ; Rebounce:inst3|counter_out[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[11]   ; Rebounce:inst3|counter_out[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[12]   ; Rebounce:inst3|counter_out[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[13]   ; Rebounce:inst3|counter_out[13]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[14]   ; Rebounce:inst3|counter_out[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[15]   ; Rebounce:inst3|counter_out[15]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[16]   ; Rebounce:inst3|counter_out[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[17]   ; Rebounce:inst3|counter_out[17]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[18]   ; Rebounce:inst3|counter_out[18]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[19]   ; Rebounce:inst3|counter_out[19]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|counter_out[20]   ; Rebounce:inst3|counter_out[20]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst3|result            ; Rebounce:inst3|result            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; Rebounce:inst6|counter_out[0]    ; Rebounce:inst6|counter_out[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; Rebounce:inst6|counter_out[1]    ; Rebounce:inst6|counter_out[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; Rebounce:inst6|counter_out[2]    ; Rebounce:inst6|counter_out[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
@@ -806,6 +781,31 @@ No paths to report.
 ; 0.215 ; Rebounce:inst6|counter_out[19]   ; Rebounce:inst6|counter_out[19]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; Rebounce:inst6|counter_out[20]   ; Rebounce:inst6|counter_out[20]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; Rebounce:inst6|result            ; Rebounce:inst6|result            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[0]    ; Rebounce:inst5|counter_out[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[1]    ; Rebounce:inst5|counter_out[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[2]    ; Rebounce:inst5|counter_out[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[3]    ; Rebounce:inst5|counter_out[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[4]    ; Rebounce:inst5|counter_out[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[5]    ; Rebounce:inst5|counter_out[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[6]    ; Rebounce:inst5|counter_out[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[7]    ; Rebounce:inst5|counter_out[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[8]    ; Rebounce:inst5|counter_out[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[9]    ; Rebounce:inst5|counter_out[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[10]   ; Rebounce:inst5|counter_out[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[11]   ; Rebounce:inst5|counter_out[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[12]   ; Rebounce:inst5|counter_out[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[13]   ; Rebounce:inst5|counter_out[13]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[14]   ; Rebounce:inst5|counter_out[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[15]   ; Rebounce:inst5|counter_out[15]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[16]   ; Rebounce:inst5|counter_out[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[17]   ; Rebounce:inst5|counter_out[17]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[18]   ; Rebounce:inst5|counter_out[18]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[19]   ; Rebounce:inst5|counter_out[19]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|counter_out[20]   ; Rebounce:inst5|counter_out[20]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Rebounce:inst5|result            ; Rebounce:inst5|result            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PushBoxMap:inst2|player_pos_x[2] ; PushBoxMap:inst2|player_pos_x[2] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PushBoxMap:inst2|player_pos_x[3] ; PushBoxMap:inst2|player_pos_x[3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PushBoxMap:inst2|player_pos_y[2] ; PushBoxMap:inst2|player_pos_y[2] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
 +-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -922,11 +922,11 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; KEY[*]    ; CLOCK_50   ; 2.114 ; 2.114 ; Rise       ; CLOCK_50        ;
-;  KEY[0]   ; CLOCK_50   ; 1.443 ; 1.443 ; Rise       ; CLOCK_50        ;
-;  KEY[1]   ; CLOCK_50   ; 1.441 ; 1.441 ; Rise       ; CLOCK_50        ;
-;  KEY[2]   ; CLOCK_50   ; 1.449 ; 1.449 ; Rise       ; CLOCK_50        ;
-;  KEY[3]   ; CLOCK_50   ; 2.114 ; 2.114 ; Rise       ; CLOCK_50        ;
+; KEY[*]    ; CLOCK_50   ; 1.910 ; 1.910 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 1.684 ; 1.684 ; Rise       ; CLOCK_50        ;
+;  KEY[1]   ; CLOCK_50   ; 1.725 ; 1.725 ; Rise       ; CLOCK_50        ;
+;  KEY[2]   ; CLOCK_50   ; 1.879 ; 1.879 ; Rise       ; CLOCK_50        ;
+;  KEY[3]   ; CLOCK_50   ; 1.910 ; 1.910 ; Rise       ; CLOCK_50        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -935,11 +935,11 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; KEY[*]    ; CLOCK_50   ; -1.321 ; -1.321 ; Rise       ; CLOCK_50        ;
-;  KEY[0]   ; CLOCK_50   ; -1.323 ; -1.323 ; Rise       ; CLOCK_50        ;
-;  KEY[1]   ; CLOCK_50   ; -1.321 ; -1.321 ; Rise       ; CLOCK_50        ;
-;  KEY[2]   ; CLOCK_50   ; -1.329 ; -1.329 ; Rise       ; CLOCK_50        ;
-;  KEY[3]   ; CLOCK_50   ; -1.994 ; -1.994 ; Rise       ; CLOCK_50        ;
+; KEY[*]    ; CLOCK_50   ; -1.564 ; -1.564 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; -1.564 ; -1.564 ; Rise       ; CLOCK_50        ;
+;  KEY[1]   ; CLOCK_50   ; -1.605 ; -1.605 ; Rise       ; CLOCK_50        ;
+;  KEY[2]   ; CLOCK_50   ; -1.759 ; -1.759 ; Rise       ; CLOCK_50        ;
+;  KEY[3]   ; CLOCK_50   ; -1.790 ; -1.790 ; Rise       ; CLOCK_50        ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -948,25 +948,25 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDG[*]   ; CLOCK_50   ; 4.084 ; 4.084 ; Rise       ; CLOCK_50        ;
-;  LEDG[0]  ; CLOCK_50   ; 4.084 ; 4.084 ; Rise       ; CLOCK_50        ;
-; VGA_B[*]  ; CLOCK_50   ; 4.593 ; 4.593 ; Rise       ; CLOCK_50        ;
-;  VGA_B[0] ; CLOCK_50   ; 4.314 ; 4.314 ; Rise       ; CLOCK_50        ;
-;  VGA_B[1] ; CLOCK_50   ; 4.593 ; 4.593 ; Rise       ; CLOCK_50        ;
-;  VGA_B[2] ; CLOCK_50   ; 4.518 ; 4.518 ; Rise       ; CLOCK_50        ;
-;  VGA_B[3] ; CLOCK_50   ; 4.454 ; 4.454 ; Rise       ; CLOCK_50        ;
-; VGA_G[*]  ; CLOCK_50   ; 4.699 ; 4.699 ; Rise       ; CLOCK_50        ;
-;  VGA_G[0] ; CLOCK_50   ; 4.648 ; 4.648 ; Rise       ; CLOCK_50        ;
-;  VGA_G[1] ; CLOCK_50   ; 4.501 ; 4.501 ; Rise       ; CLOCK_50        ;
-;  VGA_G[2] ; CLOCK_50   ; 4.699 ; 4.699 ; Rise       ; CLOCK_50        ;
-;  VGA_G[3] ; CLOCK_50   ; 4.413 ; 4.413 ; Rise       ; CLOCK_50        ;
-; VGA_HS    ; CLOCK_50   ; 4.153 ; 4.153 ; Rise       ; CLOCK_50        ;
-; VGA_R[*]  ; CLOCK_50   ; 4.752 ; 4.752 ; Rise       ; CLOCK_50        ;
-;  VGA_R[0] ; CLOCK_50   ; 4.435 ; 4.435 ; Rise       ; CLOCK_50        ;
+; LEDG[*]   ; CLOCK_50   ; 4.243 ; 4.243 ; Rise       ; CLOCK_50        ;
+;  LEDG[0]  ; CLOCK_50   ; 4.243 ; 4.243 ; Rise       ; CLOCK_50        ;
+; VGA_B[*]  ; CLOCK_50   ; 4.641 ; 4.641 ; Rise       ; CLOCK_50        ;
+;  VGA_B[0] ; CLOCK_50   ; 4.641 ; 4.641 ; Rise       ; CLOCK_50        ;
+;  VGA_B[1] ; CLOCK_50   ; 4.603 ; 4.603 ; Rise       ; CLOCK_50        ;
+;  VGA_B[2] ; CLOCK_50   ; 4.526 ; 4.526 ; Rise       ; CLOCK_50        ;
+;  VGA_B[3] ; CLOCK_50   ; 4.480 ; 4.480 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]  ; CLOCK_50   ; 4.754 ; 4.754 ; Rise       ; CLOCK_50        ;
+;  VGA_G[0] ; CLOCK_50   ; 4.754 ; 4.754 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1] ; CLOCK_50   ; 4.513 ; 4.513 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2] ; CLOCK_50   ; 4.641 ; 4.641 ; Rise       ; CLOCK_50        ;
+;  VGA_G[3] ; CLOCK_50   ; 4.741 ; 4.741 ; Rise       ; CLOCK_50        ;
+; VGA_HS    ; CLOCK_50   ; 3.910 ; 3.910 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]  ; CLOCK_50   ; 4.751 ; 4.751 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0] ; CLOCK_50   ; 4.667 ; 4.667 ; Rise       ; CLOCK_50        ;
 ;  VGA_R[1] ; CLOCK_50   ; 4.731 ; 4.731 ; Rise       ; CLOCK_50        ;
-;  VGA_R[2] ; CLOCK_50   ; 4.752 ; 4.752 ; Rise       ; CLOCK_50        ;
-;  VGA_R[3] ; CLOCK_50   ; 4.393 ; 4.393 ; Rise       ; CLOCK_50        ;
-; VGA_VS    ; CLOCK_50   ; 4.136 ; 4.136 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2] ; CLOCK_50   ; 4.751 ; 4.751 ; Rise       ; CLOCK_50        ;
+;  VGA_R[3] ; CLOCK_50   ; 4.719 ; 4.719 ; Rise       ; CLOCK_50        ;
+; VGA_VS    ; CLOCK_50   ; 4.139 ; 4.139 ; Rise       ; CLOCK_50        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -975,25 +975,25 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDG[*]   ; CLOCK_50   ; 4.084 ; 4.084 ; Rise       ; CLOCK_50        ;
-;  LEDG[0]  ; CLOCK_50   ; 4.084 ; 4.084 ; Rise       ; CLOCK_50        ;
-; VGA_B[*]  ; CLOCK_50   ; 4.004 ; 4.004 ; Rise       ; CLOCK_50        ;
-;  VGA_B[0] ; CLOCK_50   ; 4.164 ; 4.164 ; Rise       ; CLOCK_50        ;
-;  VGA_B[1] ; CLOCK_50   ; 4.148 ; 4.148 ; Rise       ; CLOCK_50        ;
-;  VGA_B[2] ; CLOCK_50   ; 4.177 ; 4.177 ; Rise       ; CLOCK_50        ;
-;  VGA_B[3] ; CLOCK_50   ; 4.004 ; 4.004 ; Rise       ; CLOCK_50        ;
-; VGA_G[*]  ; CLOCK_50   ; 4.063 ; 4.063 ; Rise       ; CLOCK_50        ;
-;  VGA_G[0] ; CLOCK_50   ; 4.284 ; 4.284 ; Rise       ; CLOCK_50        ;
-;  VGA_G[1] ; CLOCK_50   ; 4.063 ; 4.063 ; Rise       ; CLOCK_50        ;
-;  VGA_G[2] ; CLOCK_50   ; 4.350 ; 4.350 ; Rise       ; CLOCK_50        ;
-;  VGA_G[3] ; CLOCK_50   ; 4.269 ; 4.269 ; Rise       ; CLOCK_50        ;
-; VGA_HS    ; CLOCK_50   ; 4.153 ; 4.153 ; Rise       ; CLOCK_50        ;
-; VGA_R[*]  ; CLOCK_50   ; 4.243 ; 4.243 ; Rise       ; CLOCK_50        ;
-;  VGA_R[0] ; CLOCK_50   ; 4.292 ; 4.292 ; Rise       ; CLOCK_50        ;
-;  VGA_R[1] ; CLOCK_50   ; 4.300 ; 4.300 ; Rise       ; CLOCK_50        ;
-;  VGA_R[2] ; CLOCK_50   ; 4.389 ; 4.389 ; Rise       ; CLOCK_50        ;
-;  VGA_R[3] ; CLOCK_50   ; 4.243 ; 4.243 ; Rise       ; CLOCK_50        ;
-; VGA_VS    ; CLOCK_50   ; 4.136 ; 4.136 ; Rise       ; CLOCK_50        ;
+; LEDG[*]   ; CLOCK_50   ; 4.243 ; 4.243 ; Rise       ; CLOCK_50        ;
+;  LEDG[0]  ; CLOCK_50   ; 4.243 ; 4.243 ; Rise       ; CLOCK_50        ;
+; VGA_B[*]  ; CLOCK_50   ; 4.099 ; 4.099 ; Rise       ; CLOCK_50        ;
+;  VGA_B[0] ; CLOCK_50   ; 4.242 ; 4.242 ; Rise       ; CLOCK_50        ;
+;  VGA_B[1] ; CLOCK_50   ; 4.205 ; 4.205 ; Rise       ; CLOCK_50        ;
+;  VGA_B[2] ; CLOCK_50   ; 4.156 ; 4.156 ; Rise       ; CLOCK_50        ;
+;  VGA_B[3] ; CLOCK_50   ; 4.099 ; 4.099 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]  ; CLOCK_50   ; 4.126 ; 4.126 ; Rise       ; CLOCK_50        ;
+;  VGA_G[0] ; CLOCK_50   ; 4.357 ; 4.357 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1] ; CLOCK_50   ; 4.126 ; 4.126 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2] ; CLOCK_50   ; 4.272 ; 4.272 ; Rise       ; CLOCK_50        ;
+;  VGA_G[3] ; CLOCK_50   ; 4.364 ; 4.364 ; Rise       ; CLOCK_50        ;
+; VGA_HS    ; CLOCK_50   ; 3.910 ; 3.910 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]  ; CLOCK_50   ; 4.314 ; 4.314 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0] ; CLOCK_50   ; 4.377 ; 4.377 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1] ; CLOCK_50   ; 4.350 ; 4.350 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2] ; CLOCK_50   ; 4.365 ; 4.365 ; Rise       ; CLOCK_50        ;
+;  VGA_R[3] ; CLOCK_50   ; 4.314 ; 4.314 ; Rise       ; CLOCK_50        ;
+; VGA_VS    ; CLOCK_50   ; 4.139 ; 4.139 ; Rise       ; CLOCK_50        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -1002,10 +1002,10 @@ No paths to report.
 +------------------+-----------+-------+----------+---------+---------------------+
 ; Clock            ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+-----------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -15.445   ; 0.215 ; N/A      ; N/A     ; -1.631              ;
-;  CLOCK_50        ; -15.445   ; 0.215 ; N/A      ; N/A     ; -1.631              ;
-; Design-wide TNS  ; -7805.481 ; 0.0   ; 0.0      ; 0.0     ; -816.705            ;
-;  CLOCK_50        ; -7805.481 ; 0.000 ; N/A      ; N/A     ; -816.705            ;
+; Worst-case Slack ; -15.339   ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+;  CLOCK_50        ; -15.339   ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -7937.016 ; 0.0   ; 0.0      ; 0.0     ; -816.705            ;
+;  CLOCK_50        ; -7937.016 ; 0.000 ; N/A      ; N/A     ; -816.705            ;
 +------------------+-----------+-------+----------+---------+---------------------+
 
 
@@ -1014,11 +1014,11 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; KEY[*]    ; CLOCK_50   ; 4.645 ; 4.645 ; Rise       ; CLOCK_50        ;
-;  KEY[0]   ; CLOCK_50   ; 3.079 ; 3.079 ; Rise       ; CLOCK_50        ;
-;  KEY[1]   ; CLOCK_50   ; 3.077 ; 3.077 ; Rise       ; CLOCK_50        ;
-;  KEY[2]   ; CLOCK_50   ; 3.083 ; 3.083 ; Rise       ; CLOCK_50        ;
-;  KEY[3]   ; CLOCK_50   ; 4.645 ; 4.645 ; Rise       ; CLOCK_50        ;
+; KEY[*]    ; CLOCK_50   ; 4.201 ; 4.201 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 3.701 ; 3.701 ; Rise       ; CLOCK_50        ;
+;  KEY[1]   ; CLOCK_50   ; 3.779 ; 3.779 ; Rise       ; CLOCK_50        ;
+;  KEY[2]   ; CLOCK_50   ; 4.047 ; 4.047 ; Rise       ; CLOCK_50        ;
+;  KEY[3]   ; CLOCK_50   ; 4.201 ; 4.201 ; Rise       ; CLOCK_50        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -1027,11 +1027,11 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; KEY[*]    ; CLOCK_50   ; -1.321 ; -1.321 ; Rise       ; CLOCK_50        ;
-;  KEY[0]   ; CLOCK_50   ; -1.323 ; -1.323 ; Rise       ; CLOCK_50        ;
-;  KEY[1]   ; CLOCK_50   ; -1.321 ; -1.321 ; Rise       ; CLOCK_50        ;
-;  KEY[2]   ; CLOCK_50   ; -1.329 ; -1.329 ; Rise       ; CLOCK_50        ;
-;  KEY[3]   ; CLOCK_50   ; -1.994 ; -1.994 ; Rise       ; CLOCK_50        ;
+; KEY[*]    ; CLOCK_50   ; -1.564 ; -1.564 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; -1.564 ; -1.564 ; Rise       ; CLOCK_50        ;
+;  KEY[1]   ; CLOCK_50   ; -1.605 ; -1.605 ; Rise       ; CLOCK_50        ;
+;  KEY[2]   ; CLOCK_50   ; -1.759 ; -1.759 ; Rise       ; CLOCK_50        ;
+;  KEY[3]   ; CLOCK_50   ; -1.790 ; -1.790 ; Rise       ; CLOCK_50        ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -1040,25 +1040,25 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDG[*]   ; CLOCK_50   ; 7.685 ; 7.685 ; Rise       ; CLOCK_50        ;
-;  LEDG[0]  ; CLOCK_50   ; 7.685 ; 7.685 ; Rise       ; CLOCK_50        ;
-; VGA_B[*]  ; CLOCK_50   ; 9.034 ; 9.034 ; Rise       ; CLOCK_50        ;
-;  VGA_B[0] ; CLOCK_50   ; 8.323 ; 8.323 ; Rise       ; CLOCK_50        ;
-;  VGA_B[1] ; CLOCK_50   ; 9.034 ; 9.034 ; Rise       ; CLOCK_50        ;
-;  VGA_B[2] ; CLOCK_50   ; 8.797 ; 8.797 ; Rise       ; CLOCK_50        ;
-;  VGA_B[3] ; CLOCK_50   ; 8.669 ; 8.669 ; Rise       ; CLOCK_50        ;
-; VGA_G[*]  ; CLOCK_50   ; 9.326 ; 9.326 ; Rise       ; CLOCK_50        ;
-;  VGA_G[0] ; CLOCK_50   ; 9.099 ; 9.099 ; Rise       ; CLOCK_50        ;
-;  VGA_G[1] ; CLOCK_50   ; 8.774 ; 8.774 ; Rise       ; CLOCK_50        ;
-;  VGA_G[2] ; CLOCK_50   ; 9.326 ; 9.326 ; Rise       ; CLOCK_50        ;
-;  VGA_G[3] ; CLOCK_50   ; 8.591 ; 8.591 ; Rise       ; CLOCK_50        ;
-; VGA_HS    ; CLOCK_50   ; 7.854 ; 7.854 ; Rise       ; CLOCK_50        ;
-; VGA_R[*]  ; CLOCK_50   ; 9.390 ; 9.390 ; Rise       ; CLOCK_50        ;
-;  VGA_R[0] ; CLOCK_50   ; 8.637 ; 8.637 ; Rise       ; CLOCK_50        ;
-;  VGA_R[1] ; CLOCK_50   ; 9.378 ; 9.378 ; Rise       ; CLOCK_50        ;
-;  VGA_R[2] ; CLOCK_50   ; 9.390 ; 9.390 ; Rise       ; CLOCK_50        ;
-;  VGA_R[3] ; CLOCK_50   ; 8.577 ; 8.577 ; Rise       ; CLOCK_50        ;
-; VGA_VS    ; CLOCK_50   ; 7.847 ; 7.847 ; Rise       ; CLOCK_50        ;
+; LEDG[*]   ; CLOCK_50   ; 8.195 ; 8.195 ; Rise       ; CLOCK_50        ;
+;  LEDG[0]  ; CLOCK_50   ; 8.195 ; 8.195 ; Rise       ; CLOCK_50        ;
+; VGA_B[*]  ; CLOCK_50   ; 9.065 ; 9.065 ; Rise       ; CLOCK_50        ;
+;  VGA_B[0] ; CLOCK_50   ; 9.065 ; 9.065 ; Rise       ; CLOCK_50        ;
+;  VGA_B[1] ; CLOCK_50   ; 9.015 ; 9.015 ; Rise       ; CLOCK_50        ;
+;  VGA_B[2] ; CLOCK_50   ; 8.771 ; 8.771 ; Rise       ; CLOCK_50        ;
+;  VGA_B[3] ; CLOCK_50   ; 8.722 ; 8.722 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]  ; CLOCK_50   ; 9.358 ; 9.358 ; Rise       ; CLOCK_50        ;
+;  VGA_G[0] ; CLOCK_50   ; 9.358 ; 9.358 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1] ; CLOCK_50   ; 8.754 ; 8.754 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2] ; CLOCK_50   ; 9.067 ; 9.067 ; Rise       ; CLOCK_50        ;
+;  VGA_G[3] ; CLOCK_50   ; 9.336 ; 9.336 ; Rise       ; CLOCK_50        ;
+; VGA_HS    ; CLOCK_50   ; 7.226 ; 7.226 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]  ; CLOCK_50   ; 9.353 ; 9.353 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0] ; CLOCK_50   ; 9.119 ; 9.119 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1] ; CLOCK_50   ; 9.328 ; 9.328 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2] ; CLOCK_50   ; 9.353 ; 9.353 ; Rise       ; CLOCK_50        ;
+;  VGA_R[3] ; CLOCK_50   ; 9.323 ; 9.323 ; Rise       ; CLOCK_50        ;
+; VGA_VS    ; CLOCK_50   ; 7.831 ; 7.831 ; Rise       ; CLOCK_50        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -1067,25 +1067,25 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDG[*]   ; CLOCK_50   ; 4.084 ; 4.084 ; Rise       ; CLOCK_50        ;
-;  LEDG[0]  ; CLOCK_50   ; 4.084 ; 4.084 ; Rise       ; CLOCK_50        ;
-; VGA_B[*]  ; CLOCK_50   ; 4.004 ; 4.004 ; Rise       ; CLOCK_50        ;
-;  VGA_B[0] ; CLOCK_50   ; 4.164 ; 4.164 ; Rise       ; CLOCK_50        ;
-;  VGA_B[1] ; CLOCK_50   ; 4.148 ; 4.148 ; Rise       ; CLOCK_50        ;
-;  VGA_B[2] ; CLOCK_50   ; 4.177 ; 4.177 ; Rise       ; CLOCK_50        ;
-;  VGA_B[3] ; CLOCK_50   ; 4.004 ; 4.004 ; Rise       ; CLOCK_50        ;
-; VGA_G[*]  ; CLOCK_50   ; 4.063 ; 4.063 ; Rise       ; CLOCK_50        ;
-;  VGA_G[0] ; CLOCK_50   ; 4.284 ; 4.284 ; Rise       ; CLOCK_50        ;
-;  VGA_G[1] ; CLOCK_50   ; 4.063 ; 4.063 ; Rise       ; CLOCK_50        ;
-;  VGA_G[2] ; CLOCK_50   ; 4.350 ; 4.350 ; Rise       ; CLOCK_50        ;
-;  VGA_G[3] ; CLOCK_50   ; 4.269 ; 4.269 ; Rise       ; CLOCK_50        ;
-; VGA_HS    ; CLOCK_50   ; 4.153 ; 4.153 ; Rise       ; CLOCK_50        ;
-; VGA_R[*]  ; CLOCK_50   ; 4.243 ; 4.243 ; Rise       ; CLOCK_50        ;
-;  VGA_R[0] ; CLOCK_50   ; 4.292 ; 4.292 ; Rise       ; CLOCK_50        ;
-;  VGA_R[1] ; CLOCK_50   ; 4.300 ; 4.300 ; Rise       ; CLOCK_50        ;
-;  VGA_R[2] ; CLOCK_50   ; 4.389 ; 4.389 ; Rise       ; CLOCK_50        ;
-;  VGA_R[3] ; CLOCK_50   ; 4.243 ; 4.243 ; Rise       ; CLOCK_50        ;
-; VGA_VS    ; CLOCK_50   ; 4.136 ; 4.136 ; Rise       ; CLOCK_50        ;
+; LEDG[*]   ; CLOCK_50   ; 4.243 ; 4.243 ; Rise       ; CLOCK_50        ;
+;  LEDG[0]  ; CLOCK_50   ; 4.243 ; 4.243 ; Rise       ; CLOCK_50        ;
+; VGA_B[*]  ; CLOCK_50   ; 4.099 ; 4.099 ; Rise       ; CLOCK_50        ;
+;  VGA_B[0] ; CLOCK_50   ; 4.242 ; 4.242 ; Rise       ; CLOCK_50        ;
+;  VGA_B[1] ; CLOCK_50   ; 4.205 ; 4.205 ; Rise       ; CLOCK_50        ;
+;  VGA_B[2] ; CLOCK_50   ; 4.156 ; 4.156 ; Rise       ; CLOCK_50        ;
+;  VGA_B[3] ; CLOCK_50   ; 4.099 ; 4.099 ; Rise       ; CLOCK_50        ;
+; VGA_G[*]  ; CLOCK_50   ; 4.126 ; 4.126 ; Rise       ; CLOCK_50        ;
+;  VGA_G[0] ; CLOCK_50   ; 4.357 ; 4.357 ; Rise       ; CLOCK_50        ;
+;  VGA_G[1] ; CLOCK_50   ; 4.126 ; 4.126 ; Rise       ; CLOCK_50        ;
+;  VGA_G[2] ; CLOCK_50   ; 4.272 ; 4.272 ; Rise       ; CLOCK_50        ;
+;  VGA_G[3] ; CLOCK_50   ; 4.364 ; 4.364 ; Rise       ; CLOCK_50        ;
+; VGA_HS    ; CLOCK_50   ; 3.910 ; 3.910 ; Rise       ; CLOCK_50        ;
+; VGA_R[*]  ; CLOCK_50   ; 4.314 ; 4.314 ; Rise       ; CLOCK_50        ;
+;  VGA_R[0] ; CLOCK_50   ; 4.377 ; 4.377 ; Rise       ; CLOCK_50        ;
+;  VGA_R[1] ; CLOCK_50   ; 4.350 ; 4.350 ; Rise       ; CLOCK_50        ;
+;  VGA_R[2] ; CLOCK_50   ; 4.365 ; 4.365 ; Rise       ; CLOCK_50        ;
+;  VGA_R[3] ; CLOCK_50   ; 4.314 ; 4.314 ; Rise       ; CLOCK_50        ;
+; VGA_VS    ; CLOCK_50   ; 4.139 ; 4.139 ; Rise       ; CLOCK_50        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -1094,7 +1094,7 @@ No paths to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; CLOCK_50   ; CLOCK_50 ; 32668230 ; 0        ; 0        ; 0        ;
+; CLOCK_50   ; CLOCK_50 ; 33044274 ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1104,7 +1104,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; CLOCK_50   ; CLOCK_50 ; 32668230 ; 0        ; 0        ; 0        ;
+; CLOCK_50   ; CLOCK_50 ; 33044274 ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1141,7 +1141,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Jun 18 21:16:07 2018
+    Info: Processing started: Mon Jun 18 21:56:54 2018
 Info: Command: quartus_sta PushBox -c PushBox
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -1154,10 +1154,10 @@ Info (332105): Deriving Clocks
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -15.445
+Info (332146): Worst-case setup slack is -15.339
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):   -15.445     -7805.481 CLOCK_50 
+    Info (332119):   -15.339     -7937.016 CLOCK_50 
 Info (332146): Worst-case hold slack is 0.445
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1171,10 +1171,10 @@ Info (332146): Worst-case minimum pulse width slack is -1.631
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -5.322
+Info (332146): Worst-case setup slack is -5.356
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -5.322     -2581.204 CLOCK_50 
+    Info (332119):    -5.356     -2683.873 CLOCK_50 
 Info (332146): Worst-case hold slack is 0.215
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1189,8 +1189,8 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4600 megabytes
-    Info: Processing ended: Mon Jun 18 21:16:09 2018
+    Info: Peak virtual memory: 4602 megabytes
+    Info: Processing ended: Mon Jun 18 21:56:56 2018
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
