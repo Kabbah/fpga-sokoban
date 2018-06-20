@@ -21,23 +21,6 @@ applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 144 168 312 184)
-	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "SW[0]" (rect 5 0 35 12)(font "Arial" ))
-	(pt 168 8)
-	(drawing
-		(line (pt 84 12)(pt 109 12))
-		(line (pt 84 4)(pt 109 4))
-		(line (pt 113 8)(pt 168 8))
-		(line (pt 84 12)(pt 84 4))
-		(line (pt 109 4)(pt 113 8))
-		(line (pt 109 12)(pt 113 8))
-	)
-	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 88 184 144 200))
-)
-(pin
-	(input)
 	(rect 144 184 312 200)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "CLOCK_50" (rect 5 0 60 12)(font "Arial" ))
@@ -120,6 +103,39 @@ applicable agreement for further details.
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
 	(annotation_block (location)(rect -24 768 32 784))
+)
+(pin
+	(input)
+	(rect 144 168 312 184)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "SW[0]" (rect 5 0 36 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 88 184 144 200))
+)
+(pin
+	(input)
+	(rect 32 848 200 864)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "SW[1]" (rect 5 0 36 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(output)
@@ -210,7 +226,7 @@ applicable agreement for further details.
 	(output)
 	(rect 416 336 592 352)
 	(text "OUTPUT" (rect 137 6 175 16)(font "Arial" (font_size 6)))
-	(text "LEDG[0]" (rect 5 4 48 16)(font "Arial" ))
+	(text "LEDG[0]" (rect 5 4 47 16)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -222,6 +238,7 @@ applicable agreement for further details.
 		(line (pt 98 4)(pt 94 8))
 	)
 	(rotate180)
+	(annotation_block (location)(rect 592 352 648 368))
 )
 (symbol
 	(rect 376 144 552 288)
@@ -532,9 +549,44 @@ applicable agreement for further details.
 	(annotation_block (parameter)(rect 344 680 552 712))
 )
 (symbol
+	(rect 200 808 344 888)
+	(text "Rebounce" (rect 5 0 54 12)(font "Arial" ))
+	(text "inst7" (rect 8 64 31 76)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "button" (rect 0 0 30 12)(font "Arial" ))
+		(text "button" (rect 21 43 51 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 144 32)
+		(output)
+		(text "result" (rect 0 0 27 12)(font "Arial" ))
+		(text "result" (rect 101 27 128 39)(font "Arial" ))
+		(line (pt 144 32)(pt 128 32))
+	)
+	(parameter
+		"COUNTER_SIZE"
+		"20"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 128 64))
+	)
+	(annotation_block (parameter)(rect 344 776 552 808))
+)
+(symbol
 	(rect 720 280 976 456)
 	(text "PushBoxMap" (rect 188 164 251 176)(font "Arial" ))
-	(text "inst2" (rect 225 4 248 16)(font "Arial" ))
+	(text "inst8" (rect 225 4 248 16)(font "Arial" ))
 	(port
 		(pt 256 144)
 		(input)
@@ -573,16 +625,23 @@ applicable agreement for further details.
 	(port
 		(pt 256 64)
 		(input)
-		(text "display_x[3..0]" (rect 0 0 73 12)(font "Arial" ))
-		(text "display_x[3..0]" (rect 162 57 235 69)(font "Arial" ))
-		(line (pt 256 64)(pt 240 64)(line_width 3))
+		(text "rst" (rect 0 0 12 12)(font "Arial" ))
+		(text "rst" (rect 223 57 235 69)(font "Arial" ))
+		(line (pt 256 64)(pt 240 64))
 	)
 	(port
 		(pt 256 48)
 		(input)
-		(text "display_y[3..0]" (rect 0 0 74 12)(font "Arial" ))
-		(text "display_y[3..0]" (rect 161 41 235 53)(font "Arial" ))
+		(text "display_x[3..0]" (rect 0 0 73 12)(font "Arial" ))
+		(text "display_x[3..0]" (rect 162 41 235 53)(font "Arial" ))
 		(line (pt 256 48)(pt 240 48)(line_width 3))
+	)
+	(port
+		(pt 256 32)
+		(input)
+		(text "display_y[3..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "display_y[3..0]" (rect 161 25 235 37)(font "Arial" ))
+		(line (pt 256 32)(pt 240 32)(line_width 3))
 	)
 	(port
 		(pt 0 144)
@@ -704,10 +763,6 @@ applicable agreement for further details.
 	(pt 144 664)
 )
 (connector
-	(pt 144 664)
-	(pt 144 744)
-)
-(connector
 	(pt 200 584)
 	(pt 144 584)
 )
@@ -741,16 +796,6 @@ applicable agreement for further details.
 	(pt 1048 744)
 )
 (connector
-	(pt 1008 224)
-	(pt 1008 328)
-	(bus)
-)
-(connector
-	(pt 1024 208)
-	(pt 1024 344)
-	(bus)
-)
-(connector
 	(pt 1016 584)
 	(pt 1016 408)
 )
@@ -766,16 +811,6 @@ applicable agreement for further details.
 	(text "clk_50" (rect 986 408 1017 420)(font "Arial" ))
 	(pt 976 424)
 	(pt 1120 424)
-)
-(connector
-	(pt 1024 344)
-	(pt 976 344)
-	(bus)
-)
-(connector
-	(pt 1008 328)
-	(pt 976 328)
-	(bus)
 )
 (connector
 	(pt 976 376)
@@ -819,5 +854,50 @@ applicable agreement for further details.
 	(pt 592 344)
 	(pt 648 344)
 )
+(connector
+	(pt 200 840)
+	(pt 144 840)
+)
+(connector
+	(pt 144 664)
+	(pt 144 744)
+)
+(connector
+	(pt 144 744)
+	(pt 144 840)
+)
+(connector
+	(pt 344 840)
+	(pt 1064 840)
+)
+(connector
+	(pt 1064 840)
+	(pt 1064 344)
+)
+(connector
+	(pt 1064 344)
+	(pt 976 344)
+)
+(connector
+	(pt 1008 224)
+	(pt 1008 312)
+	(bus)
+)
+(connector
+	(pt 1008 312)
+	(pt 976 312)
+	(bus)
+)
+(connector
+	(pt 1024 208)
+	(pt 1024 328)
+	(bus)
+)
+(connector
+	(pt 1024 328)
+	(pt 976 328)
+	(bus)
+)
 (junction (pt 144 664))
 (junction (pt 144 584))
+(junction (pt 144 744))

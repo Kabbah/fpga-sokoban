@@ -16,6 +16,7 @@ entity PushBoxMap is
 		btn_baixo    : in  std_logic;
 		btn_esquerda : in  std_logic;
 		btn_direita  : in  std_logic;
+		rst          : in  std_logic;
 		
 		-- Bit que indica vitória quando é '1'
 		victory : out std_logic;
@@ -68,6 +69,7 @@ signal s_btn_cima     : unsigned(2 downto 0) := "000";
 signal s_btn_baixo    : unsigned(2 downto 0) := "000";
 signal s_btn_esquerda : unsigned(2 downto 0) := "000";
 signal s_btn_direita  : unsigned(2 downto 0) := "000";
+signal s_rst          : unsigned(2 downto 0) := "000";
 
 -- Sinal que indica vitória quando é '1'
 signal s_victory : std_logic := '0';
@@ -86,6 +88,14 @@ begin
 			s_btn_baixo    <= s_btn_baixo   (1 downto 0) & btn_baixo;
 			s_btn_esquerda <= s_btn_esquerda(1 downto 0) & btn_esquerda;
 			s_btn_direita  <= s_btn_direita (1 downto 0) & btn_direita;
+			s_rst          <= s_rst         (1 downto 0) & rst;
+			
+			-- Reseta o mapa
+			if s_rst(2 downto 1) = "10" then
+				map_matrix <= c_map_matrix;
+				player_pos_x <= start_player_pos_x;
+				player_pos_y <= start_player_pos_y;
+			end if;
 			
 			-- Detecta botão CIMA
 			if s_btn_cima(2 downto 1) = "10" then
