@@ -28,6 +28,7 @@ entity VgaPixel is
 		b_out       : out unsigned(3 downto 0);
 		
 		-- Sinais para ler o mapa do jogo
+		map_victory   : in  std_logic;
 		map_pos_value : in  unsigned(2 downto 0);
 		map_x_pos     : out unsigned(3 downto 0);
 		map_y_pos     : out unsigned(3 downto 0)
@@ -140,6 +141,23 @@ constant tile_wall          : image_array_t := ((X"fff",X"fff",X"fff",X"fff",X"f
 												(X"fff",X"ccc",X"ccc",X"ccc",X"ccc",X"ccc",X"ccc",X"777",X"fff",X"ccc",X"ccc",X"ccc",X"ccc",X"ccc",X"ccc",X"777"),
 												(X"777",X"777",X"777",X"777",X"777",X"777",X"777",X"777",X"fff",X"ccc",X"ccc",X"ccc",X"ccc",X"ccc",X"ccc",X"777"));
 
+constant check_img          : image_array_t := ((X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000"),
+                                                (X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000"),
+                                                (X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"9f5",X"000",X"000",X"000",X"000",X"000",X"000",X"000"),
+                                                (X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"9f5",X"000",X"000",X"000",X"000",X"000",X"000"),
+                                                (X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"9f5",X"000",X"000",X"000",X"000",X"000"),
+                                                (X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"9f5",X"9f5",X"000",X"000",X"000",X"000"),
+                                                (X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"9f5",X"9f5",X"9f5",X"000",X"000",X"000"),
+                                                (X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"9f5",X"9f5",X"9f5",X"000",X"000",X"000",X"000"),
+                                                (X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"9f5",X"9f5",X"9f5",X"000",X"000",X"000",X"000",X"000"),
+                                                (X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"9f5",X"9f5",X"9f5",X"000",X"000",X"000",X"000",X"000",X"000"),
+                                                (X"000",X"000",X"000",X"000",X"000",X"000",X"9f5",X"9f5",X"9f5",X"000",X"000",X"000",X"000",X"000",X"000",X"000"),
+                                                (X"000",X"000",X"000",X"000",X"000",X"9f5",X"9f5",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000"),
+                                                (X"000",X"000",X"000",X"000",X"9f5",X"9f5",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000"),
+                                                (X"000",X"000",X"000",X"9f5",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000"),
+                                                (X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000"),
+                                                (X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000",X"000"));
+
 -- Índices para os pixels das tiles
 signal s_x_image : unsigned(3 downto 0);
 signal s_y_image : unsigned(3 downto 0);
@@ -163,31 +181,16 @@ begin
 	s_x_image <= 15 - unsigned((column - MAP_START_COL))(4 downto 1);
 	s_y_image <= 15 - unsigned((row    - MAP_START_ROW))(4 downto 1);
 	
-	-- Pega a cor correspondente (DEBUG)
---	s_rgb_next <= x"000" when column < MAP_START_COL or
---	                          column >= MAP_END_COL  or
---	                          row < MAP_START_ROW or
---	                          row >= MAP_END_ROW else
---                              x"007" when map_pos_value = "000" else
---                              x"00F" when map_pos_value = "001" else
---                              x"0F0" when map_pos_value = "010" else
---                              x"0FF" when map_pos_value = "011" else
---                              x"F00" when map_pos_value = "100" else
---                              x"F0F" when map_pos_value = "101" else
---                              x"FF0" when map_pos_value = "110" else
---                              x"FFF" when map_pos_value = "111" else
---                              x"000";
-	s_rgb_next <= x"000" when column < MAP_START_COL or
-	                          column >= MAP_END_COL  or
-	                          row < MAP_START_ROW or
-	                          row >= MAP_END_ROW else
+	-- Pega a cor correspondente
+	s_rgb_next <= check_img(to_integer(s_x_image), to_integer(s_y_image)) when map_victory = '1' and column > (MAP_START_COL + 128) and column < (MAP_END_COL - 128) and row < MAP_START_ROW and row > (MAP_START_ROW - 32) else
+	              x"000" when column < MAP_START_COL or column >= MAP_END_COL  or row < MAP_START_ROW or row >= MAP_END_ROW else
 	              tile_box(to_integer(s_x_image), to_integer(s_y_image))           when map_pos_value = "011" else
-				  tile_box_objective(to_integer(s_x_image), to_integer(s_y_image)) when map_pos_value = "111" else
-				  tile_floor(to_integer(s_x_image), to_integer(s_y_image))         when map_pos_value = "001" else
-				  tile_objective(to_integer(s_x_image), to_integer(s_y_image))     when map_pos_value = "101" else
-				  tile_player(to_integer(s_x_image), to_integer(s_y_image))        when map_pos_value(1 downto 0) = "10" else
-				  tile_wall(to_integer(s_x_image), to_integer(s_y_image))          when map_pos_value = "000" else
-				  x"000";
+	              tile_box_objective(to_integer(s_x_image), to_integer(s_y_image)) when map_pos_value = "111" else
+	              tile_floor(to_integer(s_x_image), to_integer(s_y_image))         when map_pos_value = "001" else
+	              tile_objective(to_integer(s_x_image), to_integer(s_y_image))     when map_pos_value = "101" else
+	              tile_player(to_integer(s_x_image), to_integer(s_y_image))        when map_pos_value(1 downto 0) = "10" else
+	              tile_wall(to_integer(s_x_image), to_integer(s_y_image))          when map_pos_value = "000" else
+	              x"000";
 	
 	-- Atualiza o registrador de cor
 	process (clock, reset)

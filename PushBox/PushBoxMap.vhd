@@ -16,6 +16,7 @@ entity PushBoxMap is
 		btn_baixo    : in  std_logic;
 		btn_esquerda : in  std_logic;
 		btn_direita  : in  std_logic;
+		btn_next_lvl : in  std_logic;
 		rst          : in  std_logic;
 		
 		-- Bit que indica vitória quando é '1'
@@ -39,7 +40,30 @@ architecture archPushBoxMap of PushBoxMap is
 --   10: Jogador
 --   11: Caixa
 type map_matrix_t is array(2**MAP_WIDTH_BITS-1 downto 0, 2**MAP_HEIGHT_BITS-1 downto 0) of unsigned(2 downto 0);
-constant c_map_matrix : map_matrix_t := (("100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100"),
+type map_matrix_array_t is array(0 to 1) of map_matrix_t;
+type player_start_array_t is array(0 to 1) of unsigned(MAP_HEIGHT_BITS-1 downto 0);
+
+signal cur_level : integer range 0 to 1 := 0;
+
+constant c_map_matrix_array : map_matrix_array_t := (
+                                        (("100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100"),
+                                         ("100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100"),
+                                         ("100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100"),
+                                         ("100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100"),
+                                         ("100", "100", "100", "100", "100", "100", "000", "000", "000", "100", "100", "100", "100", "100", "100", "100"),
+                                         ("100", "100", "100", "100", "100", "100", "000", "101", "000", "100", "100", "100", "100", "100", "100", "100"),
+                                         ("100", "100", "100", "100", "100", "100", "000", "001", "000", "000", "000", "000", "100", "100", "100", "100"),
+                                         ("100", "100", "100", "100", "000", "000", "000", "011", "001", "011", "101", "000", "100", "100", "100", "100"),
+                                         ("100", "100", "100", "100", "000", "101", "001", "011", "010", "000", "000", "000", "100", "100", "100", "100"),
+                                         ("100", "100", "100", "100", "000", "000", "000", "000", "011", "000", "100", "100", "100", "100", "100", "100"),
+                                         ("100", "100", "100", "100", "100", "100", "100", "000", "101", "000", "100", "100", "100", "100", "100", "100"),
+                                         ("100", "100", "100", "100", "100", "100", "100", "000", "000", "000", "100", "100", "100", "100", "100", "100"),
+                                         ("100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100"),
+                                         ("100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100"),
+                                         ("100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100"),
+                                         ("100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100")),
+													  
+													 (("100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100"),
                                          ("100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100"),
                                          ("100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100"),
                                          ("100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100"),
@@ -54,21 +78,24 @@ constant c_map_matrix : map_matrix_t := (("100", "100", "100", "100", "100", "10
                                          ("100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100"),
                                          ("100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100"),
                                          ("100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100"),
-                                         ("100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100"));
+                                         ("100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100", "100"))
+													  
+													  );
 -- Posição inicial do jogador no mapa
-constant start_player_pos_x : unsigned(MAP_HEIGHT_BITS-1 downto 0) := "1010";
-constant start_player_pos_y : unsigned(MAP_WIDTH_BITS-1 downto 0)  := "1000";
+constant start_player_pos_x : player_start_array_t := ("0111", "1010");
+constant start_player_pos_y : player_start_array_t := ("0111", "1000");
 
 -- Mapa e posição do player que são alterados dentro do jogo
-signal map_matrix : map_matrix_t := c_map_matrix;
-signal player_pos_x : unsigned(MAP_HEIGHT_BITS-1 downto 0) := start_player_pos_x;
-signal player_pos_y : unsigned(MAP_WIDTH_BITS-1 downto 0)  := start_player_pos_y;
+signal map_matrix : map_matrix_t := c_map_matrix_array(0);
+signal player_pos_x : unsigned(MAP_HEIGHT_BITS-1 downto 0) := start_player_pos_x(0);
+signal player_pos_y : unsigned(MAP_WIDTH_BITS-1 downto 0)  := start_player_pos_y(0);
 
 -- Sinais que guardam as três últimas leituras dos botões, para verificar um button press
 signal s_btn_cima     : unsigned(2 downto 0) := "000";
 signal s_btn_baixo    : unsigned(2 downto 0) := "000";
 signal s_btn_esquerda : unsigned(2 downto 0) := "000";
 signal s_btn_direita  : unsigned(2 downto 0) := "000";
+signal s_btn_next_lvl : unsigned(2 downto 0) := "000";
 signal s_rst          : unsigned(2 downto 0) := "000";
 
 -- Sinal que indica vitória quando é '1'
@@ -88,13 +115,24 @@ begin
 			s_btn_baixo    <= s_btn_baixo   (1 downto 0) & btn_baixo;
 			s_btn_esquerda <= s_btn_esquerda(1 downto 0) & btn_esquerda;
 			s_btn_direita  <= s_btn_direita (1 downto 0) & btn_direita;
+			s_btn_next_lvl <= s_btn_next_lvl(1 downto 0) & btn_next_lvl;
 			s_rst          <= s_rst         (1 downto 0) & rst;
 			
 			-- Reseta o mapa
 			if s_rst(2 downto 1) = "10" then
-				map_matrix <= c_map_matrix;
-				player_pos_x <= start_player_pos_x;
-				player_pos_y <= start_player_pos_y;
+				map_matrix <= c_map_matrix_array(cur_level);
+				player_pos_x <= start_player_pos_x(cur_level);
+				player_pos_y <= start_player_pos_y(cur_level);
+			end if;
+				
+			-- Troca o nível
+			if s_btn_next_lvl(2 downto 1) = "10" then
+				if s_victory = '1' then
+					map_matrix <= c_map_matrix_array(cur_level + 1);
+					player_pos_x <= start_player_pos_x(cur_level + 1);
+					player_pos_y <= start_player_pos_y(cur_level + 1);
+					cur_level <= cur_level + 1;
+				end if;
 			end if;
 			
 			-- Detecta botão CIMA
