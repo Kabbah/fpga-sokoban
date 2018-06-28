@@ -96,9 +96,16 @@ applicable agreement for further details.
 	(port
 		(pt 256 48)
 		(output)
-		(text "display_pos_value[2..0]" (rect 0 0 94 12)(font "Arial" ))
-		(text "display_pos_value[2..0]" (rect 141 43 235 55)(font "Arial" ))
+		(text "cur_level[7..0]" (rect 0 0 56 12)(font "Arial" ))
+		(text "cur_level[7..0]" (rect 179 43 235 55)(font "Arial" ))
 		(line (pt 256 48)(pt 240 48)(line_width 3))
+	)
+	(port
+		(pt 256 64)
+		(output)
+		(text "display_pos_value[2..0]" (rect 0 0 94 12)(font "Arial" ))
+		(text "display_pos_value[2..0]" (rect 141 59 235 71)(font "Arial" ))
+		(line (pt 256 64)(pt 240 64)(line_width 3))
 	)
 	(parameter
 		"MAP_WIDTH_BITS"

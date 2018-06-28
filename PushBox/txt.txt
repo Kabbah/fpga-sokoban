@@ -1,8 +1,8 @@
-Jogo PushBox/Sokoban
+﻿Jogo PushBox/Sokoban
 https://www.youtube.com/watch?v=dzlGmq_ef9U
 
 O tabuleiro pode ser relativamente grande, 16x16 por exemplo.
-Podemos fazer níveis menores "enclausurados" por paredes.
+Podemos fazer níveis menores "enclausurados" por paredes "void".
 
 Cada posição pode conter:
 	a) Nada (vazia)
@@ -21,5 +21,5 @@ na direção do movimento.
 
 O jogador pode utilizar uma das chaves para reiniciar o nível.
 
-*** O jogador pode selecionar o nível por meio de uma das chaves.
-
+O jogador pode ir para o próximo nível por meio de uma das chaves, se a
+condição de vitória do nível atual tiver sido estabelecida.
