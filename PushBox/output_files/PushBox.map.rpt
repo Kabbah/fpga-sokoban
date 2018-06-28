@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PushBox
-Mon Jun 18 21:56:02 2018
+Wed Jun 27 23:10:55 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,17 +13,20 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Inverted Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: PushBoxMap:inst2
- 12. Parameter Settings for User Entity Instance: Rebounce:inst4
- 13. Parameter Settings for User Entity Instance: Rebounce:inst5
- 14. Parameter Settings for User Entity Instance: Rebounce:inst3
- 15. Parameter Settings for User Entity Instance: Rebounce:inst6
- 16. Parameter Settings for User Entity Instance: VgaPixel:inst1
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: PushBoxMap:inst2
+ 13. Parameter Settings for User Entity Instance: Rebounce:inst4
+ 14. Parameter Settings for User Entity Instance: Rebounce:inst5
+ 15. Parameter Settings for User Entity Instance: Rebounce:inst3
+ 16. Parameter Settings for User Entity Instance: Rebounce:inst6
+ 17. Parameter Settings for User Entity Instance: Rebounce:inst8
+ 18. Parameter Settings for User Entity Instance: Rebounce:inst7
+ 19. Parameter Settings for User Entity Instance: VgaPixel:inst11
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -49,16 +52,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun 18 21:56:02 2018           ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun 27 23:10:55 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; PushBox                                         ;
 ; Top-level Entity Name              ; PushBox                                         ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 5,945                                           ;
-;     Total combinational functions  ; 5,924                                           ;
-;     Dedicated logic registers      ; 667                                             ;
-; Total registers                    ; 667                                             ;
-; Total pins                         ; 21                                              ;
+; Total logic elements               ; 11,859                                          ;
+;     Total combinational functions  ; 11,828                                          ;
+;     Dedicated logic registers      ; 732                                             ;
+; Total registers                    ; 732                                             ;
+; Total pins                         ; 23                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -175,34 +178,34 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------------------+-------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimated Total logic elements              ; 5,945    ;
-;                                             ;          ;
-; Total combinational functions               ; 5924     ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 4234     ;
-;     -- 3 input functions                    ; 1258     ;
-;     -- <=2 input functions                  ; 432      ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 5819     ;
-;     -- arithmetic mode                      ; 105      ;
-;                                             ;          ;
-; Total registers                             ; 667      ;
-;     -- Dedicated logic registers            ; 667      ;
-;     -- I/O registers                        ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 21       ;
-; Embedded Multiplier 9-bit elements          ; 0        ;
-; Maximum fan-out node                        ; CLOCK_50 ;
-; Maximum fan-out                             ; 667      ;
-; Total fan-out                               ; 23486    ;
-; Average fan-out                             ; 3.55     ;
-+---------------------------------------------+----------+
++-------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                             ;
++---------------------------------------------+---------------------------+
+; Resource                                    ; Usage                     ;
++---------------------------------------------+---------------------------+
+; Estimated Total logic elements              ; 11,859                    ;
+;                                             ;                           ;
+; Total combinational functions               ; 11828                     ;
+; Logic element usage by number of LUT inputs ;                           ;
+;     -- 4 input functions                    ; 9010                      ;
+;     -- 3 input functions                    ; 1440                      ;
+;     -- <=2 input functions                  ; 1378                      ;
+;                                             ;                           ;
+; Logic elements by mode                      ;                           ;
+;     -- normal mode                          ; 11683                     ;
+;     -- arithmetic mode                      ; 145                       ;
+;                                             ;                           ;
+; Total registers                             ; 732                       ;
+;     -- Dedicated logic registers            ; 732                       ;
+;     -- I/O registers                        ; 0                         ;
+;                                             ;                           ;
+; I/O pins                                    ; 23                        ;
+; Embedded Multiplier 9-bit elements          ; 0                         ;
+; Maximum fan-out node                        ; PushBoxMap:inst2|Equal2~0 ;
+; Maximum fan-out                             ; 1483                      ;
+; Total fan-out                               ; 45201                     ;
+; Average fan-out                             ; 3.59                      ;
++---------------------------------------------+---------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -210,16 +213,274 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name       ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+--------------+
-; |PushBox                   ; 5924 (0)          ; 667 (0)      ; 0           ; 0            ; 0       ; 0         ; 21   ; 0            ; |PushBox                  ; work         ;
-;    |PushBoxMap:inst2|      ; 5546 (5546)       ; 534 (534)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|PushBoxMap:inst2 ; work         ;
+; |PushBox                   ; 11828 (0)         ; 732 (0)      ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |PushBox                  ; work         ;
+;    |PushBoxMap:inst2|      ; 11328 (11328)     ; 551 (551)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|PushBoxMap:inst2 ; work         ;
 ;    |Rebounce:inst3|        ; 45 (45)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|Rebounce:inst3   ; work         ;
 ;    |Rebounce:inst4|        ; 45 (45)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|Rebounce:inst4   ; work         ;
 ;    |Rebounce:inst5|        ; 45 (45)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|Rebounce:inst5   ; work         ;
 ;    |Rebounce:inst6|        ; 45 (45)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|Rebounce:inst6   ; work         ;
-;    |VgaPixel:inst1|        ; 145 (145)         ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|VgaPixel:inst1   ; work         ;
-;    |VgaSync:inst|          ; 53 (53)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|VgaSync:inst     ; work         ;
+;    |Rebounce:inst7|        ; 45 (45)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|Rebounce:inst7   ; work         ;
+;    |Rebounce:inst8|        ; 45 (45)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|Rebounce:inst8   ; work         ;
+;    |VgaPixel:inst11|       ; 176 (176)         ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|VgaPixel:inst11  ; work         ;
+;    |VgaSync:inst|          ; 54 (54)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PushBox|VgaSync:inst     ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                           ;
++-----------------------------------------+----------------------------------------------------+
+; Register name                           ; Reason for Removal                                 ;
++-----------------------------------------+----------------------------------------------------+
+; PushBoxMap:inst2|map_matrix[2][15][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[0][0][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[3][0][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[3][1][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[8][13][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[9][1][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[12][5][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[3][3][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[3][6][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[3][5][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[9][15][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[10][1][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[0][5][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[0][6][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[0][7][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[3][12][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[0][8][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[4][0][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[4][1][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[11][4][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[11][3][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[4][4][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[4][5][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[4][2][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[15][7][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[15][4][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[7][2][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[7][14][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[12][15][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[13][7][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[13][3][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[1][6][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[15][12][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[8][14][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[1][14][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[1][15][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[4][13][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[15][0][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[15][3][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[2][1][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[14][15][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[9][14][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[2][4][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[2][7][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[2][10][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[2][11][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[10][14][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[8][15][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[12][1][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[11][14][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[3][7][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[3][9][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[10][0][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[12][6][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[3][8][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[3][13][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[12][14][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[10][13][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[0][12][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[4][3][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[13][6][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[0][13][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[13][14][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[0][14][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[4][12][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[12][4][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[14][6][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[5][1][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[13][0][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[5][2][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[14][14][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[1][3][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[13][4][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[15][6][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[1][5][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[14][3][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[1][7][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[15][14][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][3][2]   ;
+; PushBoxMap:inst2|map_matrix[1][8][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[14][13][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[6][0][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[14][7][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[6][3][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[6][2][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[7][0][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[11][13][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[1][12][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[15][11][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[1][13][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[4][15][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[11][1][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[12][7][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[1][1][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[13][5][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[13][9][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[5][0][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[13][12][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[12][13][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[13][13][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[1][4][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[14][0][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[14][4][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[13][15][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[14][5][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[5][12][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[14][9][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[14][11][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[5][13][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[5][15][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[2][0][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[15][1][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[6][13][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[15][5][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[12][0][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[2][2][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[7][1][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[2][3][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[12][3][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[2][6][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[7][13][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[8][1][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[8][0][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[2][9][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[2][13][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][2][2]   ;
+; PushBoxMap:inst2|map_matrix[14][12][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[9][2][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[11][0][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[2][8][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[11][2][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[3][4][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[3][15][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[10][15][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[1][2][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[13][2][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[8][2][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[14][8][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[5][14][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[1][11][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[10][2][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[0][10][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[3][2][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[7][15][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[12][2][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[3][11][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[11][15][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[14][2][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[1][0][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[5][3][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[1][10][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[15][2][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[14][1][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[13][1][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[13][8][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[13][11][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[6][15][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[6][1][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[15][9][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[15][8][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[2][5][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[15][13][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[2][12][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[2][14][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[9][0][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[9][13][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[3][10][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[3][14][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[0][9][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[0][11][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[13][10][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[0][15][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[4][14][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[14][10][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[15][10][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[15][15][2]  ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[1][9][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[6][14][2]   ; Merged with PushBoxMap:inst2|map_matrix[0][1][2]   ;
+; PushBoxMap:inst2|map_matrix[12][8][2]   ; Merged with PushBoxMap:inst2|map_matrix[4][9][2]   ;
+; PushBoxMap:inst2|map_matrix[12][9][2]   ; Merged with PushBoxMap:inst2|map_matrix[4][9][2]   ;
+; PushBoxMap:inst2|map_matrix[12][11][2]  ; Merged with PushBoxMap:inst2|map_matrix[4][9][2]   ;
+; PushBoxMap:inst2|map_matrix[4][10][2]   ; Merged with PushBoxMap:inst2|map_matrix[4][9][2]   ;
+; PushBoxMap:inst2|map_matrix[12][12][2]  ; Merged with PushBoxMap:inst2|map_matrix[4][11][2]  ;
+; PushBoxMap:inst2|map_matrix[12][10][2]  ; Merged with PushBoxMap:inst2|map_matrix[4][11][2]  ;
+; PushBoxMap:inst2|map_matrix[5][11][2]   ; Merged with PushBoxMap:inst2|map_matrix[5][4][2]   ;
+; PushBoxMap:inst2|map_matrix[6][4][2]    ; Merged with PushBoxMap:inst2|map_matrix[5][4][2]   ;
+; PushBoxMap:inst2|map_matrix[8][12][2]   ; Merged with PushBoxMap:inst2|map_matrix[5][5][2]   ;
+; PushBoxMap:inst2|map_matrix[8][10][2]   ; Merged with PushBoxMap:inst2|map_matrix[5][6][2]   ;
+; PushBoxMap:inst2|map_matrix[11][8][2]   ; Merged with PushBoxMap:inst2|map_matrix[5][6][2]   ;
+; PushBoxMap:inst2|map_matrix[5][8][2]    ; Merged with PushBoxMap:inst2|map_matrix[5][6][2]   ;
+; PushBoxMap:inst2|map_matrix[7][7][2]    ; Merged with PushBoxMap:inst2|map_matrix[5][6][2]   ;
+; PushBoxMap:inst2|map_matrix[8][9][2]    ; Merged with PushBoxMap:inst2|map_matrix[5][6][2]   ;
+; PushBoxMap:inst2|map_matrix[8][7][2]    ; Merged with PushBoxMap:inst2|map_matrix[5][6][2]   ;
+; PushBoxMap:inst2|map_matrix[6][5][2]    ; Merged with PushBoxMap:inst2|map_matrix[5][7][2]   ;
+; PushBoxMap:inst2|map_matrix[10][11][2]  ; Merged with PushBoxMap:inst2|map_matrix[5][7][2]   ;
+; PushBoxMap:inst2|map_matrix[10][10][2]  ; Merged with PushBoxMap:inst2|map_matrix[5][7][2]   ;
+; PushBoxMap:inst2|map_matrix[11][10][2]  ; Merged with PushBoxMap:inst2|map_matrix[5][7][2]   ;
+; PushBoxMap:inst2|map_matrix[9][10][2]   ; Merged with PushBoxMap:inst2|map_matrix[5][7][2]   ;
+; PushBoxMap:inst2|map_matrix[5][9][2]    ; Merged with PushBoxMap:inst2|map_matrix[5][7][2]   ;
+; PushBoxMap:inst2|map_matrix[10][6][2]   ; Merged with PushBoxMap:inst2|map_matrix[5][10][2]  ;
+; PushBoxMap:inst2|map_matrix[7][4][2]    ; Merged with PushBoxMap:inst2|map_matrix[6][6][2]   ;
+; PushBoxMap:inst2|map_matrix[7][6][2]    ; Merged with PushBoxMap:inst2|map_matrix[6][6][2]   ;
+; PushBoxMap:inst2|map_matrix[8][4][2]    ; Merged with PushBoxMap:inst2|map_matrix[6][6][2]   ;
+; PushBoxMap:inst2|map_matrix[6][11][2]   ; Merged with PushBoxMap:inst2|map_matrix[6][7][2]   ;
+; PushBoxMap:inst2|map_matrix[7][8][2]    ; Merged with PushBoxMap:inst2|map_matrix[6][7][2]   ;
+; PushBoxMap:inst2|map_matrix[7][11][2]   ; Merged with PushBoxMap:inst2|map_matrix[6][7][2]   ;
+; PushBoxMap:inst2|map_matrix[8][8][2]    ; Merged with PushBoxMap:inst2|map_matrix[6][7][2]   ;
+; PushBoxMap:inst2|map_matrix[8][11][2]   ; Merged with PushBoxMap:inst2|map_matrix[6][7][2]   ;
+; PushBoxMap:inst2|map_matrix[9][8][2]    ; Merged with PushBoxMap:inst2|map_matrix[6][7][2]   ;
+; PushBoxMap:inst2|map_matrix[10][9][2]   ; Merged with PushBoxMap:inst2|map_matrix[6][7][2]   ;
+; PushBoxMap:inst2|map_matrix[9][9][2]    ; Merged with PushBoxMap:inst2|map_matrix[6][8][2]   ;
+; PushBoxMap:inst2|map_matrix[7][9][2]    ; Merged with PushBoxMap:inst2|map_matrix[6][10][2]  ;
+; PushBoxMap:inst2|map_matrix[9][3][2]    ; Merged with PushBoxMap:inst2|map_matrix[6][12][2]  ;
+; PushBoxMap:inst2|map_matrix[11][5][2]   ; Merged with PushBoxMap:inst2|map_matrix[6][12][2]  ;
+; PushBoxMap:inst2|map_matrix[7][12][2]   ; Merged with PushBoxMap:inst2|map_matrix[7][3][2]   ;
+; PushBoxMap:inst2|map_matrix[8][3][2]    ; Merged with PushBoxMap:inst2|map_matrix[7][3][2]   ;
+; PushBoxMap:inst2|map_matrix[10][3][2]   ; Merged with PushBoxMap:inst2|map_matrix[7][3][2]   ;
+; PushBoxMap:inst2|map_matrix[9][5][2]    ; Merged with PushBoxMap:inst2|map_matrix[7][5][2]   ;
+; PushBoxMap:inst2|map_matrix[11][6][2]   ; Merged with PushBoxMap:inst2|map_matrix[8][5][2]   ;
+; PushBoxMap:inst2|map_matrix[9][6][2]    ; Merged with PushBoxMap:inst2|map_matrix[9][4][2]   ;
+; PushBoxMap:inst2|map_matrix[10][7][2]   ; Merged with PushBoxMap:inst2|map_matrix[9][7][2]   ;
+; PushBoxMap:inst2|map_matrix[11][7][2]   ; Merged with PushBoxMap:inst2|map_matrix[9][7][2]   ;
+; PushBoxMap:inst2|map_matrix[10][8][2]   ; Merged with PushBoxMap:inst2|map_matrix[9][11][2]  ;
+; PushBoxMap:inst2|map_matrix[10][5][2]   ; Merged with PushBoxMap:inst2|map_matrix[9][11][2]  ;
+; PushBoxMap:inst2|map_matrix[10][4][2]   ; Merged with PushBoxMap:inst2|map_matrix[9][12][2]  ;
+; PushBoxMap:inst2|map_matrix[11][11][2]  ; Merged with PushBoxMap:inst2|map_matrix[9][12][2]  ;
+; PushBoxMap:inst2|map_matrix[11][12][2]  ; Merged with PushBoxMap:inst2|map_matrix[10][12][2] ;
+; PushBoxMap:inst2|map_matrix[0][1][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[0][2][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[0][3][2]    ; Merged with PushBoxMap:inst2|map_matrix[0][4][2]   ;
+; PushBoxMap:inst2|map_matrix[4][8][2]    ; Merged with PushBoxMap:inst2|map_matrix[4][7][2]   ;
+; PushBoxMap:inst2|map_matrix[10][12][2]  ; Merged with PushBoxMap:inst2|map_matrix[4][9][2]   ;
+; PushBoxMap:inst2|map_matrix[4][11][2]   ; Merged with PushBoxMap:inst2|map_matrix[4][9][2]   ;
+; PushBoxMap:inst2|map_matrix[5][5][2]    ; Merged with PushBoxMap:inst2|map_matrix[5][4][2]   ;
+; PushBoxMap:inst2|map_matrix[9][12][2]   ; Merged with PushBoxMap:inst2|map_matrix[5][4][2]   ;
+; PushBoxMap:inst2|map_matrix[11][9][2]   ; Merged with PushBoxMap:inst2|map_matrix[5][6][2]   ;
+; PushBoxMap:inst2|map_matrix[6][8][2]    ; Merged with PushBoxMap:inst2|map_matrix[5][6][2]   ;
+; PushBoxMap:inst2|map_matrix[6][7][2]    ; Merged with PushBoxMap:inst2|map_matrix[5][6][2]   ;
+; PushBoxMap:inst2|map_matrix[9][11][2]   ; Merged with PushBoxMap:inst2|map_matrix[5][7][2]   ;
+; PushBoxMap:inst2|map_matrix[5][10][2]   ; Merged with PushBoxMap:inst2|map_matrix[5][7][2]   ;
+; PushBoxMap:inst2|map_matrix[8][6][2]    ; Merged with PushBoxMap:inst2|map_matrix[6][6][2]   ;
+; PushBoxMap:inst2|map_matrix[9][4][2]    ; Merged with PushBoxMap:inst2|map_matrix[6][6][2]   ;
+; PushBoxMap:inst2|map_matrix[6][10][2]   ; Merged with PushBoxMap:inst2|map_matrix[6][9][2]   ;
+; PushBoxMap:inst2|map_matrix[7][3][2]    ; Merged with PushBoxMap:inst2|map_matrix[6][12][2]  ;
+; PushBoxMap:inst2|map_matrix[9][7][2]    ; Merged with PushBoxMap:inst2|map_matrix[7][5][2]   ;
+; PushBoxMap:inst2|map_matrix[5][6][2]    ; Stuck at GND due to stuck port data_in             ;
+; PushBoxMap:inst2|map_matrix[0][4][2]    ; Stuck at VCC due to stuck port data_in             ;
+; PushBoxMap:inst2|map_matrix[4][7][2]    ; Merged with PushBoxMap:inst2|map_matrix[8][5][2]   ;
+; PushBoxMap:inst2|map_matrix[4][6][2]    ; Merged with PushBoxMap:inst2|map_matrix[5][7][2]   ;
+; Total Number of Removed Registers = 247 ;                                                    ;
++-----------------------------------------+----------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -227,12 +488,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 667   ;
-; Number of registers using Synchronous Clear  ; 5     ;
-; Number of registers using Synchronous Load   ; 25    ;
+; Total registers                              ; 732   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 59    ;
 ; Number of registers using Asynchronous Clear ; 37    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 478   ;
+; Number of registers using Clock Enable       ; 461   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -242,34 +503,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
-; PushBoxMap:inst2|map_matrix[6][6][0]    ; 5       ;
-; PushBoxMap:inst2|map_matrix[6][7][0]    ; 4       ;
-; PushBoxMap:inst2|map_matrix[7][6][0]    ; 5       ;
-; PushBoxMap:inst2|map_matrix[7][7][0]    ; 3       ;
-; PushBoxMap:inst2|map_matrix[10][9][0]   ; 4       ;
-; PushBoxMap:inst2|map_matrix[10][8][0]   ; 4       ;
-; PushBoxMap:inst2|map_matrix[9][10][0]   ; 4       ;
-; PushBoxMap:inst2|map_matrix[8][9][0]    ; 5       ;
+; PushBoxMap:inst2|map_matrix[6][7][0]    ; 3       ;
+; PushBoxMap:inst2|map_matrix[5][7][0]    ; 5       ;
+; PushBoxMap:inst2|map_matrix[8][7][0]    ; 4       ;
+; PushBoxMap:inst2|map_matrix[8][5][0]    ; 5       ;
+; PushBoxMap:inst2|map_matrix[10][8][0]   ; 5       ;
+; PushBoxMap:inst2|map_matrix[8][8][0]    ; 3       ;
+; PushBoxMap:inst2|map_matrix[7][10][0]   ; 5       ;
 ; PushBoxMap:inst2|map_matrix[9][8][0]    ; 4       ;
-; PushBoxMap:inst2|map_matrix[9][9][0]    ; 3       ;
-; PushBoxMap:inst2|map_matrix[9][6][0]    ; 5       ;
-; PushBoxMap:inst2|map_matrix[8][6][0]    ; 5       ;
-; PushBoxMap:inst2|map_matrix[9][7][0]    ; 3       ;
-; PushBoxMap:inst2|map_matrix[8][7][0]    ; 5       ;
-; PushBoxMap:inst2|map_matrix[10][7][0]   ; 4       ;
-; PushBoxMap:inst2|map_matrix[6][9][0]    ; 5       ;
-; PushBoxMap:inst2|map_matrix[7][9][0]    ; 3       ;
-; PushBoxMap:inst2|map_matrix[7][10][0]   ; 4       ;
-; PushBoxMap:inst2|map_matrix[6][8][0]    ; 5       ;
-; PushBoxMap:inst2|map_matrix[7][8][0]    ; 4       ;
-; PushBoxMap:inst2|map_matrix[9][7][1]    ; 3       ;
-; PushBoxMap:inst2|map_matrix[7][9][1]    ; 3       ;
-; PushBoxMap:inst2|map_matrix[7][7][1]    ; 3       ;
-; PushBoxMap:inst2|map_matrix[9][9][1]    ; 3       ;
-; PushBoxMap:inst2|map_matrix[8][10][1]   ; 5       ;
-; PushBoxMap:inst2|player_pos_x[1]        ; 251     ;
-; PushBoxMap:inst2|player_pos_x[3]        ; 85      ;
-; PushBoxMap:inst2|player_pos_y[3]        ; 80      ;
+; PushBoxMap:inst2|map_matrix[7][8][0]    ; 3       ;
+; PushBoxMap:inst2|map_matrix[8][6][0]    ; 4       ;
+; PushBoxMap:inst2|map_matrix[7][9][0]    ; 5       ;
+; PushBoxMap:inst2|map_matrix[4][9][2]    ; 6       ;
+; PushBoxMap:inst2|map_matrix[7][10][2]   ; 2       ;
+; PushBoxMap:inst2|map_matrix[6][12][2]   ; 5       ;
+; PushBoxMap:inst2|map_matrix[5][4][2]    ; 7       ;
+; PushBoxMap:inst2|map_matrix[5][7][2]    ; 9       ;
+; PushBoxMap:inst2|map_matrix[8][5][2]    ; 5       ;
+; PushBoxMap:inst2|map_matrix[6][7][1]    ; 3       ;
+; PushBoxMap:inst2|map_matrix[7][7][1]    ; 4       ;
+; PushBoxMap:inst2|map_matrix[7][8][1]    ; 3       ;
+; PushBoxMap:inst2|map_matrix[8][8][1]    ; 3       ;
+; PushBoxMap:inst2|map_matrix[8][6][1]    ; 4       ;
+; PushBoxMap:inst2|player_pos_x[0]        ; 567     ;
+; PushBoxMap:inst2|player_pos_x[2]        ; 184     ;
+; PushBoxMap:inst2|player_pos_x[1]        ; 249     ;
+; PushBoxMap:inst2|player_pos_y[0]        ; 108     ;
+; PushBoxMap:inst2|player_pos_y[1]        ; 102     ;
+; PushBoxMap:inst2|player_pos_y[2]        ; 98      ;
 ; Total number of inverted registers = 28 ;         ;
 +-----------------------------------------+---------+
 
@@ -279,266 +540,254 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |PushBox|VgaSync:inst|s_countv_prev[0]          ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PushBox|Rebounce:inst5|counter_out[17]         ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PushBox|Rebounce:inst4|counter_out[11]         ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PushBox|Rebounce:inst6|counter_out[0]          ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PushBox|Rebounce:inst3|counter_out[19]         ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |PushBox|VgaPixel:inst1|s_rgb_prev[8]           ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |PushBox|PushBoxMap:inst2|player_pos_y[1]       ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][0][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][0][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][0][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][1][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][15][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][1][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][1][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][2][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][2][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][2][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][3][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][3][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][3][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][4][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][4][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][4][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][5][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][5][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][5][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][6][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][6][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][6][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][7][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][7][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][7][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][8][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][8][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][8][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][9][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][9][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][9][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][10][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][10][1] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][10][1] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][11][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][11][1] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][11][1] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][12][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][12][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][12][1] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][13][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][13][1] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][13][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][14][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][14][1] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][14][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][15][1] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][15][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][0][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][1][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][2][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][3][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][4][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][5][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][6][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][7][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][8][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][9][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][10][1] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][11][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][12][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][13][1] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][14][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][15][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][0][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][1][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][2][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][3][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][4][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][5][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][6][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][7][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][8][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][9][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][10][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][11][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][12][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][13][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][14][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][15][1] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][0][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][1][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][2][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][3][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][4][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][5][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][6][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][10][1] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][11][0] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][12][1] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][13][1] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][14][1] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][15][1] ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][0][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][1][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][2][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][3][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][4][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][5][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][11][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][12][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][13][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][14][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][15][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][0][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][1][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][2][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][3][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][4][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][5][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][8][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][11][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][12][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][13][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][14][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][15][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][0][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][1][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][2][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][3][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][4][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][5][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][11][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][12][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][13][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][14][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][15][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][0][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][1][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][2][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][3][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][4][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][5][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][10][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][11][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][12][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][13][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][14][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][15][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][0][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][1][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][2][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][3][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][4][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][5][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][6][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][7][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][8][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][9][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][10][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][11][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][12][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][13][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][14][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][15][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][0][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][1][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][2][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][3][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][4][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][5][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][6][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][7][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][8][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][9][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][10][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][11][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][12][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][13][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][14][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][15][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][0][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][1][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][2][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][3][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][4][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][5][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][6][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][7][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][8][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][9][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][10][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][11][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][12][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][13][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][14][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][15][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][0][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][1][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][2][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][3][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][4][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][5][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][6][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][7][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][8][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][9][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][10][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][11][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][12][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][13][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][14][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][15][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][0][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][1][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][2][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][3][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][4][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][5][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][6][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][7][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][8][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][9][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][10][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][11][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][12][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][13][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][14][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][15][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][0][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][1][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][2][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][3][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][4][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][5][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][6][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][7][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][8][0]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][9][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][10][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][11][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][12][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][13][0]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][14][1]  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][15][1]  ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |PushBox|PushBoxMap:inst2|player_pos_x[3]       ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][7][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][9][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][7][1]   ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 10 LEs               ; 18 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][9][1]   ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux43                 ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux39                 ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |PushBox|VgaPixel:inst1|s_rgb_next              ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |PushBox|VgaPixel:inst1|Mux26                   ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux38                 ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux77                 ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux41                 ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux73                 ;
-; 64:1               ; 2 bits    ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux179                ;
-; 64:1               ; 2 bits    ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux111                ;
-; 128:1              ; 2 bits    ; 170 LEs       ; 170 LEs              ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux213                ;
-; 128:1              ; 2 bits    ; 170 LEs       ; 170 LEs              ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux145                ;
-; 256:1              ; 2 bits    ; 340 LEs       ; 340 LEs              ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux36                 ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |PushBox|VgaSync:inst|s_countv_prev[3]          ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PushBox|Rebounce:inst7|counter_out[10]         ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PushBox|Rebounce:inst8|counter_out[6]          ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PushBox|Rebounce:inst5|counter_out[2]          ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PushBox|Rebounce:inst4|counter_out[9]          ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PushBox|Rebounce:inst6|counter_out[15]         ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |PushBox|Rebounce:inst3|counter_out[4]          ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][9][2]   ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |PushBox|VgaPixel:inst11|s_rgb_prev[0]          ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][0][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][0][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][0][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][1][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][15][1] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][1][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][1][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][2][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][2][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][2][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][3][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][3][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][3][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][4][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][4][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][4][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][5][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][5][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][5][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][6][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][6][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][6][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][7][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][7][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][7][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][8][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][8][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][8][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][9][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][9][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][9][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][10][0] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][10][0] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][10][1] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][11][0] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][11][0] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][11][0] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][12][1] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][12][0] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][12][0] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][13][1] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][13][0] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][13][1] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[14][14][1] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][14][0] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][14][1] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[15][15][0] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[13][15][1] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][0][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][1][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][2][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][3][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][4][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][5][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][6][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][7][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][8][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][9][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][10][0] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][11][1] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][12][1] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][13][0] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][14][0] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[12][15][0] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][0][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][1][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][2][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][3][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][4][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][5][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][6][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][7][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][8][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][12][1] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][13][0] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][14][0] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[11][15][0] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][0][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][1][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][2][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][3][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][4][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][5][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][9][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][10][1] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][12][1] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][13][1] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][14][1] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[10][15][1] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][0][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][1][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][2][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][3][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][7][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][9][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][10][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][12][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][13][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][14][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[9][15][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][0][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][1][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][2][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][3][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][12][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][13][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][14][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][15][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][0][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][1][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][2][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][3][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][4][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][6][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][12][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][13][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][14][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][15][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][0][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][1][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][2][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][3][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][4][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][11][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][12][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][13][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][14][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][15][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][0][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][1][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][2][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][3][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][4][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][5][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][6][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][11][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][12][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][13][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][14][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][15][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][0][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][1][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][2][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][3][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][4][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][5][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][6][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][7][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][8][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][9][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][10][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][11][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][12][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][13][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][14][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[4][15][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][0][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][1][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][2][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][3][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][4][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][5][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][6][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][7][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][8][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][9][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][10][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][11][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][12][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][13][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][14][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[3][15][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][0][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][1][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][2][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][3][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][4][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][5][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][6][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][7][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][8][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][9][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][10][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][11][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][12][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][13][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][14][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[2][15][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][0][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][1][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][2][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][3][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][4][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][5][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][6][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][7][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][8][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][9][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][10][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][11][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][12][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][13][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][14][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[1][15][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][0][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][1][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][2][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][3][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][4][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][5][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][6][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][7][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][8][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][9][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][10][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][11][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][12][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][13][1]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][14][0]  ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[0][15][0]  ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[5][7][2]   ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |PushBox|PushBoxMap:inst2|player_pos_y[1]       ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][6][1]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[8][8][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[7][8][0]   ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |PushBox|PushBoxMap:inst2|map_matrix[6][7][0]   ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux77                 ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux73                 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; No         ; |PushBox|VgaPixel:inst11|s_rgb_next             ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |PushBox|VgaPixel:inst11|Mux26                  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux74                 ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux112                ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux76                 ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux97                 ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux214                ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux145                ;
+; 128:1              ; 2 bits    ; 170 LEs       ; 170 LEs              ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux248                ;
+; 128:1              ; 2 bits    ; 170 LEs       ; 170 LEs              ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux180                ;
+; 256:1              ; 2 bits    ; 340 LEs       ; 340 LEs              ; 0 LEs                  ; No         ; |PushBox|PushBoxMap:inst2|Mux50                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 
 
@@ -594,16 +843,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: VgaPixel:inst1 ;
-+---------------------+-------+-------------------------------+
-; Parameter Name      ; Value ; Type                          ;
-+---------------------+-------+-------------------------------+
-; map_start_col       ; 144   ; Signed Integer                ;
-; map_end_col         ; 656   ; Signed Integer                ;
-; map_start_row       ; 44    ; Signed Integer                ;
-; map_end_row         ; 556   ; Signed Integer                ;
-; map_squaresize_bits ; 5     ; Signed Integer                ;
-+---------------------+-------+-------------------------------+
+; Parameter Settings for User Entity Instance: Rebounce:inst8 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; counter_size   ; 20    ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Rebounce:inst7 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; counter_size   ; 20    ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: VgaPixel:inst11 ;
++---------------------+-------+--------------------------------+
+; Parameter Name      ; Value ; Type                           ;
++---------------------+-------+--------------------------------+
+; map_start_col       ; 144   ; Signed Integer                 ;
+; map_end_col         ; 656   ; Signed Integer                 ;
+; map_start_row       ; 44    ; Signed Integer                 ;
+; map_end_row         ; 556   ; Signed Integer                 ;
+; map_squaresize_bits ; 5     ; Signed Integer                 ;
++---------------------+-------+--------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -612,7 +881,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:54     ;
+; Top            ; 00:01:38     ;
 +----------------+--------------+
 
 
@@ -622,7 +891,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Jun 18 21:55:04 2018
+    Info: Processing started: Wed Jun 27 23:09:13 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PushBox -c PushBox
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file pushbox.bdf
@@ -640,21 +909,22 @@ Info (12021): Found 2 design units, including 1 entities, in source file rebounc
     Info (12022): Found design unit 1: Rebounce-archRebounce
     Info (12023): Found entity 1: Rebounce
 Info (12127): Elaborating entity "PushBox" for the top level hierarchy
+Warning (275011): Block or symbol "PushBoxMap" of instance "inst2" overlaps another block or symbol
 Info (12128): Elaborating entity "VgaSync" for hierarchy "VgaSync:inst"
 Info (12128): Elaborating entity "PushBoxMap" for hierarchy "PushBoxMap:inst2"
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "map_matrix" into its bus
 Info (12128): Elaborating entity "Rebounce" for hierarchy "Rebounce:inst4"
-Info (12128): Elaborating entity "VgaPixel" for hierarchy "VgaPixel:inst1"
+Info (12128): Elaborating entity "VgaPixel" for hierarchy "VgaPixel:inst11"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 5966 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 6 input pins
+Info (21057): Implemented 11883 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
     Info (21059): Implemented 15 output pins
-    Info (21061): Implemented 5945 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4709 megabytes
-    Info: Processing ended: Mon Jun 18 21:56:02 2018
-    Info: Elapsed time: 00:00:58
-    Info: Total CPU time (on all processors): 00:00:58
+    Info (21061): Implemented 11860 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4727 megabytes
+    Info: Processing ended: Wed Jun 27 23:10:55 2018
+    Info: Elapsed time: 00:01:42
+    Info: Total CPU time (on all processors): 00:01:42
 
 

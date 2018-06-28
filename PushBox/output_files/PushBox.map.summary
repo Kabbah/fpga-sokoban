@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Mon Jun 18 21:56:02 2018
+Analysis & Synthesis Status : Successful - Wed Jun 27 23:10:55 2018
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : PushBox
 Top-level Entity Name : PushBox
 Family : Cyclone II
-Total logic elements : 5,945
-    Total combinational functions : 5,924
-    Dedicated logic registers : 667
-Total registers : 667
-Total pins : 21
+Total logic elements : 11,859
+    Total combinational functions : 11,828
+    Dedicated logic registers : 732
+Total registers : 732
+Total pins : 23
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
